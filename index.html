@@ -45,6 +45,9 @@
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com"> contact@example.com </a></i>
         <i class="bi bi-phone d-flex align-items-center ms-4"><span> +1 5589 55488 55 </span></i>
+<a href="profile.html" class="bi bi-person-fill bi-lg" style="cursor: pointer; text-decoration: none;color: white;">
+    الملف الشخصى
+</a>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -66,7 +69,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="#">الرئيسية</a></li>
-          <li><a href="register.html">تسجيل</a></li>
+          <li><a href="register.html"> تسجيل كمستفيد</a></li>
           <li><a href="#about">من نحن</a></li>
           <li><a href="#services">الخدمات</a></li>
       
@@ -107,7 +110,9 @@
           <h2>مرحبا بك  <span> </span></h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas minus ratione voluptatibus architecto aut mollitia dolorum! Beatae ipsam reiciendis maiores alias enim, voluptatum distinctio omnis in ducimus perferendis debitis.</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a class="btn-get-started" data-bs-toggle="modal" data-bs-target="#loginModal">تسجيل دخول</a>
+            <a class="btn btn-logIn" data-bs-toggle="modal" data-bs-target="#loginModal" style="margin-left: 2vw;">تسجيل دخول</a> 
+            <a class="btn btn-signUp" data-bs-toggle="modal" data-bs-target="#signupModal"> لا تملك حساب</a> 
+
           </button>
             <!-- <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
           </div>
@@ -444,18 +449,55 @@
 
   <div id="preloader"></div>
 
+<!-- ################################################ -->
+<!-- #################### MODALS #################### -->
+<!-- ################################################ -->
 
 
+<!-- ################### SIGN UP MODAL ############## -->
+
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header" style="background-color: #40a8a2; color: white;" >
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h5 class="modal-title" id="signupModalLabel">إنشاء حساب جديد</h5>
+          </div>
+          <div class="modal-body">
+              <form>
+                  <div class="mb-3">
+                      <label for="fullNameInput" class="form-label">الاسم الكامل:</label>
+                      <input type="text" class="form-control" id="fullNameInput" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="emailInput" class="form-label">البريد الإلكتروني:</label>
+                      <input type="email" class="form-control" id="emailInput" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="passwordInput" class="form-label">كلمة السر:</label>
+                      <input type="password" class="form-control" id="passwordInput" required>
+                  </div>
+                  <div class="mb-3">
+                      <label for="confirmPasswordInput" class="form-label">تأكيد كلمة السر:</label>
+                      <input type="password" class="form-control" id="confirmPasswordInput" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="background-color: #40a8a2; color: white;" >إنشاء الحساب</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
 
 
-
+<!-- ################### LOG IN MODAL ############## -->
 
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" style="background-color: #40a8a2; color: white;">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <h5 class="modal-title" id="loginModalLabel" >تسجيل الدخول</h5>
+                <h5 class="modal-title" id="loginModalLabel" >تسجيل الدخول</h5>  
+
 
             </div>
             <div class="modal-body">
@@ -474,6 +516,9 @@
         </div>
     </div>
 </div>
+
+
+
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
