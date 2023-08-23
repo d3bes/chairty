@@ -12,5 +12,7 @@ namespace charityMVC.Models
         public string city { get; set; }
         public string password { get; set; }
         public bool isDeleted { get; set; }
+
+        
     }
 }
