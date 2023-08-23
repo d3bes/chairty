@@ -1,5 +1,11 @@
 
+<app-loading></app-loading>
+
+<ng-container *ngIf="!isLoading">
+
 <app-top-bar></app-top-bar>
 <app-nav-bar></app-nav-bar>
 <router-outlet></router-outlet>
 <app-footer></app-footer>
+
+</ng-container>
