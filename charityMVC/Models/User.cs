@@ -31,6 +31,8 @@ namespace charityMVC.Models
         public string proxy_name { get; set;}
         public string proxy_account_number { get; set;}
 
+        public bool isDeleted {get;set;}
+
 
 
 
