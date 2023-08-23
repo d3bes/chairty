@@ -1,0 +1,47 @@
+@model List<UserVM>
+@{
+    ViewData["Title"] = "cityUsers";
+}
+
+
+<div class="m">
+
+</div>
+
+
+<div class="container-fluid">
+   <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>الاسم</th>
+                <th>رقم الهوية</th>
+                <th>رقم الجوال</th>
+                <th>تاريخ الميلاد</th>
+                <th>النقاط</th>
+                <th>
+                     <a class="btn btn-info" asp-controller="Register" asp-action="register">اضافة</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.fullName</td>
+                    <td>@item.id</td>
+                    <td>@item.phone</td>
+                    <td>@item.birthDate</td>
+                    <td>@item.points</td>
+                    <td>
+                        <a class="btn btn-warning" asp-controller="Clerk" asp-action="Review" asp-route-id="@item.id">مراجعة</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="m">
+
+</div>
+

@@ -1,49 +1,104 @@
+/* _content/charityMVC/Views/Clerk/cityUsers.cshtml.rz.scp.css */
+.m[b-zmiuo6207s]{
+    margin-bottom: 15vh;
+}
+/* _content/charityMVC/Views/Clerk/review.cshtml.rz.scp.css */
+/* Add your custom CSS here */
+.form-group[b-xm4hv9lbyi] {
+    margin-bottom: 20px;
+}
+
+/* Adjust input field width as needed */
+.form-control[b-xm4hv9lbyi] {
+    width: 100%;
+}
+
+/* Align labels and inputs to the right */
+.form-group label[b-xm4hv9lbyi] {
+    text-align: right;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style required asterisks */
+.text-danger[b-xm4hv9lbyi] {
+    color: red;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+/* Increase space between radio buttons */
+.radio-inline[b-xm4hv9lbyi] {
+    margin-right: 10px;
+}
+.container[b-xm4hv9lbyi] {
+margin-bottom: 10vh;
+}
+/* _content/charityMVC/Views/Register/register.cshtml.rz.scp.css */
+/* Add your custom CSS here */
+.form-group[b-6kqv849j9o] {
+    margin-bottom: 20px;
+}
+
+/* Adjust input field width as needed */
+.form-control[b-6kqv849j9o] {
+    width: 100%;
+}
+
+/* Align labels and inputs to the right */
+.form-group label[b-6kqv849j9o] {
+    text-align: right;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style required asterisks */
+.text-danger[b-6kqv849j9o] {
+    color: red;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+/* Increase space between radio buttons */
+.radio-inline[b-6kqv849j9o] {
+    margin-right: 10px;
+}
+.container[b-6kqv849j9o] {
+margin-bottom: 10vh;
+}
 /* _content/charityMVC/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-a.navbar-brand[b-grrnyighae] {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+/* _content/charityMVC/Views/UserProfile/userProfile.cshtml.rz.scp.css */
+/* Add your custom CSS here */
+.form-group[b-mkglck74tt] {
+    margin-bottom: 20px;
 }
 
-a[b-grrnyighae] {
-  color: #0077cc;
+/* Adjust input field width as needed */
+.form-control[b-mkglck74tt] {
+    width: 100%;
 }
 
-.btn-primary[b-grrnyighae] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Align labels and inputs to the right */
+.form-group label[b-mkglck74tt] {
+    text-align: right;
+    display: block;
+    margin-bottom: 5px;
 }
 
-.nav-pills .nav-link.active[b-grrnyighae], .nav-pills .show > .nav-link[b-grrnyighae] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+/* Style required asterisks */
+.text-danger[b-mkglck74tt] {
+    color: red;
+    font-size: 18px;
+    vertical-align: middle;
 }
 
-.border-top[b-grrnyighae] {
-  border-top: 1px solid #e5e5e5;
+/* Increase space between radio buttons */
+.radio-inline[b-mkglck74tt] {
+    margin-right: 10px;
 }
-.border-bottom[b-grrnyighae] {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow[b-grrnyighae] {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
-
-button.accept-policy[b-grrnyighae] {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
-.footer[b-grrnyighae] {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+.container[b-mkglck74tt] {
+margin-bottom: 10vh;
 }

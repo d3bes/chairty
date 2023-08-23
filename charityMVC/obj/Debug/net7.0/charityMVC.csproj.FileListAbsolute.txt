@@ -29,3 +29,7 @@ F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\refint\charityMVC.dll
 F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\charityMVC.pdb
 F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\charityMVC.genruntimeconfig.cache
 F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\ref\charityMVC.dll
+F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\scopedcss\Views\Register\register.cshtml.rz.scp.css
+F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\scopedcss\Views\UserProfile\userProfile.cshtml.rz.scp.css
+F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\scopedcss\Views\Clerk\cityUsers.cshtml.rz.scp.css
+F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\scopedcss\Views\Clerk\review.cshtml.rz.scp.css
