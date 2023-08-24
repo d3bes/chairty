@@ -39,9 +39,10 @@
                 <input type="text" name="city" class="form-control" required>
             </div>
 
-            <div class="form-group">
+           <div class="form-group">
                 <label>صورة من الهوية الشخصية: <span class="text-danger">*</span></label>
                 <input type="file" name="id_image" class="form-control" accept="image/*" required>
+                <a class="btn btn-primary" ><i class="bi bi-upload"></i>  </a>
             </div>
 
             <div class="form-group">
@@ -167,8 +168,43 @@
           
             <button type="submit" class="btn btn-primary">تسجيل</button>
         </form>
+
+
+
+        <form asp-action="Upload" method="post" asp-controller="Register" enctype="multipart/form-data">
+              <div class="form-group">
+                <label>صورة من الهوية الشخصية: <span class="text-danger">*</span></label>
+                <input type="file" name="id_image" class="form-control" accept="image/*" required/>
+               <div class="image-preview" id="idImagePreview">
+                <img src="" alt="الصورة الشخصية" class="image-preview__image">
+                <span class="image-preview__default-text">الصورة الشخصية</span>
+
+               </div>
+                <input type="submit" class="btn btn-primary" value="رفع"/> 
+            </div>
+        </form>
         </div>
         </div>
         <div class="col-sm-2"></div>
 
     </div>
+
+    @section Scripts
+    {
+        <script>
+          const id_image_preview = document.getElementById("idImagePreview");
+          const id_image_input = document.getElementById("id_image");
+          const id_image = id_image_preview.querySelector("image-preview__image");
+          const id_text = id_image_preview.querySelector("image-preview__default-text");
+          id_image_input.addEventListener("change", function(){
+            const file = this.files[0];
+
+          })
+
+
+     
+            
+        </script>
+
+
+    }
