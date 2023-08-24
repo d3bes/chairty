@@ -8,11 +8,11 @@ namespace charityMVC.Models
     public class Admin
     {
         public string id { get; set; }
-        public string name { get; set; }
+        public string username { get; set; }
         public string password { get; set; }
         public bool isDeleted { get; set; }
         public bool isSuperAdmin { get; set;}
-        
+
 
     }
 }
