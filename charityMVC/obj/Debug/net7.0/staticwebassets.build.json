@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "05bEV7jKGQMwXIzzmBDa2vrJqvDdUnHfoIIfWMuovoY=",
+  "Hash": "v8eZX1BmvKAtwM8wxG+N/koYnqUwC+g+xuadw5u3V/8=",
   "Source": "charityMVC",
   "BasePath": "_content/charityMVC",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "F:\\downloads\\Impact\\chairty\\charityMVC\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\charityMVC.bundle.scp.css"
+    },
+    {
+      "Identity": "F:\\downloads\\Impact\\chairty\\charityMVC\\Views\\Register\\register.cshtml.js",
+      "SourceId": "charityMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\downloads\\Impact\\chairty\\charityMVC\\",
+      "BasePath": "_content/charityMVC",
+      "RelativePath": "Views/Register/register.cshtml.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "Views\\Register\\register.cshtml.js"
     },
     {
       "Identity": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\css\\main.css",

@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\Views\\Register\\register.cshtml.js",
+      "PackagePath": "staticwebassets\\Views\\Register\\register.cshtml.js"
+    },
+    {
       "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\charityMVC.bundle.scp.css",
       "PackagePath": "staticwebassets\\charityMVC.bundle.scp.css"
     },
