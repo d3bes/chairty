@@ -29,14 +29,48 @@ namespace charityMVC.Controllers
         }
         [HttpPost]
         public IActionResult Upload(IFormFile id_image, IFormFile family_card_image, IFormFile disability_proof,
-                                    IFormFile debt_proof, IFormFile housing_proof )
+                                    IFormFile debt_proof, IFormFile rent_proof, User user )
         {
-            List<IFormFile> formFiles = new List<IFormFile>{id_image, family_card_image, disability_proof,debt_proof,housing_proof};
-            
+            List<IFormFile> formFiles = new List<IFormFile>{id_image, family_card_image, disability_proof,debt_proof,rent_proof};
+          
             foreach(var file in formFiles)
             {
-                _userRepo.Uploadimage(file);
+                 string UploadPath = Path.Combine(_webHostEnvironment.WebRootPath,"userImages");
+                 string fileName = Guid.NewGuid().ToString()+"_"+ file.FileName;
+                 string filePath = Path.Combine(UploadPath, fileName);
+                 
+                _userRepo.Uploadimage(file,filePath);
+                
+                if(file == id_image) user.id_image = filePath;
+                else if(file == family_card_image) user.family_card_image = filePath;
+                else if(file == disability_proof) user.disability_proof = filePath;
+                else if(file == debt_proof) user.debt_proof = filePath;
+                else if(file == rent_proof) user.rent_proof = filePath;
+                
+                 
             }
+
+             _userRepo.AddUser(user);
+
+
+
+          
+           return RedirectToAction("Index","Home");
+
+
+        }
+
+     
+    }
+}
+
+
+  //   user.id_image = Path.Combine(_webHostEnvironment.WebRootPath,"userImages",id_image.FileName);
+            // user.family_card_image = Path.Combine(_webHostEnvironment.WebRootPath,"userImages",family_card_image.FileName);
+            // user.disability_proof = Path.Combine(_webHostEnvironment.WebRootPath,"userImages",disability_proof.FileName);
+            // user.debt_proof = Path.Combine(_webHostEnvironment.WebRootPath,"userImages",debt_proof.FileName);
+            // user.rent_proof = Path.Combine(_webHostEnvironment.WebRootPath,"userImages",rent_proof.FileName);
+
             // string UploadPath = Path.Combine(_webHostEnvironment.WebRootPath,"userImages");
             // string fileName = Guid.NewGuid().ToString()+"_"+ id_image.FileName;
             // string filePath = Path.Combine(UploadPath, fileName);
@@ -45,12 +79,3 @@ namespace charityMVC.Controllers
             // {
             //     id_image.CopyTo(fileStream);
             // }
-
-           return RedirectToAction("Index");
-
-
-        }
-
-     
-    }
-}

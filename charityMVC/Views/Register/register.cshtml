@@ -1,3 +1,4 @@
+@model User
 
 @{
     ViewData["Title"] = "التسجيل كمستفيد";
@@ -12,18 +13,18 @@
 
             <div class="form-group">
                 <label>الاسم رباعي: <span class="text-danger">*</span></label>
-                <input type="text" name="full_name" class="form-control" required>
+                <input type="text" name="fullName" asp-for="fullName" class="form-control" required>
             </div>
 
             <div class="form-group">
                 <label>رقم الهوية : <span class="text-danger">*</span></label>
-                <input type="text" name="id_number" class="form-control" required>
+                <input type="text" asp-for="id" name="id" class="form-control" required>
             </div>
 
 
             <div class="form-group">
                 <label>تاريخ الميلاد: <span class="text-danger">*</span> </label>
-                <input type="date" name="birthdate" class="form-control" required>
+                <input type="date" asp-for="birthDate" name="birthDate" class="form-control" required>
             </div>
 
 
@@ -31,19 +32,23 @@
                 <label>رقم الجوال: <span class="text-danger">*</span></label>
                 <div class="input-group">
                     <span class="input-group-text">+966</span>
-                    <input type="number" name="mobile_number" class="form-control" required>
+                    <input type="number" asp-for="phone" name="phone" class="form-control" required>
                 </div>
             </div>
 
+          <div class="form-group">
+                <label>العنوان بالكامل: <span class="text-danger">*</span> </label>
+                <input type="text" name="fullAddress" asp-for="fullAddress" class="form-control" required>
+            </div>
             <div class="form-group">
                 <label>المدينة: <span class="text-danger">*</span> </label>
-                <input type="text" name="city" class="form-control" required>
+                <input type="text" name="city" asp-for="city" class="form-control" required>
             </div>
             @* الهوية الشخصية صورة*@
             
              <div class="form-group">
                 <label>صورة من الهوية الشخصية: <span class="text-danger">*</span></label>
-                <input type="file" id="id_image"  onchange="previewImage('id_image','idImagePreview')"  name="id_image"  class="form-control" accept="image/*" required/>
+                <input type="file" id="id_image"  asp-for="id_image"  onchange="previewImage('id_image','idImagePreview')"  name="id_image"  class="form-control" accept="image/*" required/>
                <div class="image-preview" id="idImagePreview">
                 <img src="" alt="الصورة الشخصية" class="image-preview__image">
                 <span class="image-preview__default-text">الصورة الشخصية</span>
@@ -53,7 +58,7 @@
             
             <div class="form-group">
                 <label>صورة من بطاقة العائلة: <span class="text-danger">*</span> </label>
-                <input type="file" id="family_card_image" onchange="previewImage('family_card_image','FamilyImagePreview')" name="family_card_image" class="form-control" accept="image/*" required>
+                <input type="file" id="family_card_image" asp-for="family_card_image" onchange="previewImage('family_card_image','FamilyImagePreview')" name="family_card_image" class="form-control" accept="image/*" required>
              <div class="image-preview" id="FamilyImagePreview">
                 
                 <img src="" alt="بطاقة العائلة" class="image-preview__image">
@@ -64,12 +69,12 @@
             
             <div class="form-group">
                 <label>رقم الحساب البنكي (الراجحي فقط): <span class="text-danger">*</span></label>
-                <input type="text" name="bank_account_number" class="form-control">
+                <input type="text" name="bank_account_number" asp-for="bank_account_number" class="form-control">
             </div>
 
             <div class="form-group" >
                 <label> عدد الأبناء؟ <span class="text-danger">*</span></label>
-                <select name="children_count" class="form-control">
+                <select name="children_count" asp-for="children_count" class="form-control">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -83,12 +88,12 @@
             <div class="form-group">
                 <label>هل لديك دخل أو مساعدات دورية أو ضمان اجتماعي؟ <span class="text-danger">*</span> </label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="income_support" value="نعم" required>
-                    <label class="form-check-label">نعم</label>
+                    <input class="form-check-input" asp-for="income_support" id="income_support_yes" type="radio" name="income_support" value="true" required>
+                    <label for="income_support_yes" class="form-check-label">نعم</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="income_support" value="لا" required>
-                    <label class="form-check-label">لا</label>
+                    <input class="form-check-input"  asp-for="income_support" id="income_support_No" type="radio" name="income_support" value="false" required>
+                    <label for="income_support_No" class="form-check-label">لا</label>
                 </div>
             </div>
 
@@ -97,16 +102,16 @@
             <div class="form-group" required>
                 <label>هل يوجد حالة إعاقة أو لأحد عائلتك؟ <span class="text-danger">*</span> </label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="disability" value="نعم">
-                    <label class="form-check-label">نعم</label>
+                    <input class="form-check-input" asp-for="disability" id="disability_Yes" type="radio" name="disability" value="true">
+                    <label for="disability_Yes" class="form-check-label">نعم</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="disability" value="لا">
-                    <label class="form-check-label">لا</label>
+                    <input class="form-check-input" asp-for="disability" id="disability_No" type="radio" name="disability" value="false">
+                    <label for="disability_No" class="form-check-label">لا</label>
                 </div>
                 
                 @* صورة اثبات الاعاقة *@
-                <input class="form-control mt-2" type="file" id="disability_proof" onchange="previewImage('disability_proof','disability_image_preview')"  name="disability_proof" accept="image/*">
+                <input class="form-control mt-2" type="file" asp-for="disability_proof"  id="disability_proof" onchange="previewImage('disability_proof','disability_image_preview')"  name="disability_proof" accept="image/*">
                  <div class="image-preview" id="disability_image_preview">
                 <img src="" alt="اثبات الاعاقة " class="image-preview__image">
                 <span class="image-preview__default-text">اثبات الاعاقة</span>
@@ -118,11 +123,11 @@
             <div class="form-group">
                 <label>هل يوجد أرملة أو مطلقة؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="widow" value="نعم">
+                    <input class="form-check-input" type="radio" asp-for="widow" name="widow" value="true">
                     <label class="form-check-label">نعم</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="widow" value="لا">
+                    <input class="form-check-input" type="radio"  asp-for="widow" name="widow" value="false">
                     <label class="form-check-label">لا</label>
                 </div>
             </div>
@@ -131,11 +136,11 @@
             <div class="form-group">
                 <label>هل يوجد كبير سن (فوق 60)؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="elderly" value="نعم">
+                    <input class="form-check-input" asp-for="elderly" type="radio" name="elderly" value="true">
                     <label class="form-check-label">نعم</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="elderly" value="لا">
+                    <input class="form-check-input" asp-for="elderly" type="radio" name="elderly" value="false">
                     <label class="form-check-label">لا</label>
                 </div>
             </div>
@@ -144,15 +149,15 @@
             <div class="form-group">
                 <label>هل يوجد دين؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="debt" value="نعم">
+                    <input class="form-check-input" asp-for="debt" type="radio" name="debt" value="true">
                     <label class="form-check-label">نعم</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="debt" value="لا">
+                    <input class="form-check-input" asp-for="debt" type="radio" name="debt" value="false">
                     <label class="form-check-label">لا</label>
                 </div>
                 @* اثبات الدين *@
-                <input class="form-control mt-2" onchange="previewImage('debt_proof','debt_image_preview')" id="debt_proof" type="file" name="debt_proof" accept="image/*">
+                <input class="form-control mt-2" asp-for="debt_proof" onchange="previewImage('debt_proof','debt_image_preview')" id="debt_proof" type="file" name="debt_proof" accept="image/*">
                   <div class="image-preview" id="debt_image_preview">
                 <img src="" alt="اثبات الدين" class="image-preview__image">
                 <span class="image-preview__default-text"> اثبات الدين </span>
@@ -163,15 +168,15 @@
             <div class="form-group">
                 <label>هل السكن ملك أو ايجار؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="housing_status" value="ايجار">
+                    <input class="form-check-input" asp-for="house_rent" type="radio"  value="true">
                     <label class="form-check-label">ايجار</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="housing_status" value="ملك">
+                    <input class="form-check-input" asp-for="house_rent" type="radio" value="false">
                     <label class="form-check-label">ملك</label>
                 </div>
                 @* اثبات الايجار *@
-                <input class="form-control mt-2" type="file" onchange="previewImage('housing_proof','rentImagePreview')" id="housing_proof" name="housing_proof" accept="image/*">
+                <input class="form-control mt-2" asp-for="rent_proof" type="file" onchange="previewImage('rent_proof','rentImagePreview')" id="rent_proof" name="rent_proof" accept="image/*">
                 <div class="image-preview" id="rentImagePreview">
                 <img src="" alt="اثبات الايجار" class="image-preview__image">
                 <span class="image-preview__default-text">اثبات الايجار </span>
@@ -183,27 +188,31 @@
             <div class="form-group">
                 <label>هل يوجد شخص يستلم المساعدة بالنيابة؟ </label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="proxy" value="نعم">
+                    <input class="form-check-input" asp-for="proxy" type="radio"  value="true">
                     <label class="form-check-label">نعم</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="proxy" value="لا">
+                    <input class="form-check-input" asp-for="proxy" type="radio"  value="false">
                     <label class="form-check-label">لا</label>
-                </div>
+                
+                        <div style="direction: rtl; text-align: right;">
                 <label>الاسم:</label>
-                <input type="text" name="proxy_name" class="form-control">
+                <input type="text" asp-for="proxy_name" class="form-control">
+            </div>
+
+            <div style="direction: rtl; text-align: right;">
                 <label>رقم الحساب:</label>
-                <input type="text" name="proxy_account_number" class="form-control">
+                <input type="text" asp-for="proxy_account_number" class="form-control">
+            </div>
+
+            </div>
             </div>
 
             <button type="submit" class="btn btn-primary">تسجيل</button>
         </form>
              
 
-               @* </div>
-                <input type="submit" class="btn btn-primary" value="رفع"/>
-            </div> *@
-       
+              
             </div>
         <div class="col-sm-2"></div>
 

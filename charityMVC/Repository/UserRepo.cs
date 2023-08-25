@@ -87,11 +87,9 @@ namespace charityMVC.Repository
             return user;
         }
 
-        public async Task<bool> Uploadimage(IFormFile formFile) //uplaod to wwwroot\userImages
+        public async Task<bool> Uploadimage(IFormFile formFile,string filePath) //uplaod to wwwroot\userImages
         {
-            string UploadPath = Path.Combine(_webHostEnvironment.WebRootPath,"userImages");
-            string fileName = Guid.NewGuid().ToString()+"_"+ formFile.FileName;
-            string filePath = Path.Combine(UploadPath, fileName);
+         
 
         try
         {

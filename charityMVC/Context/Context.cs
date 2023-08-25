@@ -21,7 +21,7 @@ namespace charityMVC
         }
     //  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     //     {
-    //       optionsBuilder.UseNpgsql("Host=ep-broad-tooth-96391691.ap-southeast-1.aws.neon.tech; Database=charity; User Id=fc297269;Password=UFoyG1iEI7tW");
+    //       optionsBuilder.UseNpgsql("Host=ep-broad-tooth-96391691.pooler.ap-southeast-1.aws.neon.tech; Database=charity; User Id=fc297269;Password=UFoyG1iEI7tW");
                                     //  postgres://fc297269:UFoyG1iEI7tW@ep-broad-tooth-96391691.ap-southeast-1.aws.neon.tech/charity
     //        base.OnConfiguring(optionsBuilder);
     //     }

@@ -13,11 +13,11 @@ namespace charityMVC.Models
         [Key]
         public string id { get;set;}
         public string fullName { get; set;}
-        public string userId { get; set;}
         public string? phone { get; set;}
         public string? birthDate { get; set;}
         public int? points { get; set;}
         public string? city { get; set;}
+        public string? fullAddress { get; set;}
         public string? id_image { get; set;}
         public string? family_card_image { get; set;}
         public string? bank_account_number { get; set;}
@@ -40,15 +40,15 @@ namespace charityMVC.Models
         [DefaultValue(false)]
         public bool isDeleted {get;set;}
 
-        // [ForeignKey("clerk")]
+        // [ForeignKey("support")]
+        // public string supportId { get; set;}
+        // public Support support { get; set;}
+
+
+    // [ForeignKey("clerk")]
         // public string clerkId { get; set;}
 
         // public Clerk clerk { get; set;}
-
-        [ForeignKey("support")]
-        public string supportId { get; set;}
-        public Support support { get; set;}
-
 
 
 
