@@ -28,37 +28,48 @@ namespace charityMVC.Controllers
             return View("register");
         }
         [HttpPost]
-        public IActionResult Upload(IFormFile id_image, IFormFile family_card_image, IFormFile disability_proof,
+        public async Task<IActionResult> Upload(IFormFile id_image, IFormFile family_card_image, IFormFile disability_proof,
                                     IFormFile debt_proof, IFormFile rent_proof, User user )
         {
-            List<IFormFile> formFiles = new List<IFormFile>{id_image, family_card_image, disability_proof,debt_proof,rent_proof};
-          
-            foreach(var file in formFiles)
-            {
-                 string UploadPath = Path.Combine(_webHostEnvironment.WebRootPath,"userImages");
-                 string fileName = Guid.NewGuid().ToString()+"_"+ file.FileName;
-                 string filePath = Path.Combine(UploadPath, fileName);
-                 
-                _userRepo.Uploadimage(file,filePath);
-                
-                if(file == id_image) user.id_image = filePath;
-                else if(file == family_card_image) user.family_card_image = filePath;
-                else if(file == disability_proof) user.disability_proof = filePath;
-                else if(file == debt_proof) user.debt_proof = filePath;
-                else if(file == rent_proof) user.rent_proof = filePath;
-                
-                 
-            }
+           if (ModelState.IsValid)
+{
+    // List of form files to be uploaded
+    List<IFormFile> formFiles = new List<IFormFile> { id_image, family_card_image, disability_proof, debt_proof, rent_proof };
 
-             _userRepo.AddUser(user);
+    foreach (var file in formFiles)
+    {
+        if (file != null)
+        {
+            string UploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "userImages");
+            string fileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+            string filePath = Path.Combine(UploadPath, fileName);
+            
+            // Upload the image file
+            _userRepo.Uploadimage(file, filePath);
+            
+            // Assign the uploaded file path to the corresponding property in the user object
+            if (file == id_image) user.id_image = filePath;
+            else if (file == family_card_image) user.family_card_image = filePath;
+            else if (file == disability_proof) user.disability_proof = filePath;
+            else if (file == debt_proof) user.debt_proof = filePath;
+            else if (file == rent_proof) user.rent_proof = filePath;
+        }
+    }
+    
+            // Calculate user points and add the user
+            user.points = await _userRepo.GetPoints(user);
+            await _userRepo.AddUser(user);
 
+            // Redirect to the Index action of the HomeController
+        return RedirectToRoute($"/UserProfile/GetUserProfile/{user.id}");
+        }
 
-
-          
-           return RedirectToAction("Index","Home");
-
+        // If ModelState is not valid, return to the view with validation errors
+        return View("register",user);
 
         }
+
+
 
      
     }
