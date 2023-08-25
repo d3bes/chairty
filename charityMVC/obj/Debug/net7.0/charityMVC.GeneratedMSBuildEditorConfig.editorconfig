@@ -9,49 +9,49 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = charityMVC
 build_property.RootNamespace = charityMVC
-build_property.ProjectDir = F:\downloads\Impact\chairty\charityMVC\
+build_property.ProjectDir = f:\downloads\Impact\chairty\charityMVC\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\downloads\Impact\chairty\charityMVC
+build_property.MSBuildProjectDirectory = f:\downloads\Impact\chairty\charityMVC
 build_property._RazorSourceGeneratorDebug = 
 
-[F:/downloads/Impact/chairty/charityMVC/Views/Home/Index.cshtml]
+[f:/downloads/Impact/chairty/charityMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/downloads/Impact/chairty/charityMVC/Views/Shared/Error.cshtml]
+[f:/downloads/Impact/chairty/charityMVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/downloads/Impact/chairty/charityMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[f:/downloads/Impact/chairty/charityMVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/downloads/Impact/chairty/charityMVC/Views/_ViewImports.cshtml]
+[f:/downloads/Impact/chairty/charityMVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/downloads/Impact/chairty/charityMVC/Views/_ViewStart.cshtml]
+[f:/downloads/Impact/chairty/charityMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[F:/downloads/Impact/chairty/charityMVC/Views/Clerk/cityUsers.cshtml]
+[f:/downloads/Impact/chairty/charityMVC/Views/Clerk/cityUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xlcmtcY2l0eVVzZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-zmiuo6207s
 
-[F:/downloads/Impact/chairty/charityMVC/Views/Clerk/review.cshtml]
+[f:/downloads/Impact/chairty/charityMVC/Views/Clerk/review.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xlcmtccmV2aWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-xm4hv9lbyi
 
-[F:/downloads/Impact/chairty/charityMVC/Views/Register/register.cshtml]
+[f:/downloads/Impact/chairty/charityMVC/Views/Register/register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJccmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-6kqv849j9o
 
-[F:/downloads/Impact/chairty/charityMVC/Views/Shared/_Layout.cshtml]
+[f:/downloads/Impact/chairty/charityMVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-grrnyighae
 
-[F:/downloads/Impact/chairty/charityMVC/Views/UserProfile/userProfile.cshtml]
+[f:/downloads/Impact/chairty/charityMVC/Views/UserProfile/userProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclByb2ZpbGVcdXNlclByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mkglck74tt
