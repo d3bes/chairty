@@ -1,7 +1,21 @@
+using charityMVC;
+using charityMVC.Repository;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<Context>(op=>
+{
+    op.UseNpgsql(builder.Configuration.GetConnectionString("pgsql"));
+});
+
+builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IClerkRepo, ClerkRepo>();
+builder.Services.AddScoped<IAdminRepo, AdminRepo>();
+builder.Services.AddScoped<ISupportRepo, SupportRepo>();
 
 var app = builder.Build();
 

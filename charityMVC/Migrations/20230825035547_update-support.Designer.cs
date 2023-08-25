@@ -12,8 +12,8 @@ using charityMVC;
 namespace charityMVC.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230824111611_init")]
-    partial class init
+    [Migration("20230825035547_update-support")]
+    partial class updatesupport
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -100,15 +100,13 @@ namespace charityMVC.Migrations
                     b.Property<string>("UserId")
                         .HasColumnType("text");
 
-                    b.Property<bool?>("isDeleted")
+                    b.Property<bool>("isDeleted")
                         .HasColumnType("boolean");
 
                     b.Property<string>("username")
                         .HasColumnType("text");
 
                     b.HasKey("SupportId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("support");
                 });
@@ -122,7 +120,6 @@ namespace charityMVC.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("birthDate")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int?>("children_count")
@@ -149,6 +146,9 @@ namespace charityMVC.Migrations
                     b.Property<string>("family_card_image")
                         .HasColumnType("text");
 
+                    b.Property<string>("fullAddress")
+                        .HasColumnType("text");
+
                     b.Property<string>("fullName")
                         .IsRequired()
                         .HasColumnType("text");
@@ -162,11 +162,13 @@ namespace charityMVC.Migrations
                     b.Property<bool?>("income_support")
                         .HasColumnType("boolean");
 
-                    b.Property<bool?>("isDeleted")
+                    b.Property<string>("income_supportImg")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("isDeleted")
                         .HasColumnType("boolean");
 
                     b.Property<string>("phone")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int?>("points")
@@ -184,38 +186,12 @@ namespace charityMVC.Migrations
                     b.Property<string>("rent_proof")
                         .HasColumnType("text");
 
-                    b.Property<string>("supportId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
                     b.Property<bool?>("widow")
                         .HasColumnType("boolean");
 
                     b.HasKey("id");
 
-                    b.HasIndex("supportId");
-
                     b.ToTable("user");
-                });
-
-            modelBuilder.Entity("charityMVC.Models.Support", b =>
-                {
-                    b.HasOne("charityMVC.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("charityMVC.Models.User", b =>
-                {
-                    b.HasOne("charityMVC.Models.Support", "support")
-                        .WithMany()
-                        .HasForeignKey("supportId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("support");
                 });
 #pragma warning restore 612, 618
         }

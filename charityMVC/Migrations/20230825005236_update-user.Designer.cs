@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using charityMVC;
@@ -11,9 +12,11 @@ using charityMVC;
 namespace charityMVC.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230825005236_update-user")]
+    partial class updateuser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,6 +108,8 @@ namespace charityMVC.Migrations
 
                     b.HasKey("SupportId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("support");
                 });
 
@@ -141,9 +146,6 @@ namespace charityMVC.Migrations
                         .HasColumnType("boolean");
 
                     b.Property<string>("family_card_image")
-                        .HasColumnType("text");
-
-                    b.Property<string>("fullAddress")
                         .HasColumnType("text");
 
                     b.Property<string>("fullName")
@@ -183,12 +185,38 @@ namespace charityMVC.Migrations
                     b.Property<string>("rent_proof")
                         .HasColumnType("text");
 
+                    b.Property<string>("supportId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<bool?>("widow")
                         .HasColumnType("boolean");
 
                     b.HasKey("id");
 
+                    b.HasIndex("supportId");
+
                     b.ToTable("user");
+                });
+
+            modelBuilder.Entity("charityMVC.Models.Support", b =>
+                {
+                    b.HasOne("charityMVC.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("charityMVC.Models.User", b =>
+                {
+                    b.HasOne("charityMVC.Models.Support", "support")
+                        .WithMany()
+                        .HasForeignKey("supportId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("support");
                 });
 #pragma warning restore 612, 618
         }

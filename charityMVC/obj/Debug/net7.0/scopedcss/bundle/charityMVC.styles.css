@@ -41,6 +41,11 @@ margin-bottom: 10vh;
 }
 
 /* Adjust input field width as needed */
+/* 
+    CSS class: .form-control
+    Summary: The .form-control class is used to style input fields in a form. It sets the width of the input field to 100% of its parent container.
+*/
+
 .form-control[b-6kqv849j9o] {
     width: 100%;
 }
@@ -70,24 +75,30 @@ margin-bottom: 10vh;
 .image-preview[b-6kqv849j9o]{
 
     margin: 1vw;
-    height: 25vh;
-    width: 12vw;
-    border: 0.1rem solid #dddddd ;
+    height: 40vh;
+    width: 20vw;
+    border: 0.2rem dashed #d2cece ;
+    border-radius: 15%;
 
     /* text */
     display: flex;
     align-items: center;
-    font-weight: bold;
+    font-weight: bolder;
     color: #cccccc;
-    padding: 1vw;
+    
 }
 
 .image-preview__image[b-6kqv849j9o]{
 
     display: none;
-    width: 100%;
+    width: 19vw;
+    height: 39vh;
+    border-radius: 10%;
+    padding: 0.5vw;
 
 }
+
+
 /* _content/charityMVC/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */

@@ -17,6 +17,8 @@ namespace charityMVC.Repository
         public Task<bool> SoftDeleteUser (string id);
         public Task<bool> HardDeleteUser(string id);
 
+        public Task<bool> Uploadimage(IFormFile formFile);
+
         
     }
 }

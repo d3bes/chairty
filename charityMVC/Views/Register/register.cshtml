@@ -8,7 +8,8 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
         <h3 class="mt-5"> التسجيل كمستفيد</h3>
-        <form action="" method="post" enctype="multipart/form-data" class="mt-4">
+        <form asp-action="Upload" asp-controller="Register"  class="mt-4" method="post" enctype="multipart/form-data">
+
             <div class="form-group">
                 <label>الاسم رباعي: <span class="text-danger">*</span></label>
                 <input type="text" name="full_name" class="form-control" required>
@@ -18,14 +19,14 @@
                 <label>رقم الهوية : <span class="text-danger">*</span></label>
                 <input type="text" name="id_number" class="form-control" required>
             </div>
-            
+
 
             <div class="form-group">
                 <label>تاريخ الميلاد: <span class="text-danger">*</span> </label>
                 <input type="date" name="birthdate" class="form-control" required>
             </div>
 
-            
+
             <div class="form-group">
                 <label>رقم الجوال: <span class="text-danger">*</span></label>
                 <div class="input-group">
@@ -33,29 +34,39 @@
                     <input type="number" name="mobile_number" class="form-control" required>
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <label>المدينة: <span class="text-danger">*</span> </label>
                 <input type="text" name="city" class="form-control" required>
             </div>
-
-           <div class="form-group">
+            @* الهوية الشخصية صورة*@
+            
+             <div class="form-group">
                 <label>صورة من الهوية الشخصية: <span class="text-danger">*</span></label>
-                <input type="file" name="id_image" class="form-control" accept="image/*" required>
-                <a class="btn btn-primary" ><i class="bi bi-upload"></i>  </a>
-            </div>
-
+                <input type="file" id="id_image"  onchange="previewImage('id_image','idImagePreview')"  name="id_image"  class="form-control" accept="image/*" required/>
+               <div class="image-preview" id="idImagePreview">
+                <img src="" alt="الصورة الشخصية" class="image-preview__image">
+                <span class="image-preview__default-text">الصورة الشخصية</span>
+             </div>
+              </div>
+            @*صورة  بطاقة العائلة  *@
+            
             <div class="form-group">
                 <label>صورة من بطاقة العائلة: <span class="text-danger">*</span> </label>
-                <input type="file" name="family_card_image" class="form-control" accept="image/*" required>
+                <input type="file" id="family_card_image" onchange="previewImage('family_card_image','FamilyImagePreview')" name="family_card_image" class="form-control" accept="image/*" required>
+             <div class="image-preview" id="FamilyImagePreview">
+                
+                <img src="" alt="بطاقة العائلة" class="image-preview__image">
+                <span class="image-preview__default-text">بطاقة العائلة</span>
+             </div>
             </div>
 
-
+            
             <div class="form-group">
                 <label>رقم الحساب البنكي (الراجحي فقط): <span class="text-danger">*</span></label>
                 <input type="text" name="bank_account_number" class="form-control">
             </div>
-            
+
             <div class="form-group" >
                 <label> عدد الأبناء؟ <span class="text-danger">*</span></label>
                 <select name="children_count" class="form-control">
@@ -68,6 +79,7 @@
             </div>
 
             <!-- هل لديك دخل أو مساعدات دورية أو ضمان اجتماعي؟ -->
+            
             <div class="form-group">
                 <label>هل لديك دخل أو مساعدات دورية أو ضمان اجتماعي؟ <span class="text-danger">*</span> </label><br>
                 <div class="form-check form-check-inline">
@@ -81,6 +93,7 @@
             </div>
 
             <!-- هل يوجد حالة إعاقة أو لأحد عائلتك؟ -->
+            
             <div class="form-group" required>
                 <label>هل يوجد حالة إعاقة أو لأحد عائلتك؟ <span class="text-danger">*</span> </label><br>
                 <div class="form-check form-check-inline">
@@ -91,10 +104,17 @@
                     <input class="form-check-input" type="radio" name="disability" value="لا">
                     <label class="form-check-label">لا</label>
                 </div>
-                <input class="form-control mt-2" type="file" name="disability_proof" accept="image/*">
+                
+                @* صورة اثبات الاعاقة *@
+                <input class="form-control mt-2" type="file" id="disability_proof" onchange="previewImage('disability_proof','disability_image_preview')"  name="disability_proof" accept="image/*">
+                 <div class="image-preview" id="disability_image_preview">
+                <img src="" alt="اثبات الاعاقة " class="image-preview__image">
+                <span class="image-preview__default-text">اثبات الاعاقة</span>
+             </div>
             </div>
 
             <!-- هل يوجد أرملة أو مطلقة؟ -->
+            
             <div class="form-group">
                 <label>هل يوجد أرملة أو مطلقة؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
@@ -131,7 +151,12 @@
                     <input class="form-check-input" type="radio" name="debt" value="لا">
                     <label class="form-check-label">لا</label>
                 </div>
-                <input class="form-control mt-2" type="file" name="debt_proof" accept="image/*">
+                @* اثبات الدين *@
+                <input class="form-control mt-2" onchange="previewImage('debt_proof','debt_image_preview')" id="debt_proof" type="file" name="debt_proof" accept="image/*">
+                  <div class="image-preview" id="debt_image_preview">
+                <img src="" alt="اثبات الدين" class="image-preview__image">
+                <span class="image-preview__default-text"> اثبات الدين </span>
+             </div>
             </div>
 
             <!-- هل السكن ملك أو ايجار؟ -->
@@ -145,10 +170,15 @@
                     <input class="form-check-input" type="radio" name="housing_status" value="ملك">
                     <label class="form-check-label">ملك</label>
                 </div>
-                <input class="form-control mt-2" type="file" name="housing_proof" accept="image/*">
+                @* اثبات الايجار *@
+                <input class="form-control mt-2" type="file" onchange="previewImage('housing_proof','rentImagePreview')" id="housing_proof" name="housing_proof" accept="image/*">
+                <div class="image-preview" id="rentImagePreview">
+                <img src="" alt="اثبات الايجار" class="image-preview__image">
+                <span class="image-preview__default-text">اثبات الايجار </span>
+             </div>
             </div>
 
-           
+
             <!-- هل يوجد شخص يستلم المساعدة بالنيابة؟ -->
             <div class="form-group">
                 <label>هل يوجد شخص يستلم المساعدة بالنيابة؟ </label><br>
@@ -165,26 +195,16 @@
                 <label>رقم الحساب:</label>
                 <input type="text" name="proxy_account_number" class="form-control">
             </div>
-          
+
             <button type="submit" class="btn btn-primary">تسجيل</button>
         </form>
+             
 
-
-
-        <form asp-action="Upload" method="post" asp-controller="Register" enctype="multipart/form-data">
-              <div class="form-group">
-                <label>صورة من الهوية الشخصية: <span class="text-danger">*</span></label>
-                <input type="file" name="id_image" class="form-control" accept="image/*" required/>
-               <div class="image-preview" id="idImagePreview">
-                <img src="" alt="الصورة الشخصية" class="image-preview__image">
-                <span class="image-preview__default-text">الصورة الشخصية</span>
-
-               </div>
-                <input type="submit" class="btn btn-primary" value="رفع"/> 
+               @* </div>
+                <input type="submit" class="btn btn-primary" value="رفع"/>
+            </div> *@
+       
             </div>
-        </form>
-        </div>
-        </div>
         <div class="col-sm-2"></div>
 
     </div>
@@ -192,18 +212,68 @@
     @section Scripts
     {
         <script>
+
+            @*id_image   *@
+      
+      /*
           const id_image_preview = document.getElementById("idImagePreview");
           const id_image_input = document.getElementById("id_image");
-          const id_image = id_image_preview.querySelector("image-preview__image");
-          const id_text = id_image_preview.querySelector("image-preview__default-text");
+          const id_image = id_image_preview.querySelector(".image-preview__image");
+          const id_text = id_image_preview.querySelector(".image-preview__default-text");
           id_image_input.addEventListener("change", function(){
-            const file = this.files[0];
+   const fileInput = id_image_input;
+            const file = fileInput.files[0];
+            if(file){
 
-          })
+                const reader = new FileReader();
+
+                id_text.style.display = "none";
+                id_image.style.display ="block";
+
+                reader.addEventListener("load", function(){
+                    console.log(this);
+                    id_image.setAttribute("src", this.result)
+                    @* id_image.style.width = "11.5vw",
+                    id_image.style.height = "24.5vh"                     *@
 
 
-     
-            
+                })
+
+
+                reader.readAsDataURL(file);
+            }
+
+          })*/
+
+
+
+       function previewImage(inputId, previewImageId) {
+    const inputElement = document.getElementById(inputId);
+    const previewElement = document.getElementById(previewImageId);
+    const image = previewElement.querySelector(".image-preview__image");
+    const default_text = previewElement.querySelector(".image-preview__default-text");
+
+    const fileInput = inputElement;
+    const file = fileInput.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        default_text.style.display = "none";
+        image.style.display = "block";
+
+        reader.addEventListener("load", function() {
+            console.log(this);
+            image.setAttribute("src", this.result);
+            // image.style.width = "11.5vw";
+            // image.style.height = "24.5vh";
+        });
+
+        reader.readAsDataURL(file);
+    }
+}
+
+
         </script>
 
 

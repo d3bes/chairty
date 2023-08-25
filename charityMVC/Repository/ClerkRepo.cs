@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace charityMVC.Repository
 {
-    public class ClerkRepo
+    public class ClerkRepo:IClerkRepo
     {
         
     }

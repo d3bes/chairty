@@ -53,7 +53,7 @@ namespace charityMVC.Migrations
                     Description = table.Column<string>(type: "text", nullable: true),
                     DocumentUrl = table.Column<string>(type: "text", nullable: true),
                     username = table.Column<string>(type: "text", nullable: true),
-                    isDeleted = table.Column<bool>(type: "boolean", nullable: true),
+                    isDeleted = table.Column<bool>(type: "boolean", nullable: false),
                     UserId = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
@@ -67,8 +67,9 @@ namespace charityMVC.Migrations
                 {
                     id = table.Column<string>(type: "text", nullable: false),
                     fullName = table.Column<string>(type: "text", nullable: false),
-                    phone = table.Column<string>(type: "text", nullable: false),
-                    birthDate = table.Column<string>(type: "text", nullable: false),
+                    userId = table.Column<string>(type: "text", nullable: false),
+                    phone = table.Column<string>(type: "text", nullable: true),
+                    birthDate = table.Column<string>(type: "text", nullable: true),
                     points = table.Column<int>(type: "integer", nullable: true),
                     city = table.Column<string>(type: "text", nullable: true),
                     id_image = table.Column<string>(type: "text", nullable: true),
@@ -76,6 +77,7 @@ namespace charityMVC.Migrations
                     bank_account_number = table.Column<string>(type: "text", nullable: true),
                     children_count = table.Column<int>(type: "integer", nullable: true),
                     income_support = table.Column<bool>(type: "boolean", nullable: true),
+                    income_supportImg = table.Column<string>(type: "text", nullable: true),
                     disability = table.Column<bool>(type: "boolean", nullable: true),
                     disability_proof = table.Column<string>(type: "text", nullable: true),
                     widow = table.Column<bool>(type: "boolean", nullable: true),
@@ -87,7 +89,7 @@ namespace charityMVC.Migrations
                     proxy = table.Column<bool>(type: "boolean", nullable: true),
                     proxy_name = table.Column<string>(type: "text", nullable: true),
                     proxy_account_number = table.Column<string>(type: "text", nullable: true),
-                    isDeleted = table.Column<bool>(type: "boolean", nullable: true),
+                    isDeleted = table.Column<bool>(type: "boolean", nullable: false),
                     supportId = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>

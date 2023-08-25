@@ -12,8 +12,8 @@ using charityMVC;
 namespace charityMVC.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230824125353_isDeleted")]
-    partial class isDeleted
+    [Migration("20230825004505_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -122,7 +122,6 @@ namespace charityMVC.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("birthDate")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int?>("children_count")
@@ -162,11 +161,13 @@ namespace charityMVC.Migrations
                     b.Property<bool?>("income_support")
                         .HasColumnType("boolean");
 
+                    b.Property<string>("income_supportImg")
+                        .HasColumnType("text");
+
                     b.Property<bool>("isDeleted")
                         .HasColumnType("boolean");
 
                     b.Property<string>("phone")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int?>("points")
@@ -185,6 +186,10 @@ namespace charityMVC.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("supportId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("userId")
                         .IsRequired()
                         .HasColumnType("text");
 

@@ -4,6 +4,11 @@
 }
 
 /* Adjust input field width as needed */
+/* 
+    CSS class: .form-control
+    Summary: The .form-control class is used to style input fields in a form. It sets the width of the input field to 100% of its parent container.
+*/
+
 .form-control {
     width: 100%;
 }
@@ -29,3 +34,31 @@
 .container {
 margin-bottom: 10vh;
 }
+
+.image-preview{
+
+    margin: 1vw;
+    height: 40vh;
+    width: 20vw;
+    border: 0.2rem dashed #d2cece ;
+    border-radius: 15%;
+
+    /* text */
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    color: #cccccc;
+    
+}
+
+.image-preview__image{
+
+    display: none;
+    width: 19vw;
+    height: 39vh;
+    border-radius: 10%;
+    padding: 0.5vw;
+
+}
+
+

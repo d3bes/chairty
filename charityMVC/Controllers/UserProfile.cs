@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using charityMVC.Repository;
+using charityMVC.Models;
 
 namespace charityMVC.Controllers
 {
@@ -12,15 +14,19 @@ namespace charityMVC.Controllers
     public class UserProfile : Controller
     {
         private readonly ILogger<UserProfile> _logger;
-
-        public UserProfile(ILogger<UserProfile> logger)
+        public IUserRepo _userRepo;
+        public UserProfile(ILogger<UserProfile> logger, IUserRepo userRepo)
         {
             _logger = logger;
+            _userRepo = userRepo;
         }
 
-        public IActionResult GetUserProfile()
+        public async Task<IActionResult> GetUserProfile(string id)
         {
-            return View("userProfile");
+          
+            User user  = await _userRepo.GetUserById(id);
+
+            return View("userProfile",user);
         }
 
     }

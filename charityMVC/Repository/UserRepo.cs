@@ -4,15 +4,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using charityMVC.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace charityMVC.Repository
 {
     public class UserRepo : IUserRepo
     {
         private Context context;
-        public UserRepo(Context _context)
+         private IWebHostEnvironment _webHostEnvironment;
+
+        public UserRepo(Context _context, IWebHostEnvironment webHostEnvironment)
         {
             context= _context;
+            _webHostEnvironment = webHostEnvironment;
         }
         public async Task<User> AddUser(User user)
         {
@@ -80,6 +85,28 @@ namespace charityMVC.Repository
             context.Update(user);
             await context.SaveChangesAsync();
             return user;
+        }
+
+        public async Task<bool> Uploadimage(IFormFile formFile) //uplaod to wwwroot\userImages
+        {
+            string UploadPath = Path.Combine(_webHostEnvironment.WebRootPath,"userImages");
+            string fileName = Guid.NewGuid().ToString()+"_"+ formFile.FileName;
+            string filePath = Path.Combine(UploadPath, fileName);
+
+        try
+        {
+            using(FileStream fileStream = new FileStream(filePath, FileMode.Create))
+            {
+               await formFile.CopyToAsync(fileStream);
+                return true;
+            }
+            
+        }
+        catch
+        {
+            return false;
+        }
+
         }
     }
 }
