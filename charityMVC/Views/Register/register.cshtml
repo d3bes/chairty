@@ -1,4 +1,4 @@
-@model User
+@model User 
 
 @{
     ViewData["Title"] = "التسجيل كمستفيد";
@@ -10,78 +10,129 @@
             <div class="col-sm-8">
         <h3 class="mt-5"> التسجيل كمستفيد</h3>
         <form asp-action="Upload" asp-controller="Register"  class="mt-4" method="post" enctype="multipart/form-data">
-
+         
+         <div class="row">
+            <div class="col-sm-8">
             <div class="form-group">
                 <label>الاسم رباعي: <span class="text-danger">*</span></label>
                 <input type="text" name="fullName" asp-for="fullName" class="form-control" required>
             </div>
-
-            <div class="form-group">
-                <label>رقم الهوية : <span class="text-danger">*</span></label>
-                <input type="text" asp-for="id" name="id" class="form-control" required>
             </div>
 
-
-            <div class="form-group">
+            <div class="col-sm-4">
+             <div class="form-group">
                 <label>تاريخ الميلاد: <span class="text-danger">*</span> </label>
                 <input type="date" asp-for="birthDate" name="birthDate" class="form-control" required>
             </div>
+            </div>
+     </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="form-group">
+                <label>رقم الهوية : <span class="text-danger">*</span></label>
+                <input type="number" asp-for="id" pattern="[0-9]{16}" oninput="restrictInputToTenDigits(this)"   name="id" class="form-control" required>
+                    <span asp-validation-for="id" class="text-danger"></span>
 
 
-            <div class="form-group">
+            </div>
+            </div>
+
+            <div class="col-sm-4">
+                   <div class="form-group">
                 <label>رقم الجوال: <span class="text-danger">*</span></label>
                 <div class="input-group">
                     <span class="input-group-text">+966</span>
-                    <input type="number" asp-for="phone" name="phone" class="form-control" required>
+                    <input type="number" asp-for="phone"  pattern="[0-9]{10}" oninput="restrictInputToTenDigits(this)" name="phone" class="form-control" required>
+                      <span asp-validation-for="phone" class="text-danger"></span>
+
                 </div>
             </div>
+            </div>
+
+        </div>
+        
+
+           
+
+
+         
 
           <div class="form-group">
                 <label>العنوان بالكامل: <span class="text-danger">*</span> </label>
                 <input type="text" name="fullAddress" asp-for="fullAddress" class="form-control" required>
+                        <span asp-validation-for="fullAddress" class="text-danger"></span>
+
             </div>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label>المدينة: <span class="text-danger">*</span> </label>
                 <input type="text" name="city" asp-for="city" class="form-control" required>
-            </div>
+            </div> *@
+            <div class="form-group">
+            <label for="city">اختر مدينتك</label>
+            <select class="form-control" asp-for="city" id="city">
+                <option value="">اختر مدينة</option>
+            </select>
+        </div>
+
             @* الهوية الشخصية صورة*@
-            
-             <div class="form-group">
+            <div class="row">
+                  <div class="col-sm-5" >
+             <div class="form-group ">
                 <label>صورة من الهوية الشخصية: <span class="text-danger">*</span></label>
-                <input type="file" id="id_image"  asp-for="id_image"  onchange="previewImage('id_image','idImagePreview')"  name="id_image"  class="form-control" accept="image/*" required/>
                <div class="image-preview" id="idImagePreview">
                 <img src="" alt="الصورة الشخصية" class="image-preview__image">
                 <span class="image-preview__default-text">الصورة الشخصية</span>
              </div>
+            <input type="file" id="id_image"  asp-for="id_image"  onchange="previewImage('id_image','idImagePreview')"  name="id_image"  class="form-control" accept="image/*" required/>
+
+             </div>
               </div>
+              
+              <div class="col-sm-1"></div>
             @*صورة  بطاقة العائلة  *@
-            
+            <div class="col-sm-5">
             <div class="form-group">
                 <label>صورة من بطاقة العائلة: <span class="text-danger">*</span> </label>
-                <input type="file" id="family_card_image" asp-for="family_card_image" onchange="previewImage('family_card_image','FamilyImagePreview')" name="family_card_image" class="form-control" accept="image/*" required>
              <div class="image-preview" id="FamilyImagePreview">
                 
                 <img src="" alt="بطاقة العائلة" class="image-preview__image">
                 <span class="image-preview__default-text">بطاقة العائلة</span>
              </div>
+                <input type="file" id="family_card_image" asp-for="family_card_image" onchange="previewImage('family_card_image','FamilyImagePreview')" name="family_card_image" class="form-control" accept="image/*" required>
+
+            </div>
+            </div>
             </div>
 
-            
-            <div class="form-group">
-                <label>رقم الحساب البنكي (الراجحي فقط): <span class="text-danger">*</span></label>
-                <input type="text" name="bank_account_number" asp-for="bank_account_number" class="form-control">
-            </div>
 
-            <div class="form-group" >
+            <div class="row">
+                <div class="col-sm-8">
+
+                <div class="form-group">
+                    <label>رقم الحساب البنكي (الراجحي فقط): <span class="text-danger">*</span></label>
+                    <input type="number" name="bank_account_number"  pattern="[0-9]{10}" oninput="restrictInputToTenDigits(this)" maxlength="16" asp-for="bank_account_number" class="form-control">
+                                      <span asp-validation-for="bank_account_number" class="text-danger"></span>
+                </div>
+
+                </div>
+                <div class="col-sm-4">
+
+                <div class="form-group" >
                 <label> عدد الأبناء؟ <span class="text-danger">*</span></label>
                 <select name="children_count" asp-for="children_count" class="form-control">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5+">أكثر من 4</option>
+                    <option value='1' >1</option>
+                    <option value='2' >2</option>
+                    <option value='3' >3</option>
+                    <option value='4' >4</option>
+                    <option value='5' >أكثر من 4</option>
                 </select>
+                 </div>
+                </div>
+
             </div>
+          
+
+        
 
             <!-- هل لديك دخل أو مساعدات دورية أو ضمان اجتماعي؟ -->
             
@@ -102,19 +153,24 @@
             <div class="form-group" required>
                 <label>هل يوجد حالة إعاقة أو لأحد عائلتك؟ <span class="text-danger">*</span> </label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" asp-for="disability" id="disability_Yes" type="radio" name="disability" value="true">
+                    <input class="form-check-input" onchange="showSection('disiability-section')" asp-for="disability" id="disability_Yes" type="radio" name="disability" value="true">
                     <label for="disability_Yes" class="form-check-label">نعم</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" asp-for="disability" id="disability_No" type="radio" name="disability" value="false">
+                    <input class="form-check-input" onchange="hideSection('disiability-section')" asp-for="disability" id="disability_No" type="radio" name="disability" value="false">
                     <label for="disability_No" class="form-check-label">لا</label>
                 </div>
                 
                 @* صورة اثبات الاعاقة *@
-                <input class="form-control mt-2" type="file" asp-for="disability_proof"  id="disability_proof" onchange="previewImage('disability_proof','disability_image_preview')"  name="disability_proof" accept="image/*">
+                <div id="disiability-section" >
                  <div class="image-preview" id="disability_image_preview">
                 <img src="" alt="اثبات الاعاقة " class="image-preview__image">
                 <span class="image-preview__default-text">اثبات الاعاقة</span>
+                 </div>
+                <div class="col-sm-5" >
+                    <input class="form-control mt-2" type="file" asp-for="disability_proof"  id="disability_proof" onchange="previewImage('disability_proof','disability_image_preview')"  name="disability_proof" accept="image/*">
+                </div>
+                
              </div>
             </div>
 
@@ -149,18 +205,21 @@
             <div class="form-group">
                 <label>هل يوجد دين؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" asp-for="debt" type="radio" name="debt" value="true">
+                    <input class="form-check-input" asp-for="debt" onchange="showSection('debt-section')" type="radio" name="debt" value="true">
                     <label class="form-check-label">نعم</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" asp-for="debt" type="radio" name="debt" value="false">
+                    <input class="form-check-input" asp-for="debt" onchange="hideSection('debt-section')" type="radio" name="debt" value="false">
                     <label class="form-check-label">لا</label>
                 </div>
                 @* اثبات الدين *@
-                <input class="form-control mt-2" asp-for="debt_proof" onchange="previewImage('debt_proof','debt_image_preview')" id="debt_proof" type="file" name="debt_proof" accept="image/*">
+                <div id="debt-section" class="col-sm-5">
                   <div class="image-preview" id="debt_image_preview">
                 <img src="" alt="اثبات الدين" class="image-preview__image">
                 <span class="image-preview__default-text"> اثبات الدين </span>
+                  </div>
+                 <input class="form-control mt-2" asp-for="debt_proof" onchange="previewImage('debt_proof','debt_image_preview')" id="debt_proof" type="file" name="debt_proof" accept="image/*">
+
              </div>
             </div>
 
@@ -168,42 +227,49 @@
             <div class="form-group">
                 <label>هل السكن ملك أو ايجار؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" asp-for="house_rent" type="radio"  value="true">
+                    <input class="form-check-input" onchange="showSection('rent-section')" asp-for="house_rent" type="radio"  value="true">
                     <label class="form-check-label">ايجار</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" asp-for="house_rent" type="radio" value="false">
+                    <input class="form-check-input" onchange="hideSection('rent-section')" asp-for="house_rent" type="radio" value="false">
                     <label class="form-check-label">ملك</label>
                 </div>
                 @* اثبات الايجار *@
-                <input class="form-control mt-2" asp-for="rent_proof" type="file" onchange="previewImage('rent_proof','rentImagePreview')" id="rent_proof" name="rent_proof" accept="image/*">
+                <div id="rent-section" class="col-sm-5">
                 <div class="image-preview" id="rentImagePreview">
                 <img src="" alt="اثبات الايجار" class="image-preview__image">
                 <span class="image-preview__default-text">اثبات الايجار </span>
+                </div>
+                 <input class="form-control mt-2" asp-for="rent_proof" type="file" onchange="previewImage('rent_proof','rentImagePreview')" id="rent_proof" name="rent_proof" accept="image/*">
+
              </div>
             </div>
 
 
             <!-- هل يوجد شخص يستلم المساعدة بالنيابة؟ -->
-            <div class="form-group">
+            <div class="form-group" id="proxy">
                 <label>هل يوجد شخص يستلم المساعدة بالنيابة؟ </label><br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" asp-for="proxy" type="radio"  value="true">
+                    <input class="form-check-input" onchange="showSection('proxy-section')" asp-for="proxy" type="radio"  value="true">
                     <label class="form-check-label">نعم</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" asp-for="proxy" type="radio"  value="false">
+                    <input class="form-check-input" onchange="hideSection('proxy-section')" asp-for="proxy" type="radio"  value="false">
                     <label class="form-check-label">لا</label>
+                </div>
                 
-                        <div style="direction: rtl; text-align: right;">
+              <div id="proxy-section" >
+                <div>
                 <label>الاسم:</label>
-                <input type="text" asp-for="proxy_name" class="form-control">
-            </div>
+                <input type="text" asp-for="_proxy_name" class="form-control">
+                   </div>
 
-            <div style="direction: rtl; text-align: right;">
-                <label>رقم الحساب:</label>
-                <input type="text" asp-for="proxy_account_number" class="form-control">
-            </div>
+                  <div>
+                    <label>رقم الحساب:</label>
+                <input type="text" asp-for="_proxy_account_number" maxlength="16" class="form-control">
+                    <span asp-validation-for="_proxy_account_number" class="text-danger"></span>
+
+                 </div>
 
             </div>
             </div>
@@ -222,68 +288,82 @@
     {
         <script>
 
-            @*id_image   *@
+            @* id_image *@
       
-      /*
-          const id_image_preview = document.getElementById("idImagePreview");
-          const id_image_input = document.getElementById("id_image");
-          const id_image = id_image_preview.querySelector(".image-preview__image");
-          const id_text = id_image_preview.querySelector(".image-preview__default-text");
-          id_image_input.addEventListener("change", function(){
-   const fileInput = id_image_input;
-            const file = fileInput.files[0];
-            if(file){
 
+
+
+        function previewImage(inputId, previewImageId) {
+            const inputElement = document.getElementById(inputId);
+            const previewElement = document.getElementById(previewImageId);
+            const image = previewElement.querySelector(".image-preview__image");
+            const default_text = previewElement.querySelector(".image-preview__default-text");
+
+            const fileInput = inputElement;
+            const file = fileInput.files[0];
+
+            if (file) {
                 const reader = new FileReader();
 
-                id_text.style.display = "none";
-                id_image.style.display ="block";
+                default_text.style.display = "none";
+                image.style.display = "block";
 
-                reader.addEventListener("load", function(){
+                reader.addEventListener("load", function() {
                     console.log(this);
-                    id_image.setAttribute("src", this.result)
-                    @* id_image.style.width = "11.5vw",
-                    id_image.style.height = "24.5vh"                     *@
-
-
-                })
-
+                    image.setAttribute("src", this.result);
+                    // image.style.width = "11.5vw";
+                    // image.style.height = "24.5vh";
+                });
 
                 reader.readAsDataURL(file);
             }
+        }
 
-          })*/
+     @* let proxySection = false; *@
+     @* let elments = document.getElementsByName("form-check form-check-inline") *@
+
+
+ 
+        function showSection(id)
+        {
+            const Element = document.getElementById(id);
+            Element.style.display ="block";
+        }
+
+        function hideSection(id)
+        {
+            const Element = document.getElementById(id);
+            Element.style.display ="none";
+        
+        }
 
 
 
-       function previewImage(inputId, previewImageId) {
-    const inputElement = document.getElementById(inputId);
-    const previewElement = document.getElementById(previewImageId);
-    const image = previewElement.querySelector(".image-preview__image");
-    const default_text = previewElement.querySelector(".image-preview__default-text");
+var cities =  [ 
+    "أبها", "الأحساء", "الباحة", "الدمام", "الرياض", "الزلفي", "الخبر", "الخرج", "الخفجي", "الجبيل", "الجوف", "الحائط", "الحبيل", "الحوية", "الدرعية", "الدوادمي", "الدومة الجندل", "الظهران",
+      "العلا", "العيون", "الغاط", "الفريش", "القريات", "القطيف", "القويعية", "المجمعة", "المذنب", "المدينة المنورة", "المزاحمية", "المبرز", "المخواة", "النعيرية", "النماص", "الهفوف", "الوجه", 
+      "بيشة", "تبوك", "تاروت", "جازان", "جدة", "حائل", "خميس مشيط", "رفحاء", "رأس تنورة", "رياض الخبراء", "ساجر", "سكاكا", "سيهات", "شرورة", "شقراء", "ضباء", "طريف", "ظهران الجنوب", "عرعر",
+      "عفيف", "عنيزة", "غرناطة", "فيفاء", "قلوة", "قيصومة", "كفر الدوار", "مكة المكرمة", "محايل عسير", "مرات", "مراكز الجودة", "مزارع الشريفة", "مستورة", "مطوفة", "محمد بن عبدالوهاب", "نجران", 
+      "نجوى", "نجوى ورغداء", "نخيل", "نمرة", "نفي", "نيابة", "هدا الشام", "هيئة", "هيئة الاتصالات وتقنية المعلومات", "وادي الدواسر", "وادي الريان", "وادي الشريعة", "وادي الفرع"
+  ];
 
-    const fileInput = inputElement;
-    const file = fileInput.files[0];
+var cityDropdown = document.getElementById("city");
 
-    if (file) {
-        const reader = new FileReader();
-
-        default_text.style.display = "none";
-        image.style.display = "block";
-
-        reader.addEventListener("load", function() {
-            console.log(this);
-            image.setAttribute("src", this.result);
-            // image.style.width = "11.5vw";
-            // image.style.height = "24.5vh";
-        });
-
-        reader.readAsDataURL(file);
+    for (var i = 0; i < cities.length; i++) {
+        var option = document.createElement("option");
+        option.value = cities[i];
+        option.text = cities[i];
+        cityDropdown.appendChild(option);
     }
-}
+
+
+
+
 
 
         </script>
 
 
     }
+
+    
