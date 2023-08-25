@@ -569,6 +569,22 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\08eb7225-f442-4d7e-b7ed-280b6cb03092_debt.jpg",
+      "PackagePath": "staticwebassets\\userImages\\08eb7225-f442-4d7e-b7ed-280b6cb03092_debt.jpg"
+    },
+    {
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\389a82ed-ee93-4217-bed9-485df00647d0_disibality.jfif",
+      "PackagePath": "staticwebassets\\userImages\\389a82ed-ee93-4217-bed9-485df00647d0_disibality.jfif"
+    },
+    {
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\aff558e3-6956-4dc2-92c7-021fe0fe476e_1.jfif",
+      "PackagePath": "staticwebassets\\userImages\\aff558e3-6956-4dc2-92c7-021fe0fe476e_1.jfif"
+    },
+    {
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\befde96d-ec48-4435-98a4-85202fd4f821_family.jfif",
+      "PackagePath": "staticwebassets\\userImages\\befde96d-ec48-4435-98a4-85202fd4f821_family.jfif"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.charityMVC.props",
       "PackagePath": "build\\charityMVC.props"
     },
