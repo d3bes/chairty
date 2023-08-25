@@ -15,6 +15,7 @@ namespace charityMVC
       public DbSet<Clerk> clerk { get; set; }
       public DbSet<User> user { get; set; }
       public DbSet<Support> support { get; set; }
+      public DbSet<points> points { get; set; }
 
       public Context(DbContextOptions<Context> options) : base(options) 
         {
