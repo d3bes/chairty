@@ -294,35 +294,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+//disiable extra sections
+  document.addEventListener("DOMContentLoaded", function() {
+    let proxySection = document.getElementById("proxy-section");
+    let rentSection = document.getElementById("rent-section");
+    let debtSection = document.getElementById("debt-section");
+    let disiabilitySection = document.getElementById("disiability-section");
+    proxySection.style.display = "none";
+    rentSection.style.display = "none";
+    debtSection.style.display = "none";
+    disiabilitySection.style.display = "none";
 
 
-        document.addEventListener('DOMContentLoaded', function () {
-            // Get references to the radio buttons and input fields
-            const proxyYesRadioButton = document.getElementById('proxyYes');
-            const proxyNoRadioButton = document.getElementById('proxyNo');
-            const proxyNameInput = document.getElementById('proxy_name');
-            const proxyAccountNumberInput = document.getElementById('proxy_account_number');
+});
 
-            // Initially, set the input fields to disabled
-            proxyNameInput.disabled = true;
-            proxyAccountNumberInput.disabled = true;
 
-            // Add event listeners to the radio buttons
-            proxyYesRadioButton.addEventListener('change', function () {
-                if (this.checked) {
-                    // Enable the input fields if the "نعم" radio button is selected
-                    proxyNameInput.disabled = false;
-                    proxyAccountNumberInput.disabled = false;
-                }
-            });
 
-            proxyNoRadioButton.addEventListener('change', function () {
-                if (this.checked) {
-                    // Disable the input fields if the "لا" radio button is selected
-                    proxyNameInput.disabled = true;
-                    proxyAccountNumberInput.disabled = true;
-                }
-            });
-        });
+
+
+
 
 
