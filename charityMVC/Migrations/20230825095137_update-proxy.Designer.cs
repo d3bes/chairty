@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using charityMVC;
@@ -11,9 +12,11 @@ using charityMVC;
 namespace charityMVC.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230825095137_update-proxy")]
+    partial class updateproxy
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -189,52 +192,6 @@ namespace charityMVC.Migrations
                     b.HasKey("id");
 
                     b.ToTable("user");
-                });
-
-            modelBuilder.Entity("charityMVC.Models.points", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("children_count_1")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("children_count_2")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("children_count_3")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("children_count_4")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("children_count_4p")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("elderly")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("hasNo_income_support")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("has_debt")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("has_disability")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("house_is_rent")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("widow")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("points");
                 });
 #pragma warning restore 612, 618
         }
