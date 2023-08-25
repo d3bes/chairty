@@ -19,6 +19,7 @@ namespace charityMVC.Repository
 
         public Task<bool> Uploadimage(IFormFile formFile,string filePath);
 
+        public  Task<int> GetPoints(User user);
         
     }
 }

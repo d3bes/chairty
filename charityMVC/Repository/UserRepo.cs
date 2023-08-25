@@ -19,6 +19,35 @@ namespace charityMVC.Repository
             context= _context;
             _webHostEnvironment = webHostEnvironment;
         }
+
+        public async Task<int> GetPoints(User user)
+        {
+           var Points = await context.points.FirstOrDefaultAsync(i=> i.Id == 1 );
+        
+           var result = await CalculatePoints(user,Points) ;
+            return result;
+
+        }
+
+        public async Task<int> CalculatePoints(User user, points points)
+        {
+            int ResultPoints = 0;
+            if((bool)user.elderly) ResultPoints+= points.elderly;
+            if((bool)user.widow) ResultPoints+= points.widow;
+             if((bool)user.debt) ResultPoints += points.has_debt;
+            if((bool)user.disability) ResultPoints += points.has_disability;
+            if((bool)user.house_rent) ResultPoints += points.house_is_rent;
+            if((bool)user.income_support) ResultPoints += points.hasNo_income_support;
+            if(user.children_count==1) ResultPoints += points.children_count_1;
+            if(user.children_count==2) ResultPoints += points.children_count_2;
+            if(user.children_count==3) ResultPoints += points.children_count_3;
+            if(user.children_count==4) ResultPoints += points.children_count_4;
+            if(user.children_count==5) ResultPoints += points.children_count_4p;
+
+            return ResultPoints;
+            
+        }
+
         public async Task<User> AddUser(User user)
         {
            await context.user.AddAsync(user);
