@@ -38,6 +38,7 @@ namespace charityMVC.Models
         public bool? debt { get; set;}
         public string? debt_proof { get; set;}
         public bool? house_rent { get; set;}
+
         public string? rent_proof { get; set;}
         public bool? proxy { get; set;}
         public string? _proxy_name { get; set;}
