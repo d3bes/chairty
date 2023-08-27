@@ -30,7 +30,7 @@
             <div class="col-sm-8">
                 <div class="form-group">
                 <label>رقم الهوية : <span class="text-danger">*</span></label>
-                <input type="number" asp-for="id" pattern="[0-9]{16}" oninput="restrictInputToTenDigits(this)"   name="id" class="form-control" required>
+                <input type="number" asp-for="id"  name="id" class="form-control" required>
                     <span asp-validation-for="id" class="text-danger"></span>
 
 
@@ -41,9 +41,10 @@
                    <div class="form-group">
                 <label>رقم الجوال: <span class="text-danger">*</span></label>
                 <div class="input-group">
-                    <span class="input-group-text">+966</span>
-                    <input type="number" asp-for="phone"  pattern="[0-9]{10}" oninput="restrictInputToTenDigits(this)" name="phone" class="form-control" required>
+                    <input type="number" asp-for="phone"   name="phone" class="form-control" required>
                       <span asp-validation-for="phone" class="text-danger"></span>
+                                          <span class="input-group-text">+966</span>
+
 
                 </div>
             </div>
@@ -110,7 +111,7 @@
 
                 <div class="form-group">
                     <label>رقم الحساب البنكي (الراجحي فقط): <span class="text-danger">*</span></label>
-                    <input type="number" name="bank_account_number"  pattern="[0-9]{10}" oninput="restrictInputToTenDigits(this)" maxlength="16" asp-for="bank_account_number" class="form-control">
+                    <input type="number" name="bank_account_number"   asp-for="bank_account_number" class="form-control">
                                       <span asp-validation-for="bank_account_number" class="text-danger"></span>
                 </div>
 
@@ -218,7 +219,7 @@
                 <img src="" alt="اثبات الدين" class="image-preview__image">
                 <span class="image-preview__default-text"> اثبات الدين </span>
                   </div>
-                 <input class="form-control mt-2" asp-for="debt_proof" onchange="previewImage('debt_proof','debt_image_preview')" id="debt_proof" type="file" name="debt_proof" accept="image/*">
+                 <input class="form-control mt-2" asp-for="debt_proof" onchange="previewImage('debt_proof','debt_image_preview')" id="debt_proof" type="file"  name="debt_proof" accept="image/*">
 
              </div>
             </div>
@@ -267,7 +268,7 @@
                   <div>
                     <label>رقم الحساب:</label>
                 <input type="text" asp-for="_proxy_account_number" maxlength="16" class="form-control">
-                    <span asp-validation-for="_proxy_account_number" class="text-danger"></span>
+                    @* <span asp-validation-for="_proxy_account_number" class="text-danger"></span> *@
 
                  </div>
 
