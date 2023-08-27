@@ -29,3 +29,26 @@
 .container {
 margin-bottom: 10vh;
 }
+
+img{
+    width: 20vw;
+    height: 40vh;
+    border-radius: 10%;
+    margin: 0.5vw;
+    border: 0.2rem dashed #cccccc;
+}
+
+.section{
+
+    margin:0.5vw;
+    border: 0.2rem solid #cccccc;
+    border-radius: 2%;
+    padding: 2vw;
+    margin-bottom: 2vw;
+
+
+}
+
+a{
+    margin: 1;
+}
