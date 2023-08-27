@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using charityMVC.Repository;
 using charityMVC.Models;
+using charityMVC.ViewModels;
 
 namespace charityMVC.Controllers
 {
@@ -28,6 +29,12 @@ namespace charityMVC.Controllers
 
             return View("userProfile",user);
         }
+
+        public async Task UpdateSocialStatus(SocialStatus socialStatus)
+        {
+
+        }
+        
 
     }
 }
