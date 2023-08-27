@@ -1,12 +1,12 @@
-@model List<UserVM>
+@model ClerkProfileVM
 @{
     ViewData["Title"] = "cityUsers";
 }
 
 
-<div class="m">
 
-</div>
+<h4 style="margin: 5vw;">مدينة: @Model.clerk.city</h4>
+
 
 
 <div class="container-fluid">
@@ -16,7 +16,7 @@
                 <th>الاسم</th>
                 <th>رقم الهوية</th>
                 <th>رقم الجوال</th>
-                <th>تاريخ الميلاد</th>
+                <th>العنوان</th>
                 <th>النقاط</th>
                 <th>
                      <a class="btn btn-info" asp-controller="Register" asp-action="register">اضافة</a>
@@ -24,13 +24,13 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @foreach (var item in Model.Users)
             {
                 <tr>
                     <td>@item.fullName</td>
                     <td>@item.id</td>
                     <td>@item.phone</td>
-                    <td>@item.birthDate</td>
+                    <td>@item.fullAddress</td>
                     <td>@item.points</td>
                     <td>
                         <a class="btn btn-warning" asp-controller="Clerk" asp-action="Review" asp-route-id="@item.id">مراجعة</a>
