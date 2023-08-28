@@ -11,6 +11,7 @@ namespace charityMVC
 {
     public class Context: DbContext
     {
+      public DbSet<Roles> Roles { get; set; }
       public DbSet<Admin> admin { get; set; }
       public DbSet<Clerk> clerk { get; set; }
       public DbSet<User> user { get; set; }

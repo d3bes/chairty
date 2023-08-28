@@ -71,6 +71,20 @@ namespace charityMVC.Migrations
                     b.ToTable("clerk");
                 });
 
+            modelBuilder.Entity("charityMVC.Models.Roles", b =>
+                {
+                    b.Property<string>("id")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Roles");
+                });
+
             modelBuilder.Entity("charityMVC.Models.Support", b =>
                 {
                     b.Property<string>("SupportId")
@@ -150,6 +164,7 @@ namespace charityMVC.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("fullAddress")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("fullName")
