@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using charityMVC.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-
+using charityMVC.ViewModels;
 
 namespace charityMVC.Repository
 {
@@ -120,20 +120,100 @@ namespace charityMVC.Repository
         {
          
 
-        try
-        {
-            using(FileStream fileStream = new FileStream(filePath, FileMode.Create))
-            {
-               await formFile.CopyToAsync(fileStream);
-                return true;
-            }
-            
-        }
-        catch
-        {
-            return false;
-        }
+                try
+                {
+                    using(FileStream fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                    await formFile.CopyToAsync(fileStream);
+                        return true;
+                    }
+                    
+                }
+                catch
+                {
+                    return false;
+                }
 
         }
+
+
+        public User Find(string id,string password)
+        {
+            User user = context.user
+                        .FirstOrDefault(u=> u.id == id && u.phone == password && ! u.isDeleted);
+
+            return user;
+
+        }
+
+        public bool Found(string id,string password)
+        {
+              User user = context.user
+                        .FirstOrDefault(u=> u.id == id && u.phone == password  && ! u.isDeleted);
+
+                // return user != null? true : false;
+
+                return user != null;
+
+
+        }
+
+        public async Task<bool> AddRole (Roles role)
+        {
+        
+            await context.Roles.AddAsync(role);
+            await context.SaveChangesAsync();
+            return true;
+
+        }
+
+        public async Task<Roles> GetRoles(string id)
+        {
+            return await context.Roles.FirstOrDefaultAsync(r=> r.id == id);
+        }
+
+        public async Task<User> UploadAllFiles(IFormFile id_image, IFormFile family_card_image, IFormFile disability_proof
+                                    , IFormFile debt_proof, IFormFile rent_proof, User user)
+        {
+                    try{
+                    // List of form files to be uploaded
+                        List<IFormFile> formFiles = new List<IFormFile> { id_image, family_card_image, disability_proof, debt_proof, rent_proof };
+                        
+                        foreach (var file in formFiles)
+                        {
+                            if (file != null)
+                            {
+                                DateTime date = DateTime.UtcNow;
+                                string formattedDateTime = date.ToString("yyyyMMddHHmm");
+
+                                string UploadPath = Path.Combine(_webHostEnvironment.WebRootPath, "userImages");
+                                // string fileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                                string fileName = formattedDateTime + "_" + user.id + "_" + file.FileName;
+                                string filePath = Path.Combine(UploadPath, fileName);
+                                
+                                // Upload the image file
+                             await Uploadimage(file, filePath);
+                                
+                                // Assign the uploaded file path to the corresponding property in the user object
+                                if (file == id_image) user.id_image = Path.Combine("\\userImages", fileName);
+                                else if (file == family_card_image) user.family_card_image = Path.Combine("\\userImages", fileName);
+                                else if (file == disability_proof) user.disability_proof = Path.Combine("\\userImages", fileName);
+                                else if (file == debt_proof) user.debt_proof = Path.Combine("\\userImages", fileName);
+                                else if (file == rent_proof) user.rent_proof = Path.Combine("\\userImages", fileName);
+                            }
+                        }
+                        return user;
+                    }
+                    catch(InvalidOperationException ex)
+                    {
+                         Console.WriteLine(ex.ToString()); 
+                         return user;
+                       
+                    }
+
+
+        }
+
+
     }
 }

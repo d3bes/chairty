@@ -20,6 +20,19 @@ namespace charityMVC.Repository
         public Task<bool> Uploadimage(IFormFile formFile,string filePath);
 
         public  Task<int> GetPoints(User user);
+
+        public User Find(string id,string password);
+
+        public bool Found(string id,string password);
+
+        public  Task<bool> AddRole (Roles role);
+
+        public  Task<Roles> GetRoles(string id);
+
+        public Task<User> UploadAllFiles(IFormFile id_image, IFormFile family_card_image,
+                         IFormFile disability_proof, IFormFile debt_proof, IFormFile rent_proof ,User user);
+
+       
         
     }
 }
