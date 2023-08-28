@@ -8,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using charityMVC.Repository;
 using charityMVC.Models;
 using charityMVC.ViewModels;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace charityMVC.Controllers
 {
@@ -21,19 +23,30 @@ namespace charityMVC.Controllers
             _logger = logger;
             _userRepo = userRepo;
         }
-
-        public async Task<IActionResult> GetUserProfile(string id)
+        [Authorize]
+        public async Task<IActionResult> GetUserProfile()
         {
-          
-            User user  = await _userRepo.GetUserById(id);
+            try
+            {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            User user  = await _userRepo.GetUserById(userId);
 
             return View("userProfile",user);
+            }
+             catch (Exception ex)
+                  {
+                    
+                        _logger.LogError(ex, "An error occurred in the Review action.");
+                        
+                        TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر اكثر عليك التواصل مع المبرمج !";
+                    
+                      return View("UserProfile");
+
+                    }
         }
 
-        public async Task UpdateSocialStatus(SocialStatus socialStatus)
-        {
-
-        }
+       
         
 
     }

@@ -4,12 +4,23 @@
     ViewData["Title"] =@Model.fullName ;
 }
 
+@if (TempData.ContainsKey("ErrorMessage"))
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
 <div class="container">
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
 
         <div class="row">
+            <div class="col-sm-3"> 
+                     <h4>البيانات الشخصية</h4>
+            </div>
+
            <div class="col-sm-3">
              <h4 class="mt-5"> @Model.fullName</h4>
            </div> 
@@ -19,14 +30,56 @@
            <div class="col-sm-3">
             <h4 class="mt-5" style="margin-right:2vw;"> @Model.city</h4>
            </div>
+
+
         
         </div>
        
 
+       
+        <div class="section">
+                 @* الهوية الشخصية صورة*@
+                <div class="row">
+
+
+                  <div class="col-sm-5" >
+                     <form asp-action="UpdateIdImage" asp-controller="UpdateImages"  class="mt-4" method="post" enctype="multipart/form-data">
+
+             <div class="form-group ">
+                <label>  الهوية الشخصية: <span class="text-danger">*</span></label>
+               <div class="image-preview" id="idImagePreview">
+                <img src=@Model.id_image alt="" class="image-preview__image">
+                <span class="image-preview__default-text"> </span>
+             </div>
+            <input type="file" id="id_image"  asp-for="id_image"  onchange="previewImage('id_image','idImagePreview','@Model.id_image ')"  name="id_image"  class="form-control  form-control-sm" accept="image/*" />
+             </div>
+               <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
+            </form>
+              </div>
+            
+              <div class="col-sm-1"></div>
+            @*صورة  بطاقة العائلة  *@
+            <div class="col-sm-5">
+             <form asp-action="UpdateFamilyImg" asp-controller="UpdateImages"  class="mt-4" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label> بطاقة العائلة: <span class="text-danger">*</span> </label>
+             <div class="image-preview" id="FamilyImagePreview">
+                <img src="@Model.family_card_image" alt="" class="image-preview__image">
+                <span class="image-preview__default-text"> </span>
+             </div>
+                <input type="file" id="family_card_image" asp-for="family_card_image"  value="بطاقة العائلة"
+                onchange="previewImage('family_card_image','FamilyImagePreview','@Model.family_card_image')" name="family_card_image" class="form-control  form-control-sm" accept="image/*" >
+
+            </div>
+             <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
+            </form>
+            </div>
+            </div>
+        </div>
+
         <form asp-action="UpdatePersonslData" asp-controller="Register"  class="mt-4" method="post" enctype="multipart/form-data">
          
      <div id="personalData" class="section" >
-            <h4>البيانات الشخصية</h4>
          <div class="row">
             <div class="col-sm-8">
             <div class="form-group">
@@ -168,21 +221,24 @@
                     <input class="form-check-input" onchange="hideSection('proxy-section')" asp-for="proxy" type="radio"  value="false">
                     <label class="form-check-label">لا</label>
                 </div>
-                
-              <div id="proxy-section" >
-                <div>
-                <label>الاسم:</label>
-                <input type="text" asp-for="_proxy_name" class="form-control">
-                   </div>
+                @if(Model.proxy != null)
+                {
+                    <div id="proxy-section" >
+                        <div>
+                        <label>الاسم:</label>
+                        <input type="text" asp-for="_proxy_name" class="form-control">
+                        </div>
 
-                  <div>
-                    <label>رقم الحساب:</label>
-                <input type="text" asp-for="_proxy_account_number" maxlength="16" class="form-control">
-                    <span asp-validation-for="_proxy_account_number" class="text-danger"></span>
+                        <div>
+                            <label>رقم الحساب:</label>
+                        <input type="text" asp-for="_proxy_account_number" maxlength="16" class="form-control">
+                            <span asp-validation-for="_proxy_account_number" class="text-danger"></span>
 
-                 </div>
+                        </div>
 
-            </div>
+                    </div>
+                }
+
             </div>
 
              <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
@@ -196,53 +252,13 @@
          
         
 
-        <div class="section">
-                 @* الهوية الشخصية صورة*@
-                <div class="row">
-
-
-                  <div class="col-sm-5" >
-                     <form asp-action="UpdateIdImage" asp-controller="UpdateImages"  class="mt-4" method="post" enctype="multipart/form-data">
-
-             <div class="form-group ">
-                <label>  الهوية الشخصية: <span class="text-danger">*</span></label>
-               <div class="image-preview" id="idImagePreview">
-                <img src=@Model.id_image alt="" class="image-preview__image">
-                <span class="image-preview__default-text"> </span>
-             </div>
-            <input type="file" id="id_image"  asp-for="id_image"  onchange="previewImage('id_image','idImagePreview','@Model.id_image ')"  name="id_image"  class="form-control  form-control-sm" accept="image/*" />
-             </div>
-               <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
-            </form>
-              </div>
-            
-              <div class="col-sm-1"></div>
-            @*صورة  بطاقة العائلة  *@
-            <div class="col-sm-5">
-             <form asp-action="UpdateFamilyImg" asp-controller="UpdateImages"  class="mt-4" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label> بطاقة العائلة: <span class="text-danger">*</span> </label>
-             <div class="image-preview" id="FamilyImagePreview">
-                
-                <img src="@Model.family_card_image" alt="" class="image-preview__image">
-                <span class="image-preview__default-text"> </span>
-             </div>
-                <input type="file" id="family_card_image" asp-for="family_card_image"  value="بطاقة العائلة"
-                onchange="previewImage('family_card_image','FamilyImagePreview','@Model.family_card_image')" name="family_card_image" class="form-control  form-control-sm" accept="image/*" >
-
-            </div>
-             <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
-            </form>
-            </div>
-            </div>
-        </div>
           
 
 
             <div class="section" >
             <!-- هل يوجد حالة إعاقة أو لأحد عائلتك؟ -->
             <form asp-action="UpdateDisiability" asp-controller="UpdateImages"  class="mt-4" method="post" enctype="multipart/form-data">
-            
+               
             <div class="form-group" required>
                 <label>هل يوجد حالة إعاقة أو لأحد عائلتك؟ <span class="text-danger">*</span> </label><br>
                 <div class="form-check form-check-inline">
@@ -253,18 +269,23 @@
                     <input class="form-check-input" onchange="hideSection('disiability-section')" asp-for="disability" id="disability_No" type="radio" name="disability" value="false">
                     <label for="disability_No" class="form-check-label">لا</label>
                 </div>
-                
-                @* صورة اثبات الاعاقة *@
-                <div id="disiability-section" >
-                 <div class="image-preview" id="disability_image_preview">
-                <img src="@Model.disability_proof" alt="" class="image-preview__image">
-                <span class="image-preview__default-text">اثبات الاعاقة</span>
-                 </div>
-                <div class="col-sm-5" >
-                    <input class="form-control mt-2" type="file" asp-for="disability_proof"  id="disability_proof" onchange="previewImage('disability_proof','disability_image_preview','@Model.disability_proof')"  name="disability_proof" accept="image/*">
-                </div>
-                
-             </div>
+
+                     @* صورة اثبات الاعاقة *@
+
+                @if((bool)Model.disability)
+                {
+                        <div id="disiability-section" >
+                        <div class="image-preview" id="disability_image_preview">
+                        <img src="@Model.disability_proof" alt="" class="image-preview__image">
+                        <span class="image-preview__default-text">اثبات الاعاقة</span>
+                        </div>
+                        <div class="col-sm-5" >
+                            <input class="form-control mt-2" type="file" asp-for="disability_proof"  id="disability_proof" onchange="previewImage('disability_proof','disability_image_preview','@Model.disability_proof')"  name="disability_proof" accept="image/*">
+                        </div>
+                        
+                    </div>
+                }
+
             </div>
              <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
           </form>
@@ -282,14 +303,19 @@
                     <label class="form-check-label">لا</label>
                 </div>
                 @* اثبات الدين *@
-                <div id="debt-section" class="col-sm-5">
-                  <div class="image-preview" id="debt_image_preview">
-                <img src="@Model.debt_proof" alt="" class="image-preview__image">
-                <span class="image-preview__default-text"> اثبات الدين </span>
-                  </div>
-                 <input class="form-control mt-2" asp-for="debt_proof" onchange="previewImage('debt_proof','debt_image_preview','@Model.debt_proof')" id="debt_proof" type="file" name="debt_proof" accept="image/*">
 
-             </div>
+                @if((bool)Model.debt)
+                {
+                    <div id="debt-section" class="col-sm-5">
+                    <div class="image-preview" id="debt_image_preview">
+                    <img src="@Model.debt_proof" alt="" class="image-preview__image">
+                    <span class="image-preview__default-text"> اثبات الدين </span>
+                    </div>
+                    <input class="form-control mt-2" asp-for="debt_proof" onchange="previewImage('debt_proof','debt_image_preview','@Model.debt_proof')" id="debt_proof" type="file" name="debt_proof" accept="image/*">
+
+                  </div>
+                }
+
             </div>
              <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
           </form>
@@ -308,14 +334,19 @@
                     <label class="form-check-label">ملك</label>
                 </div>
                 @* اثبات الايجار *@
-                <div id="rent-section" class="col-sm-5">
-                <div class="image-preview" id="rentImagePreview">
-                <img src="@Model.rent_proof" alt="" class="image-preview__image">
-                <span class="image-preview__default-text">اثبات الايجار </span>
-                </div>
-                 <input class="form-control mt-2" asp-for="rent_proof" type="file" onchange="previewImage('rent_proof','rentImagePreview','@Model.rent_proof')" id="rent_proof" name="rent_proof" accept="image/*">
 
-             </div>
+                @if((bool)Model.house_rent)
+                {
+                    <div id="rent-section" class="col-sm-5">
+                        <div class="image-preview" id="rentImagePreview">
+                        <img src="@Model.rent_proof" alt="" class="image-preview__image">
+                        <span class="image-preview__default-text">اثبات الايجار </span>
+                        </div>
+                        <input class="form-control mt-2" asp-for="rent_proof" type="file" onchange="previewImage('rent_proof','rentImagePreview','@Model.rent_proof')" id="rent_proof" name="rent_proof" accept="image/*">
+
+                    </div>
+                }
+
             </div>
             <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
           </form>
@@ -412,8 +443,9 @@ var cityDropdown = document.getElementById("city");
 
        
   document.addEventListener("DOMContentLoaded", function() {
-    let proxySection = document.getElementById("proxy-section");
+    let proxy = document.getElementById("proxy");
     let proxyRadio = proxySection.querySelector("form-check-input");
+    let proxySection =  document.getElementById('proxy-section');
     if(proxyRadio.value === "true")
      proxySection.style.display = "block";
 
