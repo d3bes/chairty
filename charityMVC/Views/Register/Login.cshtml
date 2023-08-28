@@ -1,0 +1,43 @@
+
+@model Account
+@{
+    ViewData["Title"] = "Login";
+}
+@if (TempData.ContainsKey("ErrorMessage"))
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+<div>
+            @* <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginModal" style="margin-left: 2vw;">تسجيل دخول</a>  *@
+
+
+       <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="false">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header" style="background-color: #40a8a2; color: white;">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h5 class="modal-title" id="loginModalLabel" >تسجيل الدخول</h5>  
+  
+  
+              </div>
+              <div class="modal-body">
+                    <form asp-action="Login" asp-controller="Register" method="post" class="mt-4" method="post" enctype="multipart/form-data">
+                      <div class="mb-3">
+                          <label for="id" class="form-label">رقم الهوية:</label>
+                          <input type="text" asp-for="id" class="form-control" id="id" required>
+                      </div>
+                      <div class="mb-3">
+                          <label for="password" class="form-label">كلمة السر:</label>
+                          <input type="password" class="form-control" asp-for="password" id="password" required>
+                      </div>
+                     <button class="btn btn-success btn-sm" type="submit" style="margin-top:0.5vw">تسجيل</button>
+            </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
