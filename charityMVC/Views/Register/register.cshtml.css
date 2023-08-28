@@ -2,6 +2,9 @@
 .form-group {
     margin-bottom: 20px;
 }
+body{
+    background: rgb(213, 234, 235);
+}
 
 /* Adjust input field width as needed */
 /* 
@@ -65,4 +68,16 @@ margin-bottom: 10vh;
 .image-preview__default-text{
     padding: 5vw;
     font-size: 1.5rem;
+}
+
+
+.section{
+
+    margin:0.5vw;
+    border: 0.1rem solid #148fa8;;
+    border-radius: 2%;
+    padding: 2vw;
+    margin-bottom: 2vw;
+
+
 }

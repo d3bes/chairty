@@ -4,14 +4,28 @@
     ViewData["Title"] = "التسجيل كمستفيد";
 }
 
-<div class="container">
+@if (TempData.ContainsKey("ErrorMessage"))
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+ <form asp-action="Upload" asp-controller="Register"  class="mt-4" method="post" enctype="multipart/form-data">
+    <div class="container">
+
+   
+
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
-        <h3 class="mt-5"> التسجيل كمستفيد</h3>
-        <form asp-action="Upload" asp-controller="Register"  class="mt-4" method="post" enctype="multipart/form-data">
-         
-         <div class="row">
+             <h3 class="mt-5"> التسجيل كمستفيد</h3>
+
+              <div class="section"> 
+             
+
+                <div class="row">
             <div class="col-sm-8">
             <div class="form-group">
                 <label>الاسم رباعي: <span class="text-danger">*</span></label>
@@ -25,14 +39,13 @@
                 <input type="date" asp-for="birthDate" name="birthDate" class="form-control" required>
             </div>
             </div>
-     </div>
-        <div class="row">
+            </div>
+            <div class="row">
             <div class="col-sm-8">
                 <div class="form-group">
                 <label>رقم الهوية : <span class="text-danger">*</span></label>
                 <input type="number" asp-for="id"  name="id" class="form-control" required>
                     <span asp-validation-for="id" class="text-danger"></span>
-
 
             </div>
             </div>
@@ -42,15 +55,16 @@
                 <label>رقم الجوال: <span class="text-danger">*</span></label>
                 <div class="input-group">
                     <input type="number" asp-for="phone"   name="phone" class="form-control" required>
-                      <span asp-validation-for="phone" class="text-danger"></span>
-                                          <span class="input-group-text">+966</span>
+                                          <span class="input-group-text">966</span>
+                                    <span asp-validation-for="phone" class="text-danger"></span>
+
 
 
                 </div>
             </div>
             </div>
 
-        </div>
+          </div>
         
 
            
@@ -73,40 +87,10 @@
             <select class="form-control" asp-for="city" id="city">
                 <option value="">اختر مدينة</option>
             </select>
-        </div>
-
-            @* الهوية الشخصية صورة*@
-            <div class="row">
-                  <div class="col-sm-5" >
-             <div class="form-group ">
-                <label>صورة من الهوية الشخصية: <span class="text-danger">*</span></label>
-               <div class="image-preview" id="idImagePreview">
-                <img src="" alt="الصورة الشخصية" class="image-preview__image">
-                <span class="image-preview__default-text">الصورة الشخصية</span>
-             </div>
-            <input type="file" id="id_image"  asp-for="id_image"  onchange="previewImage('id_image','idImagePreview')"  name="id_image"  class="form-control" accept="image/*" required/>
-
-             </div>
-              </div>
-              
-              <div class="col-sm-1"></div>
-            @*صورة  بطاقة العائلة  *@
-            <div class="col-sm-5">
-            <div class="form-group">
-                <label>صورة من بطاقة العائلة: <span class="text-danger">*</span> </label>
-             <div class="image-preview" id="FamilyImagePreview">
-                
-                <img src="" alt="بطاقة العائلة" class="image-preview__image">
-                <span class="image-preview__default-text">بطاقة العائلة</span>
-             </div>
-                <input type="file" id="family_card_image" asp-for="family_card_image" onchange="previewImage('family_card_image','FamilyImagePreview')" name="family_card_image" class="form-control" accept="image/*" required>
-
-            </div>
-            </div>
-            </div>
+         </div>
 
 
-            <div class="row">
+          <div class="row">
                 <div class="col-sm-8">
 
                 <div class="form-group">
@@ -149,33 +133,7 @@
                 </div>
             </div>
 
-            <!-- هل يوجد حالة إعاقة أو لأحد عائلتك؟ -->
-            
-            <div class="form-group" required>
-                <label>هل يوجد حالة إعاقة أو لأحد عائلتك؟ <span class="text-danger">*</span> </label><br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" onchange="showSection('disiability-section')" asp-for="disability" id="disability_Yes" type="radio" name="disability" value="true">
-                    <label for="disability_Yes" class="form-check-label">نعم</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" onchange="hideSection('disiability-section')" asp-for="disability" id="disability_No" type="radio" name="disability" value="false">
-                    <label for="disability_No" class="form-check-label">لا</label>
-                </div>
-                
-                @* صورة اثبات الاعاقة *@
-                <div id="disiability-section" >
-                 <div class="image-preview" id="disability_image_preview">
-                <img src="" alt="اثبات الاعاقة " class="image-preview__image">
-                <span class="image-preview__default-text">اثبات الاعاقة</span>
-                 </div>
-                <div class="col-sm-5" >
-                    <input class="form-control mt-2" type="file" asp-for="disability_proof"  id="disability_proof" onchange="previewImage('disability_proof','disability_image_preview')"  name="disability_proof" accept="image/*">
-                </div>
-                
-             </div>
-            </div>
-
-            <!-- هل يوجد أرملة أو مطلقة؟ -->
+              <!-- هل يوجد أرملة أو مطلقة؟ -->
             
             <div class="form-group">
                 <label>هل يوجد أرملة أو مطلقة؟ <span class="text-danger">*</span></label><br>
@@ -202,7 +160,100 @@
                 </div>
             </div>
 
-            <!-- هل يوجد دين؟ -->
+       <!-- هل يوجد شخص يستلم المساعدة بالنيابة؟ -->
+            <div class="form-group" id="proxy">
+                <label>هل يوجد شخص يستلم المساعدة بالنيابة؟ </label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" onchange="showSection('proxy-section')" asp-for="proxy" type="radio"  value="true">
+                    <label class="form-check-label">نعم</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" onchange="hideSection('proxy-section')" asp-for="proxy" type="radio"  value="false">
+                    <label class="form-check-label">لا</label>
+                </div>
+                
+              <div id="proxy-section" >
+                <div>
+                <label>الاسم:</label>
+                <input type="text" asp-for="_proxy_name" class="form-control">
+                   </div>
+
+                  <div>
+                    <label>رقم الحساب:</label>
+                <input type="text" asp-for="_proxy_account_number" maxlength="16" class="form-control">
+                    @* <span asp-validation-for="_proxy_account_number" class="text-danger"></span> *@
+
+                 </div>
+
+            </div>
+            </div>
+
+    </div>
+         
+    <div class="section">
+   @* الهوية الشخصية صورة*@
+            <div class="row">
+                  <div class="col-sm-5" >
+             <div class="form-group ">
+                <label>صورة من الهوية الشخصية: <span class="text-danger">*</span></label>
+               <div class="image-preview" id="idImagePreview">
+                <img src="" alt="الصورة الشخصية" class="image-preview__image">
+                <span class="image-preview__default-text">الصورة الشخصية</span>
+             </div>
+            <input type="file" id="id_image"  asp-for="id_image"  onchange="previewImage('id_image','idImagePreview')"  name="id_image"  class="form-control" accept="image/*" required/>
+
+             </div>
+              </div>
+              
+              <div class="col-sm-1"></div>
+            @*صورة  بطاقة العائلة  *@
+            <div class="col-sm-5">
+            <div class="form-group">
+                <label>صورة من بطاقة العائلة: <span class="text-danger">*</span> </label>
+             <div class="image-preview" id="FamilyImagePreview">
+                
+                <img src="" alt="بطاقة العائلة" class="image-preview__image">
+                <span class="image-preview__default-text">بطاقة العائلة</span>
+             </div>
+                <input type="file" id="family_card_image" asp-for="family_card_image" onchange="previewImage('family_card_image','FamilyImagePreview')" name="family_card_image" class="form-control" accept="image/*" required>
+
+            </div>
+            </div>
+            </div>
+
+    </div>
+         
+
+    <div class="section"> 
+
+
+    <!-- هل يوجد حالة إعاقة أو لأحد عائلتك؟ -->
+            
+            <div class="form-group" required>
+                <label>هل يوجد حالة إعاقة أو لأحد عائلتك؟ <span class="text-danger">*</span> </label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" onchange="showSection('disiability-section')" asp-for="disability" id="disability_Yes" type="radio" name="disability" value="true">
+                    <label for="disability_Yes" class="form-check-label">نعم</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" onchange="hideSection('disiability-section')" asp-for="disability" id="disability_No" type="radio" name="disability" value="false">
+                    <label for="disability_No" class="form-check-label">لا</label>
+                </div>
+                
+                @* صورة اثبات الاعاقة *@
+                <div id="disiability-section" >
+                 <div class="image-preview" id="disability_image_preview">
+                <img src="" alt="اثبات الاعاقة " class="image-preview__image">
+                <span class="image-preview__default-text">اثبات الاعاقة</span>
+                 </div>
+                <div class="col-sm-5" >
+                    <input class="form-control mt-2" type="file" asp-for="disability_proof"  id="disability_proof" onchange="previewImage('disability_proof','disability_image_preview')"  name="disability_proof" accept="image/*">
+                </div>
+                
+             </div>
+            </div>
+
+              <!-- هل يوجد دين؟ -->
             <div class="form-group">
                 <label>هل يوجد دين؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
@@ -247,43 +298,16 @@
             </div>
 
 
-            <!-- هل يوجد شخص يستلم المساعدة بالنيابة؟ -->
-            <div class="form-group" id="proxy">
-                <label>هل يوجد شخص يستلم المساعدة بالنيابة؟ </label><br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" onchange="showSection('proxy-section')" asp-for="proxy" type="radio"  value="true">
-                    <label class="form-check-label">نعم</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" onchange="hideSection('proxy-section')" asp-for="proxy" type="radio"  value="false">
-                    <label class="form-check-label">لا</label>
-                </div>
-                
-              <div id="proxy-section" >
-                <div>
-                <label>الاسم:</label>
-                <input type="text" asp-for="_proxy_name" class="form-control">
-                   </div>
-
-                  <div>
-                    <label>رقم الحساب:</label>
-                <input type="text" asp-for="_proxy_account_number" maxlength="16" class="form-control">
-                    @* <span asp-validation-for="_proxy_account_number" class="text-danger"></span> *@
-
-                 </div>
-
-            </div>
-            </div>
+    </div>
 
             <button type="submit" class="btn btn-primary">تسجيل</button>
-        </form>
              
-
-              
             </div>
         <div class="col-sm-2"></div>
 
     </div>
+
+     </form>
 
     @section Scripts
     {
@@ -340,13 +364,13 @@
 
 
 
-var cities =  [ 
-    "أبها", "الأحساء", "الباحة", "الدمام", "الرياض", "الزلفي", "الخبر", "الخرج", "الخفجي", "الجبيل", "الجوف", "الحائط", "الحبيل", "الحوية", "الدرعية", "الدوادمي", "الدومة الجندل", "الظهران",
-      "العلا", "العيون", "الغاط", "الفريش", "القريات", "القطيف", "القويعية", "المجمعة", "المذنب", "المدينة المنورة", "المزاحمية", "المبرز", "المخواة", "النعيرية", "النماص", "الهفوف", "الوجه", 
-      "بيشة", "تبوك", "تاروت", "جازان", "جدة", "حائل", "خميس مشيط", "رفحاء", "رأس تنورة", "رياض الخبراء", "ساجر", "سكاكا", "سيهات", "شرورة", "شقراء", "ضباء", "طريف", "ظهران الجنوب", "عرعر",
-      "عفيف", "عنيزة", "غرناطة", "فيفاء", "قلوة", "قيصومة", "كفر الدوار", "مكة المكرمة", "محايل عسير", "مرات", "مراكز الجودة", "مزارع الشريفة", "مستورة", "مطوفة", "محمد بن عبدالوهاب", "نجران", 
-      "نجوى", "نجوى ورغداء", "نخيل", "نمرة", "نفي", "نيابة", "هدا الشام", "هيئة", "هيئة الاتصالات وتقنية المعلومات", "وادي الدواسر", "وادي الريان", "وادي الشريعة", "وادي الفرع"
-  ];
+    var cities =  [ 
+        "أبها", "الأحساء", "الباحة", "الدمام", "الرياض", "الزلفي", "الخبر", "الخرج", "الخفجي", "الجبيل", "الجوف", "الحائط", "الحبيل", "الحوية", "الدرعية", "الدوادمي", "الدومة الجندل", "الظهران",
+        "العلا", "العيون", "الغاط", "الفريش", "القريات", "القطيف", "القويعية", "المجمعة", "المذنب", "المدينة المنورة", "المزاحمية", "المبرز", "المخواة", "النعيرية", "النماص", "الهفوف", "الوجه", 
+        "بيشة", "تبوك", "تاروت", "جازان", "جدة", "حائل", "خميس مشيط", "رفحاء", "رأس تنورة", "رياض الخبراء", "ساجر", "سكاكا", "سيهات", "شرورة", "شقراء", "ضباء", "طريف", "ظهران الجنوب", "عرعر",
+        "عفيف", "عنيزة", "غرناطة", "فيفاء", "قلوة", "قيصومة", "كفر الدوار", "مكة المكرمة", "محايل عسير", "مرات", "مراكز الجودة", "مزارع الشريفة", "مستورة", "مطوفة", "محمد بن عبدالوهاب", "نجران", 
+        "نجوى", "نجوى ورغداء", "نخيل", "نمرة", "نفي", "نيابة", "هدا الشام", "هيئة", "هيئة الاتصالات وتقنية المعلومات", "وادي الدواسر", "وادي الريان", "وادي الشريعة", "وادي الفرع"
+    ];
 
 var cityDropdown = document.getElementById("city");
 
