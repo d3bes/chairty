@@ -31,8 +31,6 @@ F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\charityMVC.genruntimecon
 F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\ref\charityMVC.dll
 F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\scopedcss\Views\Register\register.cshtml.rz.scp.css
 F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\scopedcss\Views\UserProfile\userProfile.cshtml.rz.scp.css
-F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\scopedcss\Views\Clerk\cityUsers.cshtml.rz.scp.css
-F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\scopedcss\Views\Clerk\review.cshtml.rz.scp.css
 F:\downloads\Impact\chairty\charityMVC\bin\Debug\net7.0\Humanizer.dll
 F:\downloads\Impact\chairty\charityMVC\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 F:\downloads\Impact\chairty\charityMVC\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -50,3 +48,6 @@ F:\downloads\Impact\chairty\charityMVC\bin\Debug\net7.0\Microsoft.AspNetCore.Ide
 F:\downloads\Impact\chairty\charityMVC\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 F:\downloads\Impact\chairty\charityMVC\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 F:\downloads\Impact\chairty\charityMVC\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\scopedcss\Views\Clerk\cityUsers.cshtml.rz.scp.css
+F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\scopedcss\Views\Clerk\review.cshtml.rz.scp.css
+F:\downloads\Impact\chairty\charityMVC\obj\Debug\net7.0\scopedcss\Views\Admin\Index.cshtml.rz.scp.css

@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-//disiable extra sections
+// //disiable extra sections
 //   document.addEventListener("DOMContentLoaded", function() {
 //     let proxySection = document.getElementById("proxy-section");
 //     let rentSection = document.getElementById("rent-section");
@@ -308,41 +308,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // });
 
-document.addEventListener("DOMContentLoaded", function() {
-  let proxySection = document.getElementById("proxy-section");
-  let proxyRadio = proxySection.querySelector("form-check-input");
-  if(proxyRadio.value === "true")
-   proxySection.style.display = "block";
-  else
-  proxySection.style.display = "none";
+// document.addEventListener("DOMContentLoaded", function() {
+//   let proxySection = document.getElementById("proxy-section");
+//   let proxyRadio = proxySection.querySelector("form-check-input");
+//   if(proxyRadio.value === "true")
+//    proxySection.style.display = "block";
+//   else
+//   proxySection.style.display = "none";
 
 
-  let rentSection = document.getElementById("rent-section");
-  let rentRadio = rentSection.querySelector("form-check-input");
-  if(rentRadio.value=== "true")
-  rentSection.style.display = "block";
-  else
-  rentSection.style.display = "none";
+//   let rentSection = document.getElementById("rent-section");
+//   let rentRadio = rentSection.querySelector("form-check-input");
+//   if(rentRadio.value=== "true")
+//   rentSection.style.display = "block";
+//   else
+//   rentSection.style.display = "none";
 
 
-  let debtSection = document.getElementById("debt-section");
-  let debtRadio = debtSection.querySelector("form-check-input");
-  if(debtRadio.value=== "true")
-  debtSection.style.display = "block";
-  else
-  debtSection.style.display = "none";
+//   let debtSection = document.getElementById("debt-section");
+//   let debtRadio = debtSection.querySelector("form-check-input");
+//   if(debtRadio.value=== "true")
+//   debtSection.style.display = "block";
+//   else
+//   debtSection.style.display = "none";
 
 
-  let disiabilitySection = document.getElementById("disiability-section");
-  let disiabilityRadio = disiabilitySection.querySelector("form-check-input");
-  if(disiabilityRadio.value=== "true")
-  disiabilitySection.style.display = "block";
-  else
-  disiabilitySection.style.display = "none";
+//   let disiabilitySection = document.getElementById("disiability-section");
+//   let disiabilityRadio = disiabilitySection.querySelector("form-check-input");
+//   if(disiabilityRadio.value=== "true")
+//   disiabilitySection.style.display = "block";
+//   else
+//   disiabilitySection.style.display = "none";
 
 
 
-});
+// });
      
 
 

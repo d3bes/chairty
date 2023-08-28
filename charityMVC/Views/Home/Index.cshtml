@@ -1,5 +1,13 @@
-﻿@{
+﻿@model Account
+@{
     ViewData["Title"] = "Home Page";
+}
+
+@if (TempData.ContainsKey("ErrorMessage"))
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
 }
 
 <!-- ======= Hero Section ======= -->
@@ -11,7 +19,7 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas minus ratione voluptatibus architecto aut mollitia dolorum! Beatae ipsam reiciendis maiores alias enim, voluptatum distinctio omnis in ducimus perferendis debitis.</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a class="btn btn-logIn" data-bs-toggle="modal" data-bs-target="#loginModal" style="margin-left: 2vw;">تسجيل دخول</a> 
-            <a class="btn btn-signUp" data-bs-toggle="modal" data-bs-target="#signupModal"> لا تملك حساب</a> 
+            @* <a class="btn btn-signUp" data-bs-toggle="modal" data-bs-target="#signupModal"> لا تملك حساب</a>  *@
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
@@ -26,7 +34,8 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-person-vcard"></i></div>
-              <h4 class="title"><a href="" class="stretched-link">تسجيل كمستفيد</a></h4>
+              
+              <h4 class="title"><a asp-controller="Register" asp-action="register" class="stretched-link">تسجيل كمستفيد</a></h4>
             </div>
           </div><!--End Icon Box -->
   
@@ -221,7 +230,7 @@
   
   
   <!-- ################### LOG IN MODAL ############## -->
-  
+ 
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div class="modal-dialog">
           <div class="modal-content">
@@ -232,17 +241,17 @@
   
               </div>
               <div class="modal-body">
-                  <form>
+                    <form asp-action="Login" asp-controller="Register" method="post" class="mt-4" method="post" enctype="multipart/form-data">
                       <div class="mb-3">
-                          <label for="beneficiaryInput" class="form-label">المستفيد:</label>
-                          <input type="text" class="form-control" id="beneficiaryInput" required>
+                          <label for="id" class="form-label">رقم الهوية:</label>
+                          <input type="text" asp-for="id" class="form-control" id="id" required>
                       </div>
                       <div class="mb-3">
-                          <label for="passwordInput" class="form-label">كلمة السر:</label>
-                          <input type="password" class="form-control" id="passwordInput" required>
+                          <label for="password" class="form-label">كلمة السر:</label>
+                          <input type="password" class="form-control" asp-for="password" id="password" required>
                       </div>
-                      <button type="submit" class="btn btn" style="background-color: #40a8a2;color: white;">تسجيل الدخول</button>
-                  </form>
+                     <button class="btn btn-succes btn-sm" type="submit" style="margin-top:0.5vw">تسجيل</button>
+            </form>
               </div>
           </div>
       </div>

@@ -2,6 +2,12 @@
     ViewData["Title"] = "Index";
 }
 
+@if (TempData.ContainsKey("ErrorMessage"))
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
 
 
 <div>

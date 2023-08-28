@@ -26,6 +26,8 @@ namespace charityMVC.Controllers
 
         public async Task<IActionResult> Index()
         { 
+            try 
+            {
             var AdminProfile = new UsersClerkesVM ();
            var users = await _userRepo.GetAllUsers();
            var clerks = await _clerkRepo.GetAll();
@@ -34,6 +36,15 @@ namespace charityMVC.Controllers
             AdminProfile.clerkes = clerks;
 
             return View(AdminProfile);
+            }
+             catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "An error occurred in the Review action.");
+                        
+                        TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر عليك التواصل مع المبرمج !";
+                        return View();
+
+                    }
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
