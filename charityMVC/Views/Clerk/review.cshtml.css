@@ -30,39 +30,6 @@
 margin-bottom: 10vh;
 }
 
-
-/* Add your custom CSS here */
-.form-group {
-    margin-bottom: 20px;
-}
-
-/* Adjust input field width as needed */
-.form-control {
-    width: 100%;
-}
-
-/* Align labels and inputs to the right */
-.form-group label {
-    text-align: right;
-    display: block;
-    margin-bottom: 5px;
-}
-
-/* Style required asterisks */
-.text-danger {
-    color: red;
-    font-size: 18px;
-    vertical-align: middle;
-}
-
-/* Increase space between radio buttons */
-.radio-inline {
-    margin-right: 10px;
-}
-.container {
-margin-bottom: 10vh;
-}
-
 img{
     width: 20vw;
     height: 40vh;
@@ -74,7 +41,7 @@ img{
 .section{
 
     margin:0.5vw;
-    border: 0.2rem solid #cccccc;
+    border: 0.2rem solid #fbbb0b;
     border-radius: 2%;
     padding: 2vw;
     margin-bottom: 2vw;

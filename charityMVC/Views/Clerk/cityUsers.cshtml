@@ -3,6 +3,12 @@
     ViewData["Title"] = "cityUsers";
 }
 
+@if (TempData.ContainsKey("ErrorMessage"))
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
 
 
 <h4 style="margin: 5vw;">مدينة: @Model.clerk.city</h4>
