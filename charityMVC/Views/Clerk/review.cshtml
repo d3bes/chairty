@@ -173,7 +173,7 @@
 <!-- هل لديك دخل أو مساعدات دورية أو ضمان اجتماعي؟ -->
 
                 <h4>الحالة الاجتماعية</h4>
-            <div class="form-group">
+            @* <div class="form-group">
                 <label>هل لديك دخل أو مساعدات دورية أو ضمان اجتماعي؟ <span class="text-danger">*</span> </label><br>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" asp-for="income_support" id="income_support_yes" type="radio" name="income_support" value="true" required>
@@ -183,11 +183,16 @@
                     <input class="form-check-input"  asp-for="income_support" id="income_support_No" type="radio" name="income_support" value="false" required>
                     <label for="income_support_No" class="form-check-label">لا</label>
                 </div>
-            </div>
+            </div> *@
+            
+        <div class="form-group form-check">
+            <input type="checkbox" asp-for="income_support" class="form-check-input" name="income_support" id="income_support">
+             <label>هل لديك دخل أو مساعدات دورية أو ضمان اجتماعي؟ <span class="text-danger">*</span> </label><br>
+        </div>
 
             
             <!-- هل يوجد أرملة أو مطلقة؟ -->
-            
+@*             
             <div class="form-group">
                 <label>هل يوجد أرملة أو مطلقة؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
@@ -198,7 +203,14 @@
                     <input class="form-check-input" type="radio"  asp-for="widow" name="widow" value="false">
                     <label class="form-check-label">لا</label>
                 </div>
-            </div>
+            </div> *@
+
+            <div class="form-group form-check">
+            <input type="checkbox" asp-for="widow" class="form-check-input" name="widow" id="income_support">
+                <label>هل يوجد أرملة أو مطلقة؟ <span class="text-danger">*</span></label><br>
+        </div>
+
+
 
             <!-- هل يوجد كبير سن (فوق 60)؟ -->
             <div class="form-group">
