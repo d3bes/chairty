@@ -18,7 +18,14 @@
           <h2>مرحبا بك  <span> </span></h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas minus ratione voluptatibus architecto aut mollitia dolorum! Beatae ipsam reiciendis maiores alias enim, voluptatum distinctio omnis in ducimus perferendis debitis.</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a class="btn btn-logIn" data-bs-toggle="modal" data-bs-target="#loginModal" style="margin-left: 2vw;">تسجيل دخول</a> 
+            @if(!User.Identity.IsAuthenticated)
+            {          
+               @* <a class="btn btn-logIn" data-bs-toggle="modal" data-bs-target="#loginModal" style="margin-left: 2vw;">تسجيل دخول</a> *@
+                 <a class="btn btn-logIn"  asp-controller="Register" asp-action="login" style="margin-left: 2vw;">تسجيل دخول</a>
+
+
+            }
+
             @* <a class="btn btn-signUp" data-bs-toggle="modal" data-bs-target="#signupModal"> لا تملك حساب</a>  *@
           </div>
         </div>
@@ -31,13 +38,17 @@
     <div class="icon-boxes position-relative">
       <div class="container position-relative">
         <div class="row gy-4 mt-5" >
+            @if(!User.Identity.IsAuthenticated)
+            {  
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            
             <div class="icon-box">
               <div class="icon"><i class="bi bi-person-vcard"></i></div>
               
               <h4 class="title"><a asp-controller="Register" asp-action="register" class="stretched-link">تسجيل كمستفيد</a></h4>
             </div>
           </div><!--End Icon Box -->
+            }
   
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
@@ -228,7 +239,7 @@
     </div>
   </div>
   
-  
+@*   
   <!-- ################### LOG IN MODAL ############## -->
  
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -255,7 +266,7 @@
               </div>
           </div>
       </div>
-  </div>
+  </div> *@
 
 
 
