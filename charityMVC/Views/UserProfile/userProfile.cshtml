@@ -10,6 +10,14 @@
         @TempData["ErrorMessage"]
     </div>
 }
+@if (TempData.ContainsKey("Success"))
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+
 
 <div class="container">
         <div class="row">
@@ -51,6 +59,7 @@
                 <img src=@Model.id_image alt="" class="image-preview__image">
                 <span class="image-preview__default-text"> </span>
              </div>
+
             <input type="file" id="id_image"  asp-for="id_image"  onchange="previewImage('id_image','idImagePreview','@Model.id_image ')"  name="id_image"  class="form-control  form-control-sm" accept="image/*" />
              </div>
                <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
@@ -272,8 +281,7 @@
 
                      @* صورة اثبات الاعاقة *@
 
-                @if((bool)Model.disability)
-                {
+                
                         <div id="disiability-section" >
                         <div class="image-preview" id="disability_image_preview">
                         <img src="@Model.disability_proof" alt="" class="image-preview__image">
@@ -284,7 +292,7 @@
                         </div>
                         
                     </div>
-                }
+                
 
             </div>
              <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
@@ -304,8 +312,7 @@
                 </div>
                 @* اثبات الدين *@
 
-                @if((bool)Model.debt)
-                {
+               
                     <div id="debt-section" class="col-sm-5">
                     <div class="image-preview" id="debt_image_preview">
                     <img src="@Model.debt_proof" alt="" class="image-preview__image">
@@ -314,7 +321,7 @@
                     <input class="form-control mt-2" asp-for="debt_proof" onchange="previewImage('debt_proof','debt_image_preview','@Model.debt_proof')" id="debt_proof" type="file" name="debt_proof" accept="image/*">
 
                   </div>
-                }
+                
 
             </div>
              <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
@@ -335,8 +342,7 @@
                 </div>
                 @* اثبات الايجار *@
 
-                @if((bool)Model.house_rent)
-                {
+               
                     <div id="rent-section" class="col-sm-5">
                         <div class="image-preview" id="rentImagePreview">
                         <img src="@Model.rent_proof" alt="" class="image-preview__image">
@@ -345,7 +351,7 @@
                         <input class="form-control mt-2" asp-for="rent_proof" type="file" onchange="previewImage('rent_proof','rentImagePreview','@Model.rent_proof')" id="rent_proof" name="rent_proof" accept="image/*">
 
                     </div>
-                }
+                
 
             </div>
             <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
@@ -441,7 +447,7 @@ var cityDropdown = document.getElementById("city");
 
 
 
-       
+@*        
   document.addEventListener("DOMContentLoaded", function() {
     let proxy = document.getElementById("proxy");
     let proxyRadio = proxySection.querySelector("form-check-input");
@@ -462,7 +468,7 @@ var cityDropdown = document.getElementById("city");
     let disiabilitySection = document.getElementById("disiability-section");
     let disiabilityRadio = disiabilitySection.querySelector("form-check-input");
     if(disiabilityRadio.value=== "true")
-    disiabilitySection.style.display = "block";
+    disiabilitySection.style.display = "block"; *@
 
 
 });
