@@ -22,6 +22,32 @@ namespace charityMVC.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
+            modelBuilder.Entity("charityMVC.Models.Accepted", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("clerkId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("dateTime")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("points")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("userId")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Accepteds");
+                });
+
             modelBuilder.Entity("charityMVC.Models.Admin", b =>
                 {
                     b.Property<string>("id")
@@ -48,8 +74,11 @@ namespace charityMVC.Migrations
 
             modelBuilder.Entity("charityMVC.Models.Clerk", b =>
                 {
-                    b.Property<string>("id")
-                        .HasColumnType("text");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("city")
                         .IsRequired()
@@ -66,7 +95,11 @@ namespace charityMVC.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.HasKey("id");
+                    b.Property<string>("phone")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
 
                     b.ToTable("clerk");
                 });

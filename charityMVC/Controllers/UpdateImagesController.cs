@@ -42,6 +42,7 @@ namespace charityMVC.Controllers
                            var points = await _userRepo.GetPoints(user);
                           user.points = points;
                         await _userRepo.Update(user);
+                        TempData["Success"] = "!تم بنجاح ";
                       }
 
                      return RedirectToAction("GetUserProfile", "UserProfile", new { id = userId });
@@ -80,6 +81,7 @@ namespace charityMVC.Controllers
                            var points = await _userRepo.GetPoints(user);
                           user.points = points;
                         await _userRepo.Update(user);
+                        TempData["Success"] = "!تم بنجاح ";
                       }
 
                      return RedirectToAction("GetUserProfile", "UserProfile", new { id = userId });
@@ -113,9 +115,11 @@ namespace charityMVC.Controllers
                       {
                           var user =  await _userRepo.GetUserById(userId);
                           user.disability_proof = dbFilePath;
+                         
                            var points = await _userRepo.GetPoints(user);
                           user.points = points;
                         await _userRepo.Update(user);
+                        TempData["Success"] = "!تم بنجاح ";
                       }
 
                      return RedirectToAction("GetUserProfile", "UserProfile", new { id = userId });
@@ -150,9 +154,11 @@ namespace charityMVC.Controllers
                       {
                           var user =  await _userRepo.GetUserById(userId);
                           user.debt_proof = dbFilePath;
+                          
                            var points = await _userRepo.GetPoints(user);
                           user.points = points;
                         await _userRepo.Update(user);
+                        TempData["Success"] = "!تم بنجاح ";
                       }
 
                      return RedirectToAction("GetUserProfile", "UserProfile", new { id = userId });
@@ -184,9 +190,11 @@ namespace charityMVC.Controllers
                       {
                           var user =  await _userRepo.GetUserById(userId);  
                           user.rent_proof = dbFilePath;
+                         
                           var points = await _userRepo.GetPoints(user);
-                          user.points = points;
+                          user.points = points;  
                         await _userRepo.Update(user);
+                        TempData["Success"] = "!تم بنجاح ";
                       }
 
                      return RedirectToAction("GetUserProfile", "UserProfile", new { id = userId });
