@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = f:\downloads\Impact\chairty\charityMVC
 build_property._RazorSourceGeneratorDebug = 
 
+[f:/downloads/Impact/chairty/charityMVC/Views/Admin/AcceptedList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWNjZXB0ZWRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[f:/downloads/Impact/chairty/charityMVC/Views/Admin/AllClerks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsQ2xlcmtzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[f:/downloads/Impact/chairty/charityMVC/Views/Admin/EditPoints.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFBvaW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[f:/downloads/Impact/chairty/charityMVC/Views/Admin/LoginAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW5BZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[f:/downloads/Impact/chairty/charityMVC/Views/Clerk/LoginClerk.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xlcmtcTG9naW5DbGVyay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [f:/downloads/Impact/chairty/charityMVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -43,6 +63,14 @@ build_metadata.AdditionalFiles.CssScope =
 [f:/downloads/Impact/chairty/charityMVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[f:/downloads/Impact/chairty/charityMVC/Views/Admin/AddClerk.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQ2xlcmsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-08uie2jrdt
+
+[f:/downloads/Impact/chairty/charityMVC/Views/Admin/AllUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ty7i6paeak
 
 [f:/downloads/Impact/chairty/charityMVC/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s

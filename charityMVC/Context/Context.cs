@@ -17,7 +17,12 @@ namespace charityMVC
       public DbSet<User> user { get; set; }
       public DbSet<Support> support { get; set; }
       public DbSet<points> points { get; set; }
+      public DbSet<Accepted> Accepteds { get; set; } 
 
+    //    public void DropClerkTable()
+    // {
+    //     Database.ExecuteSqlRaw("DROP TABLE IF EXISTS clerk;");
+    // }
       public Context(DbContextOptions<Context> options) : base(options) 
         {
         }

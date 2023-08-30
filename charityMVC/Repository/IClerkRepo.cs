@@ -9,6 +9,6 @@ namespace charityMVC.Repository
     public interface IClerkRepo
     {
         public Task<List<Clerk>> GetAll();
-       public Task<Clerk> GetClerkById (string id);
+       public Task<Clerk> GetClerkById (int id);
     }
 }

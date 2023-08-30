@@ -14,5 +14,6 @@ namespace charityMVC.ViewModels
 
         [RegularExpression(@"^\d{10}$", ErrorMessage = "يجب ان يكون رقم الهاتف 10 ارقام")]
         public string password { get; set; }
+
     }
 }

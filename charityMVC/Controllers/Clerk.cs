@@ -8,6 +8,9 @@ using charityMVC.ViewModels;
 using Microsoft.Extensions.Logging;
 using charityMVC.Repository;
 using charityMVC.Models;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace charityMVC.Controllers
 {
@@ -17,11 +20,13 @@ namespace charityMVC.Controllers
         private readonly ILogger<Clerk> _logger;
         private  IUserRepo _userRepo;
         private IClerkRepo _clerkRepo;
-        public ClerkController(ILogger<Clerk> logger, IUserRepo userRepo, IClerkRepo clerkRepo)
+        private IAdminRepo _adminRepo;
+        public ClerkController(ILogger<Clerk> logger, IUserRepo userRepo, IClerkRepo clerkRepo, IAdminRepo adminRepo)
         {
             _logger = logger;
             _userRepo = userRepo;
             _clerkRepo =clerkRepo;
+            _adminRepo = adminRepo;
         }
 
         public IActionResult profile()
@@ -29,13 +34,14 @@ namespace charityMVC.Controllers
             return View("userProfile");
         }
 
-        public async Task<IActionResult> ClerkProfil(string id)
+        public async Task<IActionResult> ClerkProfil(int id)
         {
 
+            var ClerkProfil = new ClerkProfileVM();
+            Clerk clerk = await _clerkRepo.GetClerkById(id);
             try
             {
-            var ClerkProfil = new ClerkProfileVM();
-            Models.Clerk clerk = await _clerkRepo.GetClerkById(id);
+            
             var cityUsers = await _userRepo.GetCityUsers(clerk.city);
             ClerkProfil.clerk = clerk;
             ClerkProfil.Users = cityUsers;
@@ -43,16 +49,15 @@ namespace charityMVC.Controllers
 
             return View("cityUsers", ClerkProfil);
             }
-             catch (Exception ex)
+         catch (Exception ex)
                     {
                         _logger.LogError(ex, "An error occurred in the Review action.");
                         
                         TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر عليك التواصل مع المبرمج !";
                         
-                        if(ClerkProfil != null )
+                       
                         return View("cityUsers", ClerkProfil);
-                        else
-                        return View("cityUsers");
+                     
                         
                     }
         }
@@ -87,7 +92,7 @@ namespace charityMVC.Controllers
                                 user._proxy_account_number = personalData._proxy_account_number;
                                 user._proxy_name = personalData._proxy_name;
                                 user.proxy = personalData.proxy;
-                                user.elderly= personalData.elderly;
+                                user.elderly=personalData.elderly;
                                 user.widow= personalData.widow;
                                 user.income_support = personalData.income_support;
                               
@@ -115,6 +120,57 @@ namespace charityMVC.Controllers
 
         }
 
+
+        public async Task<IActionResult> LoginClerk ()
+        {
+            return View("LoginClerk");
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> LoginClerk(MemberAccount account)
+        {
+            try {
+
+            if(_adminRepo.FoundClerk(account.username, account.password))
+            {
+            Clerk clerk = await _adminRepo.FindClerk(account.username, account.password);
+              Roles role = await _userRepo.GetRoles(clerk.Id.ToString());
+            
+             ClaimsIdentity identity = 
+                    new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
+
+                identity.AddClaim(new Claim("id", clerk.Id.ToString()));
+                identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, clerk.Id.ToString()));
+                
+                identity.AddClaim(new Claim(ClaimTypes.Role, role.Role));
+
+                 ClaimsPrincipal principal = new ClaimsPrincipal(identity);
+                 
+                HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,principal);
+                 TempData["Success"] = "!تم بنجاح ";
+
+                        
+                
+                return   RedirectToAction("ClerkProfil",new { id = clerk.Id });
+            }
+            else 
+                return View("LoginClerk");
+
+
+            }
+                catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "An error occurred in the Review action.");
+                        
+                        TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر عليك التواصل مع المبرمج !";
+                        return View("LoginClerk");
+                    }
+            
+           
+
+        }
 
     }
 

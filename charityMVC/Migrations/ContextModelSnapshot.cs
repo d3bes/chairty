@@ -30,11 +30,24 @@ namespace charityMVC.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("clerkId")
-                        .HasColumnType("integer");
+                    b.Property<string>("city")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateTime>("dateTime")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("fullAddress")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("phone")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<int>("points")
                         .HasColumnType("integer");
@@ -178,19 +191,19 @@ namespace charityMVC.Migrations
                     b.Property<string>("city")
                         .HasColumnType("text");
 
-                    b.Property<bool?>("debt")
+                    b.Property<bool>("debt")
                         .HasColumnType("boolean");
 
                     b.Property<string>("debt_proof")
                         .HasColumnType("text");
 
-                    b.Property<bool?>("disability")
+                    b.Property<bool>("disability")
                         .HasColumnType("boolean");
 
                     b.Property<string>("disability_proof")
                         .HasColumnType("text");
 
-                    b.Property<bool?>("elderly")
+                    b.Property<bool>("elderly")
                         .HasColumnType("boolean");
 
                     b.Property<string>("family_card_image")
@@ -204,13 +217,13 @@ namespace charityMVC.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<bool?>("house_rent")
+                    b.Property<bool>("house_rent")
                         .HasColumnType("boolean");
 
                     b.Property<string>("id_image")
                         .HasColumnType("text");
 
-                    b.Property<bool?>("income_support")
+                    b.Property<bool>("income_support")
                         .HasColumnType("boolean");
 
                     b.Property<string>("income_supportImg")
@@ -225,13 +238,13 @@ namespace charityMVC.Migrations
                     b.Property<int?>("points")
                         .HasColumnType("integer");
 
-                    b.Property<bool?>("proxy")
+                    b.Property<bool>("proxy")
                         .HasColumnType("boolean");
 
                     b.Property<string>("rent_proof")
                         .HasColumnType("text");
 
-                    b.Property<bool?>("widow")
+                    b.Property<bool>("widow")
                         .HasColumnType("boolean");
 
                     b.HasKey("id");

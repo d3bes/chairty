@@ -22,9 +22,9 @@ namespace charityMVC.Repository
             return clerks;
         }
 
-        public async Task<Clerk> GetClerkById(string id)
+        public async Task<Clerk> GetClerkById(int id)
         {
-            var clerk = await _context.clerk.FirstOrDefaultAsync(c=>c.id == id);
+            var clerk = await _context.clerk.FirstOrDefaultAsync(c=>c.Id == id);
             return clerk;
         }
 

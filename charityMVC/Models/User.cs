@@ -29,19 +29,19 @@ namespace charityMVC.Models
         [RegularExpression(@"^\d{16}$", ErrorMessage = "يجب ان يكون رقم الحساب 16 رقم")]
         public string? bank_account_number { get; set;}
         public int? children_count { get; set;}
-        public bool? income_support { get; set;}
+        public bool income_support { get; set;}
         public string? income_supportImg { get; set;}
-        public bool? disability { get; set;}
+        public bool disability { get; set;}
         public string? disability_proof { get; set;}
-        public bool? widow { get; set;}
-        public bool? elderly { get; set;}
+        public bool widow { get; set;}
+        public bool elderly { get; set;}
 
-        public bool? debt { get; set;}
+        public bool debt { get; set;}
         public string? debt_proof { get; set;}
-        public bool? house_rent { get; set;}
+        public bool house_rent { get; set;}
 
         public string? rent_proof { get; set;}
-        public bool? proxy { get; set;}
+        public bool proxy { get; set;}
         public string? _proxy_name { get; set;}
         [RegularExpression(@"^\d{16}$", ErrorMessage = "يجب ان يكون رقم الحساب 16 رقم")]
         public string? _proxy_account_number { get; set;}

@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\Views\\Register\\register.cshtml.js",
-      "PackagePath": "staticwebassets\\Views\\Register\\register.cshtml.js"
-    },
-    {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\charityMVC.bundle.scp.css",
       "PackagePath": "staticwebassets\\charityMVC.bundle.scp.css"
     },
@@ -573,6 +569,14 @@
       "PackagePath": "staticwebassets\\userImages\\060ad68a-ad2c-47e1-9d04-ace1d7d79c4e_family.jfif"
     },
     {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\06949a37-ee7a-43c5-8422-856928feed9d_disibality.jfif",
+      "PackagePath": "staticwebassets\\userImages\\06949a37-ee7a-43c5-8422-856928feed9d_disibality.jfif"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\09423b7c-879e-4c3d-a91d-b5fc7124f7e1_disibality.jfif",
+      "PackagePath": "staticwebassets\\userImages\\09423b7c-879e-4c3d-a91d-b5fc7124f7e1_disibality.jfif"
+    },
+    {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\13035412-411c-4ee3-b375-482fa628aadf_1.jfif",
       "PackagePath": "staticwebassets\\userImages\\13035412-411c-4ee3-b375-482fa628aadf_1.jfif"
     },
@@ -685,16 +689,64 @@
       "PackagePath": "staticwebassets\\userImages\\202308271940_1234564567887654_sendmail.PNG"
     },
     {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308281955_4578986587458748_1.jfif",
+      "PackagePath": "staticwebassets\\userImages\\202308281955_4578986587458748_1.jfif"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308281955_4578986587458748_family.jfif",
+      "PackagePath": "staticwebassets\\userImages\\202308281955_4578986587458748_family.jfif"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308282012_4879485784859684_1.jfif",
+      "PackagePath": "staticwebassets\\userImages\\202308282012_4879485784859684_1.jfif"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308282012_4879485784859684_family.jfif",
+      "PackagePath": "staticwebassets\\userImages\\202308282012_4879485784859684_family.jfif"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308282019_4879485784859684_1.jfif",
+      "PackagePath": "staticwebassets\\userImages\\202308282019_4879485784859684_1.jfif"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308282058_7485962134879658_1.jfif",
+      "PackagePath": "staticwebassets\\userImages\\202308282058_7485962134879658_1.jfif"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308282058_7485962134879658_mail - Copy.PNG",
+      "PackagePath": "staticwebassets\\userImages\\202308282058_7485962134879658_mail - Copy.PNG"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\26e23293-9389-4324-8909-a881aeffc808_debt.jpg",
+      "PackagePath": "staticwebassets\\userImages\\26e23293-9389-4324-8909-a881aeffc808_debt.jpg"
+    },
+    {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\2d8c9909-6362-4f02-a85d-d34b6185f902_rent.PNG",
       "PackagePath": "staticwebassets\\userImages\\2d8c9909-6362-4f02-a85d-d34b6185f902_rent.PNG"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\341e2d13-6cf5-49c1-b300-0f29fe19a011_sendmail.PNG",
+      "PackagePath": "staticwebassets\\userImages\\341e2d13-6cf5-49c1-b300-0f29fe19a011_sendmail.PNG"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\3473759c-48e3-4d00-89e3-16ba3fe55df4_disibality.jfif",
+      "PackagePath": "staticwebassets\\userImages\\3473759c-48e3-4d00-89e3-16ba3fe55df4_disibality.jfif"
     },
     {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\3475e2cb-fd5b-4ab2-b474-0bf0d0ee8b90_debt.jpg",
       "PackagePath": "staticwebassets\\userImages\\3475e2cb-fd5b-4ab2-b474-0bf0d0ee8b90_debt.jpg"
     },
     {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\376f5a22-4cac-4795-80b6-e7a9d3a64521_mail - Copy.PNG",
+      "PackagePath": "staticwebassets\\userImages\\376f5a22-4cac-4795-80b6-e7a9d3a64521_mail - Copy.PNG"
+    },
+    {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\3dc1d74a-c098-48af-9cf9-175204481530_debt.jpg",
       "PackagePath": "staticwebassets\\userImages\\3dc1d74a-c098-48af-9cf9-175204481530_debt.jpg"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\3e7d205d-d0b6-417a-ad9d-34c1eae14d94_disibality.jfif",
+      "PackagePath": "staticwebassets\\userImages\\3e7d205d-d0b6-417a-ad9d-34c1eae14d94_disibality.jfif"
     },
     {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\42592928-85c7-47f5-9d80-bca3d38141b9_family.jfif",
@@ -723,6 +775,10 @@
     {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\5995df32-0377-4c7f-9280-ed300f757f5a_1.jfif",
       "PackagePath": "staticwebassets\\userImages\\5995df32-0377-4c7f-9280-ed300f757f5a_1.jfif"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\6223dcd6-c203-4cc6-ab7e-21997b7edfe8_1.jfif",
+      "PackagePath": "staticwebassets\\userImages\\6223dcd6-c203-4cc6-ab7e-21997b7edfe8_1.jfif"
     },
     {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\63b5b3cb-f97e-4252-95df-d34e8c9fd956_1.jfif",
@@ -773,6 +829,10 @@
       "PackagePath": "staticwebassets\\userImages\\8a7f70ab-2040-40ee-bbb4-ee9cbca62cab_disibality.jfif"
     },
     {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\8af424a1-5bf0-453b-86dd-c97ab09fdf7f_disibality.jfif",
+      "PackagePath": "staticwebassets\\userImages\\8af424a1-5bf0-453b-86dd-c97ab09fdf7f_disibality.jfif"
+    },
+    {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\8af82029-3973-4e73-a644-cef287499134_debt.jpg",
       "PackagePath": "staticwebassets\\userImages\\8af82029-3973-4e73-a644-cef287499134_debt.jpg"
     },
@@ -789,6 +849,10 @@
       "PackagePath": "staticwebassets\\userImages\\a807f54e-c2a3-4385-be8e-df335fda9fe3_mail.PNG"
     },
     {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\a91b4a84-806d-4bbe-aebb-fbc3651de2ed_1.jfif",
+      "PackagePath": "staticwebassets\\userImages\\a91b4a84-806d-4bbe-aebb-fbc3651de2ed_1.jfif"
+    },
+    {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\b0a3002b-1c08-4ad0-85c3-5a6024650789_1.jfif",
       "PackagePath": "staticwebassets\\userImages\\b0a3002b-1c08-4ad0-85c3-5a6024650789_1.jfif"
     },
@@ -799,6 +863,10 @@
     {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\c5061e1e-7656-46da-ac48-379704782f88_sendmail.PNG",
       "PackagePath": "staticwebassets\\userImages\\c5061e1e-7656-46da-ac48-379704782f88_sendmail.PNG"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\c85e01c7-0945-4640-8a75-bf58c271e0a6_debt.jpg",
+      "PackagePath": "staticwebassets\\userImages\\c85e01c7-0945-4640-8a75-bf58c271e0a6_debt.jpg"
     },
     {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\cd843029-7de3-474b-b8d1-08120d3770ed_1.jfif",
@@ -841,12 +909,20 @@
       "PackagePath": "staticwebassets\\userImages\\e3410ea1-b5cd-4c9b-b8a7-6463243018d0_sendmail.PNG"
     },
     {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\e435f5bc-c630-4903-a4a6-74d2200f9c03_debt.jpg",
+      "PackagePath": "staticwebassets\\userImages\\e435f5bc-c630-4903-a4a6-74d2200f9c03_debt.jpg"
+    },
+    {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\ea382a7a-ff22-41af-8b81-2b8cdaee1802_mail - Copy.PNG",
       "PackagePath": "staticwebassets\\userImages\\ea382a7a-ff22-41af-8b81-2b8cdaee1802_mail - Copy.PNG"
     },
     {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\ec9567c3-1f25-492f-a80f-d913061f0586_disibality.jfif",
       "PackagePath": "staticwebassets\\userImages\\ec9567c3-1f25-492f-a80f-d913061f0586_disibality.jfif"
+    },
+    {
+      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\ec965c95-b7d6-43d2-a0e6-2307d6bac1b5_sendmail.PNG",
+      "PackagePath": "staticwebassets\\userImages\\ec965c95-b7d6-43d2-a0e6-2307d6bac1b5_sendmail.PNG"
     },
     {
       "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\efde424b-92a8-45a3-9061-333606139a8a_mail - Copy.PNG",

@@ -22,7 +22,7 @@ namespace charityMVC.Repository
 
         public async Task<int> GetPoints(User user)
         {
-           var Points = await context.points.FirstOrDefaultAsync(i=> i.Id == 1 );
+           var Points = await context.points.FirstOrDefaultAsync(i=> i.Id == 2 );
         
            var result = await CalculatePoints(user,Points) ;
             return result;

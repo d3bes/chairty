@@ -1,0 +1,82 @@
+
+@model points
+@{
+    ViewData["Title"] = "EditPoints";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    
+<div class="container" >
+<div class="row">
+<div class="col-sm-3"> </div>
+
+<div class= " col-sm-4">
+
+<form asp-action="EditPoints" asp-controller="Admin" method="post">
+    <div class="form-group">
+        <label>  لديه ولد وحيد:</label>
+        <input type="number" class="form-control form-control-sm" asp-for="children_count_1" name="children_count_1" min="0" max="99" />
+    </div>
+
+    <div class="form-group">
+        <label>  لديه ولدين :</label>
+        <input type="number" class="form-control form-control-sm" asp-for="children_count_2" name="children_count_2" min="0" max="99" />
+    </div>
+
+    <div class="form-group">
+        <label>  لديه ثلاثة اولاد:</label>
+        <input type="number" class="form-control form-control-sm" asp-for="children_count_3" name="children_count_3" min="0" max="99" />
+    </div>
+
+    <div class="form-group">
+        <label>  لديه اربع اولاد:</label>
+        <input type="number" class="form-control form-control-sm" asp-for="children_count_4" name="children_count_4" min="0" max="99" />
+    </div>
+
+    <div class="form-group">
+        <label> لديه اكثر من اربع اولاد :</label>
+        <input type="number" class="form-control form-control-sm" asp-for="children_count_4p" name="children_count_4p" min="0" max="99" />
+    </div>
+
+    <div class="form-group">
+        <label>ليس لديه مساعد مالية   :</label>
+        <input type="number" class="form-control form-control-sm" asp-for="hasNo_income_support" name="hasNo_income_support" min="0" max="99" />
+    </div>
+
+    <div class="form-group">
+        <label>يوجد حالة إعاقة :</label>
+        <input type="number" class="form-control form-control-sm" asp-for="has_disability" name="has_disability" min="0" max="99" />
+    </div>
+
+    <div class="form-group">
+        <label> يوجد أرملة أو مطلقة :</label>
+        <input type="number" class="form-control form-control-sm " asp-for="widow" name="widow" min="0" max="99" value="10" />
+    </div>
+
+    <div class="form-group">
+        <label>يوجد كبير سن فوق (60):</label>
+        <input type="number" class="form-control form-control-sm" asp-for="elderly" name="elderly" min="0" max="99" />
+    </div>
+
+    <div class="form-group">
+        <label>لديه دين :</label>
+        <input type="number" class="form-control form-control-sm" asp-for="has_debt" name="has_debt" min="0" max="99" />
+    </div>
+
+    <div class="form-group">
+        <label>المنزل ايجار:</label>
+        <input type="number" class="form-control form-control-sm" asp-for="house_is_rent" name="house_is_rent" min="0" max="99" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="margin: 1vw; margin-bottom:3vw">حفظ التغييرات</button>
+</form>
+
+
+</div>
+<div class="col-sm-3"> </div>
+
+</div>
+</div>
+</div>

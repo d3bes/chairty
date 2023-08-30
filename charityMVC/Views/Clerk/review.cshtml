@@ -18,15 +18,15 @@
             <div class="col-sm-8">
 
         <div class="row">
-            <div class="col-sm-3"> 
-                     <h4>البيانات الشخصية</h4>
+            <div class="col-sm-4"> 
+                     <h5>البيانات الشخصية</h5>
             </div>
 
            <div class="col-sm-3">
-             <h4 class="mt-5"> @Model.fullName</h4>
+             <h5 class="mt-5"> @Model.fullName</h5>
            </div> 
            <div class="col-sm-2">
-            <button class="btn btn-success">قبول</button> 
+            <a  asp-action="ClerkApprove" asp-controller="Accepted" asp-route-id="@Model.id"  class="btn btn-success" style=" margin:1vw;width:10vw" >قبول</a> 
            </div>
 
 
@@ -186,7 +186,7 @@
             </div> *@
             
         <div class="form-group form-check">
-            <input type="checkbox" asp-for="income_support" class="form-check-input" name="income_support" id="income_support">
+            <input type="checkbox" asp-for="income_support" class="form-check-input" name="income_support" id="income_support" >
              <label>هل لديك دخل أو مساعدات دورية أو ضمان اجتماعي؟ <span class="text-danger">*</span> </label><br>
         </div>
 
@@ -206,13 +206,13 @@
             </div> *@
 
             <div class="form-group form-check">
-            <input type="checkbox" asp-for="widow" class="form-check-input" name="widow" id="income_support">
+            <input type="checkbox" asp-for="widow" class="form-check-input" name="widow" id="income_support" > 
                 <label>هل يوجد أرملة أو مطلقة؟ <span class="text-danger">*</span></label><br>
         </div>
 
 
 
-            <!-- هل يوجد كبير سن (فوق 60)؟ -->
+            @* <!-- هل يوجد كبير سن (فوق 60)؟ -->
             <div class="form-group">
                 <label>هل يوجد كبير سن (فوق 60)؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
@@ -223,12 +223,16 @@
                     <input class="form-check-input" asp-for="elderly" type="radio" name="elderly" value="false">
                     <label class="form-check-label">لا</label>
                 </div>
-            </div>
-              
+            </div> *@
 
+              <div class="form-group form-check">
+            <input type="checkbox" asp-for="elderly" class="form-check-input" name="elderly" id="elderly" >
+                <label>هل يوجد كبير سن (فوق 60)؟ <span class="text-danger">*</span></label><br>
+        </div>
+              
+@* 
                 <!-- هل يوجد شخص يستلم المساعدة بالنيابة؟ -->
             <div class="form-group" id="proxy">
-                <label>هل يوجد شخص يستلم المساعدة بالنيابة؟ </label><br>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" onchange="showSection('proxy-section')" asp-for="proxy" type="radio"  value="true">
                     <label class="form-check-label">نعم</label>
@@ -236,7 +240,13 @@
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" onchange="hideSection('proxy-section')" asp-for="proxy" type="radio"  value="false">
                     <label class="form-check-label">لا</label>
+                </div> *@
+
+                 <div class="form-group form-check">
+                    <input type="checkbox" onchange="toggleProxySection()" asp-for="proxy" class="form-check-input" name="proxy" id="proxy" >
+                <label>هل يوجد شخص يستلم المساعدة بالنيابة؟ </label><br>
                 </div>
+
                
                     <div id="proxy-section" >
                         <div>
@@ -254,30 +264,27 @@
                     </div>
                 
 
-            </div>
+            
 
              <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
-          
+          </div>
             </form>
         </div>
          
 
+<div class="row"> 
+<div class="col-sm-2" > </div>    
+<div class="col-sm-8" >
 
 
-         
-        
-
-          
-
-
-            <div class="section" >
+     <div class="section" >
             <!-- هل يوجد حالة إعاقة أو لأحد عائلتك؟ -->
             <form asp-action="UpdateDisiability" asp-controller="ClerkImages"  class="mt-4" method="post" enctype="multipart/form-data">
             <div>
             <input type="hidden" asp-for="id" />
             </div>
 
-            <div class="form-group" required>
+            @* <div class="form-group" required>
                 <label>هل يوجد حالة إعاقة أو لأحد عائلتك؟ <span class="text-danger">*</span> </label><br>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" onchange="showSection('disiability-section')" asp-for="disability" id="disability_Yes" type="radio" name="disability" value="true">
@@ -286,10 +293,13 @@
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" onchange="hideSection('disiability-section')" asp-for="disability" id="disability_No" type="radio" name="disability" value="false">
                     <label for="disability_No" class="form-check-label">لا</label>
-                </div>
+                </div> *@
 
+                <div class="form-group form-check">
+                    <input type="checkbox" onchange="toggledisabilitySection()" asp-for="disability" class="form-check-input" name="disability" id="disability">
+                <label>هل يوجد حالة إعاقة أو لأحد عائلتك؟ <span class="text-danger">*</span> </label><br>
+                
                      @* صورة اثبات الاعاقة *@
-
               
                         <div id="disiability-section" >
                         <div class="image-preview" id="disability_image_preview">
@@ -310,7 +320,7 @@
                 <form asp-action="UpdateDebtImg" asp-controller="ClerkImages"  class="mt-4" method="post" enctype="multipart/form-data">
                  <input type="hidden" asp-for="id" />
             <!-- هل يوجد دين؟ -->
-            <div class="form-group">
+            @* <div class="form-group">
                 <label>هل يوجد دين؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" asp-for="debt" onchange="showSection('debt-section')" type="radio" name="debt" value="true">
@@ -319,7 +329,12 @@
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" asp-for="debt" onchange="hideSection('debt-section')" type="radio" name="debt" value="false">
                     <label class="form-check-label">لا</label>
-                </div>
+                </div> *@
+                
+                <div class="form-group form-check">
+                    <input type="checkbox" onchange="toggledebtSection()" asp-for="debt" class="form-check-input" name="debt" id="debt">
+                <label>هل يوجد دين؟ <span class="text-danger">*</span></label><br>
+                
                 @* اثبات الدين *@
 
              
@@ -343,7 +358,7 @@
               
             <input type="hidden" asp-for="id" />
             
-            <div class="form-group">
+            @* <div class="form-group">
                 <label>هل السكن ملك أو ايجار؟ <span class="text-danger">*</span></label><br>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" onchange="showSection('rent-section')" asp-for="house_rent" type="radio"  value="true">
@@ -352,8 +367,12 @@
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" onchange="hideSection('rent-section')" asp-for="house_rent" type="radio" value="false">
                     <label class="form-check-label">ملك</label>
-                </div>
+                </div> *@
                 @* اثبات الايجار *@
+                   <div class="form-group form-check">
+                    <input type="checkbox" onchange="toggleRentSection()" asp-for="house_rent" class="form-check-input" name="house_rent" id="house_rent">
+                <label>هل السكن ايجار؟ <span class="text-danger">*</span></label><br>
+                
 
               
                     <div id="rent-section" class="col-sm-5">
@@ -381,11 +400,18 @@
 
               
             </div>
-        <div class="col-sm-2">
+
+</div>
+<div class="col-sm-2" > </div>    
+    
+</div>
+        
+       
+        @* <div class="col-sm-2">
 
                          
 
-        </div>
+        </div> *@
 
     </div>
 
@@ -466,35 +492,108 @@ var cityDropdown = document.getElementById("city");
 
 
        
-  document.addEventListener("DOMContentLoaded", function() {
-    let proxy = document.getElementById("proxy");
-    let proxyRadio = proxySection.querySelector("form-check-input");
-    let proxySection =  document.getElementById('proxy-section');
-    if(proxyRadio.value === "true")
-     proxySection.style.display = "block";
+   document.addEventListener("DOMContentLoaded", function() {
+    
+        let proxy = document.getElementById("proxy");
+        let proxySection = document.getElementById("proxy-section");
 
-    let rentSection = document.getElementById("rent-section");
-    let rentRadio = rentSection.querySelector("form-check-input");
-    if(rentRadio.value=== "true")
-    rentSection.style.display = "block";
+        if(proxy.checked)
+        {
+            proxySection.style.display = "block";
+        }
+        else
+            proxySection.style.display = "none";
+        let disability = document.getElementById("disability");
+        let disiabilitySection = document.getElementById("disiability-section");
+        if(disability.checked)
+                {
+                    disiabilitySection.style.display = "block";
+                }
+                else
+                    disiabilitySection.style.display = "none";
+  
+          let debtSection = document.getElementById("debt-section");
+        let debt = document.getElementById("debt");
+         if(debt.checked)
+                {
+                    debtSection.style.display = "block";
+                }
+                else
+                    debtSection.style.display = "none";
 
-    let debtSection = document.getElementById("debt-section");
-    let debtRadio = debtSection.querySelector("form-check-input");
-    if(debtRadio.value=== "true")
-    debtSection.style.display = "block";
+        let rent = document.getElementById("house_rent");
+         let rentSection = document.getElementById("rent-section");
+    if(rent.checked)
+                {
+                    rentSection.style.display = "block";
+                }
+                else
+                    rentSection.style.display = "none";
 
-    let disiabilitySection = document.getElementById("disiability-section");
-    let disiabilityRadio = disiabilitySection.querySelector("form-check-input");
-    if(disiabilityRadio.value=== "true")
-    disiabilitySection.style.display = "block";
+}); 
+
+function toggleRentSection(){
+
+      let rent = document.getElementById("house_rent");
+         let rentSection = document.getElementById("rent-section");
+    if(rent.checked)
+                {
+                    rentSection.style.display = "block";
+                }
+                else
+                    rentSection.style.display = "none";
+}
+
+    function toggledebtSection(){
+
+   let debtSection = document.getElementById("debt-section");
+        let debt = document.getElementById("debt");
+         if(debt.checked)
+                {
+                    debtSection.style.display = "block";
+                }
+                else
+                    debtSection.style.display = "none";
+
+    }
+
+    function toggledisabilitySection(){
+
+         let disability = document.getElementById("disability");
+        let disiabilitySection = document.getElementById("disiability-section");
+        if(disability.checked)
+                {
+                    disiabilitySection.style.display = "block";
+                }
+                else
+                    disiabilitySection.style.display = "none";
+    }
 
 
-});
-       
 
+    function toggleProxySection()
+    {
+        let proxy = document.getElementById("proxy");
+        let proxySection = document.getElementById("proxy-section");
+        if(proxy.checked)
+        {
+            proxySection.style.display = "block";
+        }
+        else
+            proxySection.style.display = "none";
+    }
 
+ @* document.addEventListener("DOMContentLoaded", function() {
 
-
+ let proxy = document.getElementById("proxy");
+        let proxySection = document.getElementById("proxy-section");
+        if(proxy.checked)
+        {
+            proxySection.style.display = "block";
+        }
+        else
+            proxySection.style.display = "none";
+ }); *@
 
 
         </script>

@@ -1,119 +1,74 @@
-/* _content/charityMVC/Views/Admin/Index.cshtml.rz.scp.css */
-/***
-User Profile Sidebar by @keenthemes
-A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: https://j.mp/metronictheme
-Licensed under MIT
-***/
+/* _content/charityMVC/Views/Admin/AddClerk.cshtml.rz.scp.css */
+/* Add your custom CSS here */
+.form-group[b-08uie2jrdt] {
+    margin-bottom: 20px;
+}
 
-body[b-5m6b51bfl8] {
-    background: #F1F3FA;
-  }
+/* Adjust input field width as needed */
+.form-control[b-08uie2jrdt] {
+    width: 100%;
+}
+
+/* Align labels and inputs to the right */
+.form-group label[b-08uie2jrdt] {
+    text-align: right;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style required asterisks */
+.text-danger[b-08uie2jrdt] {
+    color: red;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+/* Increase space between radio buttons */
+.radio-inline[b-08uie2jrdt] {
+    margin-right: 10px;
+}
+.container[b-08uie2jrdt] {
+margin-bottom: 10vh;
+}
+
+img[b-08uie2jrdt]{
+    width: 20vw;
+    height: 40vh;
+    border-radius: 10%;
+    margin: 0.5vw;
+    border: 0.2rem dashed #cccccc;
+}
+
+
+
+a[b-08uie2jrdt]{
+    margin: 1;
+}
+/* _content/charityMVC/Views/Admin/AllUsers.cshtml.rz.scp.css */
+.m[b-ty7i6paeak]{
+    margin-bottom: 15vh;
+}
+/* _content/charityMVC/Views/Admin/Index.cshtml.rz.scp.css */
+
   
-  /* Profile container */
-  .profile[b-5m6b51bfl8] {
-    margin: 20px 0;
-  }
-  
-  /* Profile sidebar */
-  .profile-sidebar[b-5m6b51bfl8] {
-    padding: 20px 0 10px 0;
-    background: #fff;
-  }
-  
-  .profile-userpic img[b-5m6b51bfl8] {
-    float: none;
-    margin: 0 auto;
-    width: 50%;
-    height: 50%;
-    -webkit-border-radius: 50% !important;
-    -moz-border-radius: 50% !important;
-    border-radius: 50% !important;
-  }
-  
-  .profile-usertitle[b-5m6b51bfl8] {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .profile-usertitle-name[b-5m6b51bfl8] {
-    color: #5a7391;
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 7px;
-  }
-  
-  .profile-usertitle-job[b-5m6b51bfl8] {
-    text-transform: uppercase;
-    color: #5b9bd1;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 15px;
-  }
-  
-  .profile-userbuttons[b-5m6b51bfl8] {
-    text-align: center;
-    margin-top: 10px;
-  }
-  
-  .profile-userbuttons .btn[b-5m6b51bfl8] {
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 6px 15px;
-    margin-right: 5px;
-  }
-  
-  .profile-userbuttons .btn:last-child[b-5m6b51bfl8] {
-    margin-right: 0px;
-  }
-      
-  .profile-usermenu[b-5m6b51bfl8] {
-    margin-top: 30px;
-  }
-  
-  .profile-usermenu ul li[b-5m6b51bfl8] {
-    border-bottom: 1px solid #f0f4f7;
-  }
-  
-  .profile-usermenu ul li:last-child[b-5m6b51bfl8] {
-    border-bottom: none;
-  }
-  
-  .profile-usermenu ul li a[b-5m6b51bfl8] {
-    color: #93a3b5;
-    font-size: 14px;
-    font-weight: 400;
-  }
-  
-  .profile-usermenu ul li a i[b-5m6b51bfl8] {
-    margin-right: 8px;
-    font-size: 14px;
-  }
-  
-  .profile-usermenu ul li a:hover[b-5m6b51bfl8] {
-    background-color: #fafcfd;
-    color: #5b9bd1;
-  }
-  
-  .profile-usermenu ul li.active[b-5m6b51bfl8] {
-    border-bottom: none;
-  }
-  
-  .profile-usermenu ul li.active a[b-5m6b51bfl8] {
-    color: #5b9bd1;
-    background-color: #f6f9fb;
-    border-left: 2px solid #5b9bd1;
-    margin-left: -2px;
-  }
-  
-  /* Profile Content */
-  .profile-content[b-5m6b51bfl8] {
-    padding: 20px;
-    background: #fff;
-    min-height: 460px;
+  .adminNav[b-5m6b51bfl8]{
+    
+
+  align-items: center;
+  height: 6.5vw;
+  border-radius: 0.2vw 0.2vw;
+
   }
   
   
+ .nav-item[b-5m6b51bfl8]{
+  margin: 1vw;
+ }
+
+
+  /* .btn-success:active{
+    background-color: rgb(240, 119, 119);
+  } */
   
   
   
@@ -127,87 +82,6 @@ body[b-5m6b51bfl8] {
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  a[b-5m6b51bfl8], button[b-5m6b51bfl8], code[b-5m6b51bfl8], div[b-5m6b51bfl8], img[b-5m6b51bfl8], input[b-5m6b51bfl8], label[b-5m6b51bfl8], li[b-5m6b51bfl8], p[b-5m6b51bfl8], pre[b-5m6b51bfl8], select[b-5m6b51bfl8], span[b-5m6b51bfl8], svg[b-5m6b51bfl8], table[b-5m6b51bfl8], td[b-5m6b51bfl8], textarea[b-5m6b51bfl8], th[b-5m6b51bfl8], ul[b-5m6b51bfl8] {
-      -webkit-border-radius: 0!important;
-      -moz-border-radius: 0!important;
-      border-radius: 0!important;
-  }
-  .dashboard-stat[b-5m6b51bfl8], .portlet[b-5m6b51bfl8] {
-      -webkit-border-radius: 4px;
-      -moz-border-radius: 4px;
-      -ms-border-radius: 4px;
-      -o-border-radius: 4px;
-  }
-  .portlet[b-5m6b51bfl8] {
-      margin-top: 0;
-      margin-bottom: 25px;
-      padding: 0;
-      border-radius: 4px;
-  }
-  .portlet.bordered[b-5m6b51bfl8] {
-      border-left: 2px solid #e6e9ec!important;
-  }
-  .portlet.light[b-5m6b51bfl8] {
-      padding: 12px 20px 15px;
-      background-color: #fff;
-  }
-  .portlet.light.bordered[b-5m6b51bfl8] {
-      border: 1px solid #e7ecf1!important;
-  }
-  .list-separated[b-5m6b51bfl8] {
-      margin-top: 10px;
-      margin-bottom: 15px;
-  }
-  .profile-stat[b-5m6b51bfl8] {
-      padding-bottom: 20px;
-      border-bottom: 1px solid #f0f4f7;
-  }
-  .profile-stat-title[b-5m6b51bfl8] {
-      color: #7f90a4;
-      font-size: 25px;
-      text-align: center;
-  }
-  .uppercase[b-5m6b51bfl8] {
-      text-transform: uppercase!important;
-  }
-  
-  .profile-stat-text[b-5m6b51bfl8] {
-      color: #5b9bd1;
-      font-size: 10px;
-      font-weight: 600;
-      text-align: center;
-  }
-  .profile-desc-title[b-5m6b51bfl8] {
-      color: #7f90a4;
-      font-size: 17px;
-      font-weight: 600;
-  }
-  .profile-desc-text[b-5m6b51bfl8] {
-      color: #7e8c9e;
-      font-size: 14px;
-  }
-  .margin-top-20[b-5m6b51bfl8] {
-      margin-top: 20px!important;
-  }
-  [class*=" fa-"]:not(.fa-stack)[b-5m6b51bfl8], [class*=" glyphicon-"][b-5m6b51bfl8], [class*=" icon-"][b-5m6b51bfl8], [class^=fa-]:not(.fa-stack)[b-5m6b51bfl8], [class^=glyphicon-][b-5m6b51bfl8], [class^=icon-][b-5m6b51bfl8] {
-      display: inline-block;
-      line-height: 14px;
-      -webkit-font-smoothing: antialiased;
-  }
-  .profile-desc-link i[b-5m6b51bfl8] {
-      width: 22px;
-      font-size: 19px;
-      color: #abb6c4;
-      margin-right: 5px;
-  }
   
   
 /* _content/charityMVC/Views/Clerk/cityUsers.cshtml.rz.scp.css */
@@ -262,6 +136,7 @@ img[b-xm4hv9lbyi]{
     border-radius: 2%;
     padding: 2vw;
     margin-bottom: 2vw;
+    
 
 
 }
@@ -269,6 +144,11 @@ img[b-xm4hv9lbyi]{
 a[b-xm4hv9lbyi]{
     margin: 1;
 }
+/* 
+#proxy-section{
+    display: none;
+}
+ */
 /* _content/charityMVC/Views/Register/register.cshtml.rz.scp.css */
 /* Add your custom CSS here */
 .form-group[b-6kqv849j9o] {

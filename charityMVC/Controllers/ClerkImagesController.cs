@@ -98,7 +98,7 @@ namespace charityMVC.Controllers
 
 
         }
-        public async Task<IActionResult> UpdateDisiability(IFormFile disability_proof,string id)
+        public async Task<IActionResult> UpdateDisiability(IFormFile disability_proof,string id, bool disability)
         {
 
                 try
@@ -117,6 +117,7 @@ namespace charityMVC.Controllers
                           user.disability_proof = dbFilePath;
                            var points = await _userRepo.GetPoints(user);
                           user.points = points;
+                          user.disability = disability;
                         await _userRepo.Update(user);
                       }
 
@@ -134,7 +135,7 @@ namespace charityMVC.Controllers
 
         }
 
-          public async  Task<IActionResult> UpdateDebtImg( IFormFile debt_proof,string id)
+          public async  Task<IActionResult> UpdateDebtImg( IFormFile debt_proof,string id, bool debt)
         {
                 try
                 {
@@ -152,6 +153,7 @@ namespace charityMVC.Controllers
                           user.debt_proof = dbFilePath;
                            var points = await _userRepo.GetPoints(user);
                           user.points = points;
+                          user.debt = debt ;
                         await _userRepo.Update(user);
                       }
 
@@ -168,7 +170,7 @@ namespace charityMVC.Controllers
                     }
 
         }
-          public async Task<IActionResult> UpdateRentImg(IFormFile rent_proof, string id)
+          public async Task<IActionResult> UpdateRentImg(IFormFile rent_proof, string id, bool house_rent)
         {
               try
               {
@@ -186,6 +188,7 @@ namespace charityMVC.Controllers
                           user.rent_proof = dbFilePath;
                           var points = await _userRepo.GetPoints(user);
                           user.points = points;
+                          user.house_rent = house_rent;
                         await _userRepo.Update(user);
                       }
 
