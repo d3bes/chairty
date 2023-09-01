@@ -27,16 +27,16 @@ namespace charityMVC
         {
         }
 
-         protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<Accepted>()
-            .HasIndex(a => a.userId)
-            .IsUnique();
+    //      protected override void OnModelCreating(ModelBuilder modelBuilder)
+    // {
+    //     modelBuilder.Entity<Accepted>()
+    //         .HasIndex(a => a.userId)
+    //         .IsUnique();
 
-        // Other entity configurations
+    //     // Other entity configurations
 
-        base.OnModelCreating(modelBuilder);
-    }
+    //     base.OnModelCreating(modelBuilder);
+    // }
     //  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     //     {
     //       optionsBuilder.UseNpgsql("Host=ep-broad-tooth-96391691.pooler.ap-southeast-1.aws.neon.tech; Database=charity; User Id=fc297269;Password=UFoyG1iEI7tW");
