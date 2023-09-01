@@ -25,21 +25,27 @@ namespace charityMVC.Controllers
         private IWebHostEnvironment _webHostEnvironment;
         private IAdminRepo _adminRepo;
         private ISupportRepo _supportRepo;
+        private IReportRepo _reportRepo;
+        private IUserRepo _userRepo;
 
-        public ReportsController(ILogger<ReportsController> logger, ISupportRepo supportRepo,
-             Context context, IWebHostEnvironment webHostEnvironment, IAdminRepo adminRepo)
+        public ReportsController(ILogger<ReportsController> logger, ISupportRepo supportRepo,IUserRepo userRepo,
+             Context context, IWebHostEnvironment webHostEnvironment, IAdminRepo adminRepo, IReportRepo reportRepo)
         {
             _logger = logger;
             _webHostEnvironment = webHostEnvironment;
             _context = context;
             _adminRepo = adminRepo;
             _supportRepo = supportRepo;
+            _reportRepo = reportRepo;
+            _userRepo = userRepo;
 
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            List<Support> supportes =await _supportRepo.GetAllSupports();
+
+            return View(supportes);
         }
 
 
@@ -50,37 +56,10 @@ namespace charityMVC.Controllers
 
          return View(userSupports);
     
-    // using (var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-    // {
-    //     var report = new LocalReport();
-    //     report.LoadReportDefinition(fileStream);
 
-    //     // Additional logic to set parameters and data sources if need
-    //     report.DataSources.Add(new ReportDataSource(name:"Accepted",acceptedsList));
-
-    //     byte[] bytes = report.Render("PDF");
-
-    //     return File(bytes, "application/pdf", $"{accepted.name}.pdf");
-    //}
 }
 
-// public async Task<IActionResult> ApproveSupport(string userId)
-// {
-//       var accepted = await _context.Accepteds.FirstOrDefaultAsync(a=> a.userId == userId);
-//       points _points = await _adminRepo.Points();
-//         int amount =  accepted.points *_points.pointValue;
 
-//       Support support = new Support(){
-//         Amount = amount, name = accepted.name, phone = accepted.phone,
-//         ApprovalDate = DateTime.UtcNow, userId = accepted.userId,
-//         city = accepted.city, fullAddress = accepted.fullAddress,
-//         points = accepted.points
-//       } ;
-
-//      await _context.AddAsync(support);
-//      await _context.SaveChangesAsync();
-          
-// }
 public async Task<IActionResult> SupportPdfReport(int id)
 {
     // var accepted = await _context.Accepteds.FirstOrDefaultAsync(a=> a.Id == id);
@@ -104,59 +83,86 @@ public async Task<IActionResult> SupportPdfReport(int id)
         return File(bytes, "application/pdf", $"{_support.name}.pdf");
     }
 }
-// public async Task<IActionResult> SupportXlsxReport()
-// {
+
+public async Task<IActionResult> AllUsersExel()
+{       
+    try{
+    List<User> users = await _userRepo.GetAllUsers();
+        return _reportRepo.UserModelExcel(users,"كل المستفيدين");
+    }
+         catch (Exception ex)
+                     {
+                        _logger.LogError(ex, "An error occurred in the Review action.");
+                        
+                        TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر اكثر عليك التواصل مع المبرمج !";
+                    
+                      return RedirectToAction("AllUsers","Admin");
+
+                       }
 
 
-// }
+}
+public async Task<IActionResult> CityUsersExel(string id)
+{
+    try
+    {
+    List<User> cityUsers = await _userRepo.GetCityUsers(id);
+    return _reportRepo.UserModelExcel(cityUsers,$"{id}");
+      }
+         catch (Exception ex)
+                     {
+                        _logger.LogError(ex, "An error occurred in the Review action.");
+                        
+                        TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر اكثر عليك التواصل مع المبرمج !";
+                    
+                      return RedirectToAction("AllClerks","Admin");
 
+                       }
+
+}
+
+    public async Task<IActionResult> ClerksExel()
+    {
+        try{
+        List<Clerk> clerks =await _adminRepo.GetClerks();
+        return _reportRepo.ClerksExcelReport(clerks,"قائمة المشرفين");
+        }
+         catch (Exception ex)
+                     {
+                        _logger.LogError(ex, "An error occurred in the Review action.");
+                        
+                        TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر اكثر عليك التواصل مع المبرمج !";
+                    
+                      return RedirectToAction("AllClerks","Admin");
+
+                       }
+        
+    }
+
+    public async Task<IActionResult> AcceptedExcel ()
+    {
+        List<Accepted> accepteds = await _adminRepo.GetAccepteds();
+    return _reportRepo.AcceptedExcelReport(accepteds,"المقبولين من المراجع");
+    }
 
 
 public async Task<IActionResult> SupportExcelReport(int id)
-{
+{       
+    
     Support _support = await _supportRepo.GetSupportById(id);
     _support.phone = "966" + _support.phone;
+    List<Support> _list = new List<Support>(){_support};
+   
+    return _reportRepo.UsersExcelReport(_list,$"{_support.name}");
+    
+}
 
-    using (var package = new ExcelPackage())
-    {
-        var worksheet = package.Workbook.Worksheets.Add("SupportData");
+public async Task<IActionResult> AllSupportsExcel()
+{
 
-        // Add Arabic header row
-        worksheet.Cells[1, 1].Value = "المستفيد";
-        worksheet.Cells[1, 2].Value = "رقم الهوية";
-        worksheet.Cells[1, 3].Value = "المدينة";
-        worksheet.Cells[1, 4].Value = "العنوان";
-        worksheet.Cells[1, 5].Value = "رقم الهاتف";
-        worksheet.Cells[1, 6].Value = "النقاظ";
-        worksheet.Cells[1, 7].Value = "الدفعة المالية";
-        worksheet.Cells[1, 8].Value = "تاريخ اقرار الدفعة";
+    List<Support> _list = await _supportRepo.GetAllSupports();
 
-        // Populate data row
-        worksheet.Cells[2, 1].Value = _support.name;
-        worksheet.Cells[2, 2].Value = _support.userId;
-        worksheet.Cells[2, 3].Value = _support.city;
-        worksheet.Cells[2, 4].Value = _support.fullAddress;
-        worksheet.Cells[2, 5].Value = _support.phone;
-        worksheet.Cells[2, 6].Value = _support.points;
-        worksheet.Cells[2, 7].Value = _support.Amount;
-        if (_support.ApprovalDate.HasValue)
-        {
-            worksheet.Cells[2, 8].Value = _support.ApprovalDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
-        }
-
-
-        // Apply cell formatting if needed
-        // For example:
-        // worksheet.Cells[1, 1, 2, 8].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
-
-        // Auto-fit columns
-        worksheet.Cells.AutoFitColumns();
-
-        // Save the Excel package to a stream
-        var stream = new MemoryStream(package.GetAsByteArray());
-
-        return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"{_support.name}.xlsx");
-    }
+    return _reportRepo.UsersExcelReport(_list,"قائمة التقارير");
 }
 
 
