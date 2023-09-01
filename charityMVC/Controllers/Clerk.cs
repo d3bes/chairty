@@ -33,7 +33,15 @@ namespace charityMVC.Controllers
         {
             return View("userProfile");
         }
+        
+        public async Task<IActionResult> getClerk()
+        {
 
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        return RedirectToAction("ClerkProfil", new { id = userId });
+
+
+        }
         public async Task<IActionResult> ClerkProfil(int id)
         {
 
@@ -145,6 +153,7 @@ namespace charityMVC.Controllers
                 identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, clerk.Id.ToString()));
                 
                 identity.AddClaim(new Claim(ClaimTypes.Role, role.Role));
+                identity.AddClaim(new Claim(ClaimTypes.Name, clerk.name.Split(' ')[0].ToString()));
 
                  ClaimsPrincipal principal = new ClaimsPrincipal(identity);
                  
