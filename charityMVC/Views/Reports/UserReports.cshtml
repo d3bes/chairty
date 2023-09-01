@@ -1,0 +1,63 @@
+
+@model List<Support>
+
+@{
+    ViewData["Title"] = "UserReports";
+}
+
+
+
+<div class="container" style="margin-top: 1vw; margin-bottom:15vw">
+
+<div class="row"> 
+ <div class="col-sm-1"> </div>
+
+
+
+<div class="col-sm-9">
+
+    @foreach(var item in Model)
+    {
+
+    
+        <div class="card text-right" style="margin-bottom: 1vw;margin-top:1vw">
+        <div class="card-header" >
+          @item.city - تقرير دفعة مالية  
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">  ر.س <mark> @item.Amount</mark> </h5>
+            <p class="card-text">الاسم: @item.name </p>
+             <p class="card-text">رقم الهوية: @item.userId</p>
+             <p class="card-text">رقم الهاتف: @item.phone</p>
+             <p class="card-text">العنوان : @item.fullAddress</p>
+
+            <a class="btn btn-danger" asp-controller="Reports" asp-action="SupportPdfReport" asp-route-id="@item.Id"> 
+            <i class="bi bi-file-earmark-pdf-fill"   style="font-size: 2rem;"></i>
+            </a> 
+
+            <a class="btn btn-success" asp-controller="Reports" asp-action="SupportExcelReport" asp-route-id="@item.Id" style="margin-right: 1vw;">
+           <i class="bi bi-filetype-xls" style="font-size: 2rem;"></i>
+            </a> 
+
+            
+
+        </div>
+        <div class="card-footer text-muted" >
+           @item.ApprovalDate تم الموافقة بتاريخ: 
+        </div>
+        </div>
+    }
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+    
+</div>

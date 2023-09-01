@@ -22,7 +22,7 @@ namespace charityMVC.Repository
 
         public async Task<int> GetPoints(User user)
         {
-           var Points = await context.points.FirstOrDefaultAsync(i=> i.Id == 2 );
+           var Points = await context.points.FirstOrDefaultAsync(i=> i.Id == 6 );
         
            var result = await CalculatePoints(user,Points) ;
             return result;
@@ -112,7 +112,7 @@ namespace charityMVC.Repository
         public async Task<User> Update(User user)
         {
             context.Update(user);
-            await context.SaveChangesAsync();
+             context.SaveChanges();
             return user;
         }
 

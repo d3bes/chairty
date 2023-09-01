@@ -271,7 +271,8 @@ namespace charityMVC.Controllers
         {
              try{
 
-                _points.Id = 2;
+                _points.Id = 6;
+                
                await _adminRepo.EditPoints(_points);
                TempData["Success"] = "!تم بنجاح ";
                  

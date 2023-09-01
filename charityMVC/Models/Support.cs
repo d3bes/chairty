@@ -11,24 +11,44 @@ namespace charityMVC.Models
     public class Support
     {
     [Key]
-    public string SupportId { get; set; }
+    public int Id { get; set; }
+     public string userId { get; set; }
+
+    public string name { get; set; }
+    public string city { get; set; }
+    public string fullAddress { get; set; }
+    public string phone { get; set; }
+
     public decimal? Amount { get; set; }
 
-    public DateTime RequestDate { get; set; }
     public DateTime? ApprovalDate { get; set; } // Date when support was approved
-    public bool? IsApproved { get; set; }
-
-    public string? Description { get; set; } // Details about the support request
-
-    public string? DocumentUrl { get; set; } // URL to any supporting documents
-    public string? username { get;set; } 
+    
     [DefaultValue(false)]
-    public bool isDeleted {get;set;}
+    public bool isApproved { get; set;}
+    public int points { get; set; }
+        
+    [DefaultValue(false)]
+     public bool isDeleted {get;set;}
+
+        public static implicit operator List<object>(Support v)
+        {
+            throw new NotImplementedException();
+        }
+
+        // public string? Description { get; set; } // Details about the support request
+
+        // public string? DocumentUrl { get; set; } // URL to any supporting documents
 
 
-    // [ForeignKey("User")]
-    public string? UserId { get; set; }
-    // public virtual User? User { get; set; }
+
+        // [ForeignKey("User")]
+        // public virtual User? User { get; set; }
+
+
+
+
+
+
 
     }
 }

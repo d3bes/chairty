@@ -77,7 +77,7 @@ namespace charityMVC.Repository
         }
         public async Task<points> Points()
         {
-            points _points = await _context.points.FirstOrDefaultAsync(p=> p.Id == 2);
+            points _points = await _context.points.FirstOrDefaultAsync(p=> p.Id == 6);
             return _points;
         }
 

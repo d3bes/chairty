@@ -69,11 +69,21 @@ a[b-08uie2jrdt]{
   /* .btn-success:active{
     background-color: rgb(240, 119, 119);
   } */
+  /* .page-header{
+    width: 13vw;
+    height: 4vw;
+    background-color:rgb(12, 144, 95);
+    color: white;
+    margin-top: 2vw;
+    border-radius: 0.2vw 0.2vw;
+    text-align: center;
+    margin-right: 1vw;
+    padding:0.5vw;
+   
+  }
   
   
-  
-  
-  
+   */
   
   
   
@@ -88,6 +98,7 @@ a[b-08uie2jrdt]{
 .m[b-zmiuo6207s]{
     margin-bottom: 15vh;
 }
+
 /* _content/charityMVC/Views/Clerk/review.cshtml.rz.scp.css */
 /* Add your custom CSS here */
 .form-group[b-xm4hv9lbyi] {

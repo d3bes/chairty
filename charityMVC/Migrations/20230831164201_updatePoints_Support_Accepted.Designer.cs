@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using charityMVC;
@@ -11,9 +12,11 @@ using charityMVC;
 namespace charityMVC.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230831164201_updatePoints_Support_Accepted")]
+    partial class updatePoints_Support_Accepted
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,9 +43,6 @@ namespace charityMVC.Migrations
                     b.Property<string>("fullAddress")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<bool>("isApproved")
-                        .HasColumnType("boolean");
 
                     b.Property<bool>("isDeleted")
                         .HasColumnType("boolean");
@@ -162,9 +162,6 @@ namespace charityMVC.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<bool>("isApproved")
-                        .HasColumnType("boolean");
-
                     b.Property<bool>("isDeleted")
                         .HasColumnType("boolean");
 
@@ -211,19 +208,19 @@ namespace charityMVC.Migrations
                     b.Property<string>("city")
                         .HasColumnType("text");
 
-                    b.Property<bool>("debt")
+                    b.Property<bool?>("debt")
                         .HasColumnType("boolean");
 
                     b.Property<string>("debt_proof")
                         .HasColumnType("text");
 
-                    b.Property<bool>("disability")
+                    b.Property<bool?>("disability")
                         .HasColumnType("boolean");
 
                     b.Property<string>("disability_proof")
                         .HasColumnType("text");
 
-                    b.Property<bool>("elderly")
+                    b.Property<bool?>("elderly")
                         .HasColumnType("boolean");
 
                     b.Property<string>("family_card_image")
@@ -237,13 +234,13 @@ namespace charityMVC.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<bool>("house_rent")
+                    b.Property<bool?>("house_rent")
                         .HasColumnType("boolean");
 
                     b.Property<string>("id_image")
                         .HasColumnType("text");
 
-                    b.Property<bool>("income_support")
+                    b.Property<bool?>("income_support")
                         .HasColumnType("boolean");
 
                     b.Property<bool>("isAccepted")
@@ -258,13 +255,13 @@ namespace charityMVC.Migrations
                     b.Property<int?>("points")
                         .HasColumnType("integer");
 
-                    b.Property<bool>("proxy")
+                    b.Property<bool?>("proxy")
                         .HasColumnType("boolean");
 
                     b.Property<string>("rent_proof")
                         .HasColumnType("text");
 
-                    b.Property<bool>("widow")
+                    b.Property<bool?>("widow")
                         .HasColumnType("boolean");
 
                     b.HasKey("id");

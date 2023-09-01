@@ -19,10 +19,19 @@
     </div>
 }
 
+<div class="row">
+ <div class="col-sm-5"> </div>
+ <div class="col-sm-4">
+<div class="page-header">
+<h6 style="padding-top: 0.5vw;">  اضافة مشرف </h6>
+</div>
+ </div>
+</div>
+
 
    
 
-<h1>@ViewData["Title"]</h1>
+
 
 <div style="margin-top: 5vw; margin-bottom:5vw">
      <form asp-action="AddClerk" asp-controller="Admin"  class="mt-4" method="post" >
@@ -48,7 +57,7 @@
                  </div>
 
                   <div class="form-group">
-            <label for="city">اختر مدينتك</label>
+            <label for="city"> المدينة</label>
             <select class="form-control" asp-for="city" id="city" required>
                 <option value="" aria-placeholder="مدينة"></option>
             </select>

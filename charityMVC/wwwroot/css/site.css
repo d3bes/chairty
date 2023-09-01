@@ -1,21 +1,11 @@
-/**
-* Template Name: Impact
-* Updated: Jul 27 2023 with Bootstrap v5.3.1
-* Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
-/*--------------------------------------------------------------
-# Set main reusable colors and fonts using CSS variables
-# Learn more about CSS variables at https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
---------------------------------------------------------------*/
 /* Fonts */
-:root {
+/* :root {
   --font-default: "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-primary: "Montserrat", sans-serif;
   --font-secondary: "Poppins", sans-serif;
-}
+} */
+@import url(https://fonts.googleapis.com/css?family=Tajawal);
 
 /* Colors */
 :root {
@@ -32,9 +22,11 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
 body {
   font-family: var(--font-default);
   color: var(--color-default);
+  font-family:'tajawal'!important;
 }
 
 a {
@@ -63,6 +55,7 @@ section {
   padding: 60px 0;
   overflow: hidden;
 }
+
 
 .sections-bg {
   background-color: #f6f6f6;
@@ -2694,3 +2687,18 @@ section {
   height: 60vh;
   margin-right: 10vw;
 }
+
+  
+.page-header{
+  width: 13vw;
+  height: 4vw;
+  background-color:rgb(12, 144, 95);
+  color: white;
+  margin-top: 2vw;
+  border-radius: 0.2vw 0.2vw;
+  text-align: center;
+  margin-right: 1vw;
+  padding:0.5vw;
+ 
+}
+

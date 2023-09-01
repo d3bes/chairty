@@ -15,11 +15,11 @@
 
 
 
-<div class="container-fluid">
-   <table class="table table-striped table-hover">
+<div class="container-fluid" style="direction: rtl;">
+   <table class="table table-striped table-hover" id="exampleA">
         <thead>
-            <tr>
-                <th>الاسم</th>
+            <tr> 
+                <th >الاسم</th>
                 <th>رقم الهوية</th>
                 <th>رقم الجوال</th>
                 <th>العنوان</th>
@@ -50,4 +50,11 @@
 <div class="m">
 
 </div>
+
+@section Scripts{
+    <script>
+         new DataTable('#exampleA');
+
+    </script>
+}
 

@@ -292,7 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   });
 
-
+  new DataTable('#example');
 
 // //disiable extra sections
 //   document.addEventListener("DOMContentLoaded", function() {

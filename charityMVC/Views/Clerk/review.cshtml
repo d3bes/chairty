@@ -12,31 +12,31 @@
     </div>
 }
 
-<div class="container">
+
+ <div class="container">
         <div class="row">
             <div class="col-sm-2"></div>
             <div class="col-sm-8">
 
-        <div class="row">
-            <div class="col-sm-4"> 
-                     <h5>البيانات الشخصية</h5>
-            </div>
-
-           <div class="col-sm-3">
-             <h5 class="mt-5"> @Model.fullName</h5>
-           </div> 
-           <div class="col-sm-2">
-            <a  asp-action="ClerkApprove" asp-controller="Accepted" asp-route-id="@Model.id"  class="btn btn-success" style=" margin:1vw;width:10vw" >قبول</a> 
-           </div>
-
-
-           <div class="col-sm-3">
-            <h4 class="mt-5" style="margin-right:2vw;"> @Model.city</h4>
-           </div>
-
-
-        
-        </div>
+            @if(Model.isAccepted){
+                <div style="width: 2vw; height: 2vw;color:white; background: green;padding:0.25vw;padding-right:0.40vw; border-radius: 50%; margin-top:1vw">
+               <i class="bi bi-check2-circle" ></i>
+                </div>
+            }
+     @*  <div class="row" style="height: 2vw;margin-top: 1vw;">
+    <div class="col-sm-4"  >
+        <h5>البيانات الشخصية</h5>
+    </div>
+    <div class="col-sm-3">
+        <h5 class="mt-5">@Model.fullName</h5>
+    </div>
+    <div class="col-sm-2">
+        <a asp-action="ClerkApprove" asp-controller="Accepted" asp-route-id="@Model.id" class="btn btn-success" style="margin:1vw;width:10vw">قبول</a>
+    </div>
+    <div class="col-sm-3">
+        <h4 class="mt-5" style="margin-right:2vw;">@Model.city</h4>
+    </div>
+</div> *@
 
         <div class="section">
                  @* الهوية الشخصية صورة*@
@@ -55,7 +55,12 @@
              </div>
             <input type="file" id="id_image"  asp-for="id_image"  onchange="previewImage('id_image','idImagePreview','@Model.id_image ')"  name="id_image"  class="form-control  form-control-sm" accept="image/*" />
              </div>
+
+              @if(!Model.isAccepted){
+
                <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
+              }
+
             </form>
               </div>
             
@@ -74,7 +79,9 @@
                 onchange="previewImage('family_card_image','FamilyImagePreview','@Model.family_card_image')" name="family_card_image" class="form-control  form-control-sm" accept="image/*" >
 
             </div>
+               @if(!Model.isAccepted){
              <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
+               }
             </form>
             </div>
             </div>
@@ -264,9 +271,10 @@
                     </div>
                 
 
-            
+               @if(!Model.isAccepted){
 
              <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
+               }
           </div>
             </form>
         </div>
@@ -314,7 +322,9 @@
                 
 
             </div>
+               @if(!Model.isAccepted){
              <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
+               }
           </form>
 
                 <form asp-action="UpdateDebtImg" asp-controller="ClerkImages"  class="mt-4" method="post" enctype="multipart/form-data">
@@ -349,7 +359,9 @@
                 
 
             </div>
+               @if(!Model.isAccepted){
              <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
+               }
           </form>
 
            
@@ -386,7 +398,9 @@
                 
 
             </div>
+               @if(!Model.isAccepted){
             <button class="btn btn-warning btn-sm" type="submit" style="margin-top:0.5vw">تحديث</button>
+               }
           </form>
         
 
@@ -396,13 +410,50 @@
 
             @* <button type="submit" class="btn btn-primary">تسجيل</button> *@
         @* </form> *@
-             
 
+             @if(!Model.isAccepted){
+
+                <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AcceptModal" style="margin-left: 2vw;"> قبول</a> 
+
+<!-- ################### Accepting modal ############## -->
+ 
+    <div class="modal fade" id="AcceptModal" tabindex="-1" aria-labelledby="AcceptModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header" style="background-color: #e4b816; color: white;">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h5 class="modal-title" id="AcceptModalLabel" > قبول طلب </h5>  
+                 
+  
+              </div>
+              <div class="modal-body">
+                <div> قبول طلب @Model.fullName </div>
+                 <a asp-action="ClerkApprove" asp-controller="Accepted" asp-route-id="@Model.id" class="btn btn-success" style="margin:1vw;width:10vw">قبول</a>
+
+              </div>
+          </div>
+      </div>
+  </div> 
+
+
+
+
+
+
+         
+             }
+             else{
+                
+                  <a  class="btn btn-warning" style="margin:1vw;width:10vw" disiable>تم القبول </a>
+             }
+             
               
             </div>
 
 </div>
-<div class="col-sm-2" > </div>    
+<div class="col-sm-2" > 
+    
+</div>    
     
 </div>
         

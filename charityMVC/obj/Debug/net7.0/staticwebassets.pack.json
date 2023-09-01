@@ -1,944 +1,584 @@
 {
   "Files": [
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\charityMVC.bundle.scp.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\charityMVC.bundle.scp.css",
       "PackagePath": "staticwebassets\\charityMVC.bundle.scp.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\css\\main.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\css\\main.css",
       "PackagePath": "staticwebassets\\assets\\css\\main.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\css\\register.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\css\\register.css",
       "PackagePath": "staticwebassets\\assets\\css\\register.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\OIG.jfif",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\OIG.jfif",
       "PackagePath": "staticwebassets\\assets\\img\\OIG.jfif"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\Please-add-to-my-clip-art-4-2017050425.svg",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\Please-add-to-my-clip-art-4-2017050425.svg",
       "PackagePath": "staticwebassets\\assets\\img\\Please-add-to-my-clip-art-4-2017050425.svg"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\apple-touch-icon.png",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\apple-touch-icon.png",
       "PackagePath": "staticwebassets\\assets\\img\\apple-touch-icon.png"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\favicon.png",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\favicon.png",
       "PackagePath": "staticwebassets\\assets\\img\\favicon.png"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\hero-img.svg",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\hero-img.svg",
       "PackagePath": "staticwebassets\\assets\\img\\hero-img.svg"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\stats-img.svg",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\img\\stats-img.svg",
       "PackagePath": "staticwebassets\\assets\\img\\stats-img.svg"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\js\\clerk.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\js\\clerk.js",
       "PackagePath": "staticwebassets\\assets\\js\\clerk.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\js\\main.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\js\\main.js",
       "PackagePath": "staticwebassets\\assets\\js\\main.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\js\\profile.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\js\\profile.js",
       "PackagePath": "staticwebassets\\assets\\js\\profile.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\aos\\aos.cjs.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\aos\\aos.cjs.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\aos\\aos.cjs.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\aos\\aos.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\aos\\aos.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\aos\\aos.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\aos\\aos.esm.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\aos\\aos.esm.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\aos\\aos.esm.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\aos\\aos.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\aos\\aos.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\aos\\aos.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\aos\\aos.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\aos\\aos.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\aos\\aos.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.json",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.json",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.json"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.scss",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.scss",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\bootstrap-icons.scss"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap-icons\\fonts\\bootstrap-icons.woff2"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\bootstrap\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\glightbox\\css\\glightbox.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\css\\glightbox.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\glightbox\\css\\glightbox.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\css\\plyr.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\css\\plyr.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\glightbox\\css\\plyr.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\css\\plyr.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\css\\plyr.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\glightbox\\css\\plyr.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\glightbox\\js\\glightbox.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\glightbox\\js\\glightbox.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\glightbox\\js\\glightbox.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\isotope-layout\\isotope.pkgd.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\isotope-layout\\isotope.pkgd.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\isotope-layout\\isotope.pkgd.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\php-email-form\\validate.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\php-email-form\\validate.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\php-email-form\\validate.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\purecounter\\purecounter_vanilla.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\purecounter\\purecounter_vanilla.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\purecounter\\purecounter_vanilla.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\purecounter\\purecounter_vanilla.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\purecounter\\purecounter_vanilla.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\purecounter\\purecounter_vanilla.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.css",
       "PackagePath": "staticwebassets\\assets\\vendor\\swiper\\swiper-bundle.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.js",
       "PackagePath": "staticwebassets\\assets\\vendor\\swiper\\swiper-bundle.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\vendor\\swiper\\swiper-bundle.min.js.map",
       "PackagePath": "staticwebassets\\assets\\vendor\\swiper\\swiper-bundle.min.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\css\\site.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\favicon.ico",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\js\\site.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\060ad68a-ad2c-47e1-9d04-ace1d7d79c4e_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\060ad68a-ad2c-47e1-9d04-ace1d7d79c4e_family.jfif"
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308311711_1234567891234567_1.jfif",
+      "PackagePath": "staticwebassets\\userImages\\202308311711_1234567891234567_1.jfif"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\06949a37-ee7a-43c5-8422-856928feed9d_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\06949a37-ee7a-43c5-8422-856928feed9d_disibality.jfif"
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308311712_1234567891234567_debt.jpg",
+      "PackagePath": "staticwebassets\\userImages\\202308311712_1234567891234567_debt.jpg"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\09423b7c-879e-4c3d-a91d-b5fc7124f7e1_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\09423b7c-879e-4c3d-a91d-b5fc7124f7e1_disibality.jfif"
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308311712_1234567891234567_family.jfif",
+      "PackagePath": "staticwebassets\\userImages\\202308311712_1234567891234567_family.jfif"
     },
     {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\13035412-411c-4ee3-b375-482fa628aadf_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\13035412-411c-4ee3-b375-482fa628aadf_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\1f3f5f4e-2cfb-4566-9314-be8a4084646e_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\1f3f5f4e-2cfb-4566-9314-be8a4084646e_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827171508_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\20230827171508_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827171615_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\20230827171615_family.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827171642_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\20230827171642_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827171727_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\20230827171727_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827171745_rent.PNG",
-      "PackagePath": "staticwebassets\\userImages\\20230827171745_rent.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827172931_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\20230827172931_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827172931_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\20230827172931_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827172931_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\20230827172931_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827172931_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\20230827172931_family.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827172931_rent.PNG",
-      "PackagePath": "staticwebassets\\userImages\\20230827172931_rent.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827173048_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\20230827173048_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827173048_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\20230827173048_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827173048_mail - Copy.PNG",
-      "PackagePath": "staticwebassets\\userImages\\20230827173048_mail - Copy.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\20230827173048_rent.PNG",
-      "PackagePath": "staticwebassets\\userImages\\20230827173048_rent.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271919_4578964578965984_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\202308271919_4578964578965984_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271919_4578964578965984_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\202308271919_4578964578965984_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271919_4578964578965984_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\202308271919_4578964578965984_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271919_4578964578965984_rent.PNG",
-      "PackagePath": "staticwebassets\\userImages\\202308271919_4578964578965984_rent.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271921_4578964578965984_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\202308271921_4578964578965984_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271922_4578964578965984_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\202308271922_4578964578965984_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271922_4578964578965984_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\202308271922_4578964578965984_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271922_4578964578965984_rent.PNG",
-      "PackagePath": "staticwebassets\\userImages\\202308271922_4578964578965984_rent.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271940_1234564567887654_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\202308271940_1234564567887654_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271940_1234564567887654_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\202308271940_1234564567887654_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271940_1234564567887654_mail - Copy.PNG",
-      "PackagePath": "staticwebassets\\userImages\\202308271940_1234564567887654_mail - Copy.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308271940_1234564567887654_sendmail.PNG",
-      "PackagePath": "staticwebassets\\userImages\\202308271940_1234564567887654_sendmail.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308281955_4578986587458748_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\202308281955_4578986587458748_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308281955_4578986587458748_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\202308281955_4578986587458748_family.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308282012_4879485784859684_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\202308282012_4879485784859684_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308282012_4879485784859684_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\202308282012_4879485784859684_family.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308282019_4879485784859684_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\202308282019_4879485784859684_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308282058_7485962134879658_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\202308282058_7485962134879658_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\202308282058_7485962134879658_mail - Copy.PNG",
-      "PackagePath": "staticwebassets\\userImages\\202308282058_7485962134879658_mail - Copy.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\26e23293-9389-4324-8909-a881aeffc808_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\26e23293-9389-4324-8909-a881aeffc808_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\2d8c9909-6362-4f02-a85d-d34b6185f902_rent.PNG",
-      "PackagePath": "staticwebassets\\userImages\\2d8c9909-6362-4f02-a85d-d34b6185f902_rent.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\341e2d13-6cf5-49c1-b300-0f29fe19a011_sendmail.PNG",
-      "PackagePath": "staticwebassets\\userImages\\341e2d13-6cf5-49c1-b300-0f29fe19a011_sendmail.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\3473759c-48e3-4d00-89e3-16ba3fe55df4_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\3473759c-48e3-4d00-89e3-16ba3fe55df4_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\3475e2cb-fd5b-4ab2-b474-0bf0d0ee8b90_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\3475e2cb-fd5b-4ab2-b474-0bf0d0ee8b90_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\376f5a22-4cac-4795-80b6-e7a9d3a64521_mail - Copy.PNG",
-      "PackagePath": "staticwebassets\\userImages\\376f5a22-4cac-4795-80b6-e7a9d3a64521_mail - Copy.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\3dc1d74a-c098-48af-9cf9-175204481530_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\3dc1d74a-c098-48af-9cf9-175204481530_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\3e7d205d-d0b6-417a-ad9d-34c1eae14d94_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\3e7d205d-d0b6-417a-ad9d-34c1eae14d94_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\42592928-85c7-47f5-9d80-bca3d38141b9_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\42592928-85c7-47f5-9d80-bca3d38141b9_family.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\4864130e-6b82-41d7-9f37-a4ba8d51a16c_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\4864130e-6b82-41d7-9f37-a4ba8d51a16c_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\4b3f1283-80b6-4d0d-bb8b-3c2ee3b4dcdf_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\4b3f1283-80b6-4d0d-bb8b-3c2ee3b4dcdf_family.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\4d7b3e59-85bc-428c-b896-ae73ec725aaf_mail - Copy.PNG",
-      "PackagePath": "staticwebassets\\userImages\\4d7b3e59-85bc-428c-b896-ae73ec725aaf_mail - Copy.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\54b42235-e4c2-4868-a1a0-632b6e856cb3_rent.PNG",
-      "PackagePath": "staticwebassets\\userImages\\54b42235-e4c2-4868-a1a0-632b6e856cb3_rent.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\58d98723-9f48-43d4-9b2e-3560e807a61f_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\58d98723-9f48-43d4-9b2e-3560e807a61f_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\5995df32-0377-4c7f-9280-ed300f757f5a_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\5995df32-0377-4c7f-9280-ed300f757f5a_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\6223dcd6-c203-4cc6-ab7e-21997b7edfe8_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\6223dcd6-c203-4cc6-ab7e-21997b7edfe8_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\63b5b3cb-f97e-4252-95df-d34e8c9fd956_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\63b5b3cb-f97e-4252-95df-d34e8c9fd956_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\6640140b-44f2-4c42-9c91-17738763a50e_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\6640140b-44f2-4c42-9c91-17738763a50e_family.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\697f99ff-1990-4867-b944-89ce6c2fc888_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\697f99ff-1990-4867-b944-89ce6c2fc888_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\6acf529a-b5a0-4d9f-bf87-15a20f18171b_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\6acf529a-b5a0-4d9f-bf87-15a20f18171b_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\6d948922-c865-4748-bbd9-f110508c3eeb_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\6d948922-c865-4748-bbd9-f110508c3eeb_family.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\70f1df75-b080-45a0-a582-501d824af973_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\70f1df75-b080-45a0-a582-501d824af973_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\7a0f6745-5e24-45ef-ad35-6e45d0ca4858_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\7a0f6745-5e24-45ef-ad35-6e45d0ca4858_family.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\7ff02392-b47e-408f-90da-d27ffda63746_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\7ff02392-b47e-408f-90da-d27ffda63746_family.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\857a9b5c-37ec-4ce8-ba33-b4a6c3e53cd9_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\857a9b5c-37ec-4ce8-ba33-b4a6c3e53cd9_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\870ea2b2-25ed-44b1-9422-28bf96b2752c_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\870ea2b2-25ed-44b1-9422-28bf96b2752c_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\88b4c12c-5f11-462a-bae9-20f92bfc1a78_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\88b4c12c-5f11-462a-bae9-20f92bfc1a78_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\8a7f70ab-2040-40ee-bbb4-ee9cbca62cab_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\8a7f70ab-2040-40ee-bbb4-ee9cbca62cab_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\8af424a1-5bf0-453b-86dd-c97ab09fdf7f_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\8af424a1-5bf0-453b-86dd-c97ab09fdf7f_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\8af82029-3973-4e73-a644-cef287499134_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\8af82029-3973-4e73-a644-cef287499134_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\8f5ae250-d131-48d2-883a-cb3021f0f96f_mail - Copy.PNG",
-      "PackagePath": "staticwebassets\\userImages\\8f5ae250-d131-48d2-883a-cb3021f0f96f_mail - Copy.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\a7a9ca9b-6adc-4692-bf19-48a207a30e99_sendmail.PNG",
-      "PackagePath": "staticwebassets\\userImages\\a7a9ca9b-6adc-4692-bf19-48a207a30e99_sendmail.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\a807f54e-c2a3-4385-be8e-df335fda9fe3_mail.PNG",
-      "PackagePath": "staticwebassets\\userImages\\a807f54e-c2a3-4385-be8e-df335fda9fe3_mail.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\a91b4a84-806d-4bbe-aebb-fbc3651de2ed_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\a91b4a84-806d-4bbe-aebb-fbc3651de2ed_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\b0a3002b-1c08-4ad0-85c3-5a6024650789_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\b0a3002b-1c08-4ad0-85c3-5a6024650789_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\bc98a8a1-30f1-41ff-b2b5-11ee94acb534_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\bc98a8a1-30f1-41ff-b2b5-11ee94acb534_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\c5061e1e-7656-46da-ac48-379704782f88_sendmail.PNG",
-      "PackagePath": "staticwebassets\\userImages\\c5061e1e-7656-46da-ac48-379704782f88_sendmail.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\c85e01c7-0945-4640-8a75-bf58c271e0a6_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\c85e01c7-0945-4640-8a75-bf58c271e0a6_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\cd843029-7de3-474b-b8d1-08120d3770ed_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\cd843029-7de3-474b-b8d1-08120d3770ed_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\d588474d-41e1-4b8d-bed2-249474a7a217_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\d588474d-41e1-4b8d-bed2-249474a7a217_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\d7bfe716-083e-49fb-9a27-484304b156ac_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\d7bfe716-083e-49fb-9a27-484304b156ac_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\d8758c27-59bf-41d7-8d39-2a08309c1c83_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\d8758c27-59bf-41d7-8d39-2a08309c1c83_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\dccaf7de-5010-42d8-991e-154aa84360b6_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\dccaf7de-5010-42d8-991e-154aa84360b6_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\debc1617-5a84-4506-b9e0-54fff0a639f6_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\debc1617-5a84-4506-b9e0-54fff0a639f6_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\e04ac58f-e544-4b61-986c-6337e64d5e7e_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\e04ac58f-e544-4b61-986c-6337e64d5e7e_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\e0a98669-3dc4-4f1c-a55b-71ca3c028dab_mail - Copy.PNG",
-      "PackagePath": "staticwebassets\\userImages\\e0a98669-3dc4-4f1c-a55b-71ca3c028dab_mail - Copy.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\e32c2004-014e-4ff4-b6b5-37ee4b48dbfb_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\e32c2004-014e-4ff4-b6b5-37ee4b48dbfb_family.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\e3410ea1-b5cd-4c9b-b8a7-6463243018d0_sendmail.PNG",
-      "PackagePath": "staticwebassets\\userImages\\e3410ea1-b5cd-4c9b-b8a7-6463243018d0_sendmail.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\e435f5bc-c630-4903-a4a6-74d2200f9c03_debt.jpg",
-      "PackagePath": "staticwebassets\\userImages\\e435f5bc-c630-4903-a4a6-74d2200f9c03_debt.jpg"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\ea382a7a-ff22-41af-8b81-2b8cdaee1802_mail - Copy.PNG",
-      "PackagePath": "staticwebassets\\userImages\\ea382a7a-ff22-41af-8b81-2b8cdaee1802_mail - Copy.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\ec9567c3-1f25-492f-a80f-d913061f0586_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\ec9567c3-1f25-492f-a80f-d913061f0586_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\ec965c95-b7d6-43d2-a0e6-2307d6bac1b5_sendmail.PNG",
-      "PackagePath": "staticwebassets\\userImages\\ec965c95-b7d6-43d2-a0e6-2307d6bac1b5_sendmail.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\efde424b-92a8-45a3-9061-333606139a8a_mail - Copy.PNG",
-      "PackagePath": "staticwebassets\\userImages\\efde424b-92a8-45a3-9061-333606139a8a_mail - Copy.PNG"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\f2dd1ad1-ccfb-4970-a258-c19deb15a226_disibality.jfif",
-      "PackagePath": "staticwebassets\\userImages\\f2dd1ad1-ccfb-4970-a258-c19deb15a226_disibality.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\f533cd39-41e1-4798-ae5e-a5c256e95c7a_1.jfif",
-      "PackagePath": "staticwebassets\\userImages\\f533cd39-41e1-4798-ae5e-a5c256e95c7a_1.jfif"
-    },
-    {
-      "Id": "f:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\f952ae89-c5b5-40a4-af7e-cde464c5e15b_family.jfif",
-      "PackagePath": "staticwebassets\\userImages\\f952ae89-c5b5-40a4-af7e-cde464c5e15b_family.jfif"
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\userImages\\a281c1b9-c281-41e0-bc93-c8b752b7725a_family.jfif",
+      "PackagePath": "staticwebassets\\userImages\\a281c1b9-c281-41e0-bc93-c8b752b7725a_family.jfif"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.charityMVC.props",

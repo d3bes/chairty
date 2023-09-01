@@ -4,7 +4,16 @@
     ViewData["Title"] = "EditPoints";
 }
 
-<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+ <div class="col-sm-5"> </div>
+ <div class="col-sm-4" style=" margin-bottom:2vw">
+<div class="page-header" style="width: 6vw; height: 3vw;">
+<h6 style="padding-top: 0.5vw;">تعديل النقاط </h6>
+</div>
+ </div>
+</div style="margin-bottom:2vw">
+
 
 <div>
     
@@ -68,6 +77,11 @@
     <div class="form-group">
         <label>المنزل ايجار:</label>
         <input type="number" class="form-control form-control-sm" asp-for="house_is_rent" name="house_is_rent" min="0" max="99" />
+    </div>
+
+     <div class="form-group">
+        <label> قيمة النقطة بالريال :</label>
+        <input type="number" class="form-control form-control" asp-for="pointValue" name="pointValue" min="0" max="99" />
     </div>
 
     <button type="submit" class="btn btn-primary" style="margin: 1vw; margin-bottom:3vw">حفظ التغييرات</button>
