@@ -579,8 +579,9 @@
                     <Style>
                       <FontFamily>Arabic Typesetting</FontFamily>
                       <FontSize>14pt</FontSize>
-                      <Format>'ر.س.‏'#,0.00;('ر.س.‏'#,0.00)</Format>
+                      <Format>#,0.00'ر.س.‏';(#,0.00'ر.س.‏')</Format>
                       <TextDecoration>None</TextDecoration>
+                      <rd:FormatSymbolCulture>ar-SA</rd:FormatSymbolCulture>
                     </Style>
                   </TextRun>
                 </TextRuns>
