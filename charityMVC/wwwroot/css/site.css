@@ -7,12 +7,19 @@
 } */
 @import url(https://fonts.googleapis.com/css?family=Tajawal);
 
+@font-face {
+  font-family: 'thuluth';
+  src: url('/assets/web-fonts/A Thuluth Regular.ttf') format('truetype');
+  font-weight: bold;
+}
+
 /* Colors */
 :root {
   --color-default: #222222;
   --color-primary: #023e4a;
   --color-secondary: #f85a40;
 }
+
 
 /* Smooth scroll behavior */
 :root {
