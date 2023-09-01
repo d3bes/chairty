@@ -38,14 +38,16 @@ namespace charityMVC.Controllers
         public async Task<IActionResult> Index()
         { 
             try{
-            List<Accepted> accepteds = await _context.Accepteds.ToListAsync();
+            // List<Accepted> accepteds =   _context.Accepteds.ToList();
+             List<Accepted> accepteds = await  _adminRepo.GetAccepteds();
+
         return View(accepteds);
             }
-             catch (Exception ex)
+             catch
                     {
-                        _logger.LogError(ex, "An error occurred in the Review action.");
+                        _logger.LogError( "An error occurred in the Review action.");
                         
-                        TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر عليك التواصل مع المبرمج !";
+                        TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود برجاء التاكد من الاتصال , اذا تكرر عليك التواصل مع المبرمج !";
                         return View( );
 
                     }
@@ -65,6 +67,10 @@ namespace charityMVC.Controllers
                         return View("Index", TempData);
 
                     }
+        }
+        public async Task<IActionResult> cityUsers ()
+        {
+            return View();
         }
 
         public async Task<IActionResult> AllClerks()
@@ -210,7 +216,8 @@ namespace charityMVC.Controllers
 
                 identity.AddClaim(new Claim("id", admin.id));
                 identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, admin.id.ToString()));
-                
+                identity.AddClaim(new Claim(ClaimTypes.Name, admin.username.Split(' ')[0].ToString()));
+
                 identity.AddClaim(new Claim(ClaimTypes.Role, role.Role));
 
                  ClaimsPrincipal principal = new ClaimsPrincipal(identity);
@@ -218,7 +225,7 @@ namespace charityMVC.Controllers
                 HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,principal);
                  TempData["Success"] = "!تم بنجاح ";
                 
-                return   RedirectToAction("Index");
+                return   RedirectToAction("Index", "Home");
             }
             else 
                 return View();
