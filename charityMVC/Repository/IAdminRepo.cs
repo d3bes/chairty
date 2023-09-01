@@ -24,6 +24,8 @@ namespace charityMVC.Repository
         public  bool FoundAdmin (string name, string password);
         public  bool FoundClerk (string name, string password);
         public  Task<points> Points();
+        public  Task<List<Accepted>> GetAccepteds ();
+
 
 
 

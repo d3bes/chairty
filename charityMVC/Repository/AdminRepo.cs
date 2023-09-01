@@ -16,6 +16,11 @@ namespace charityMVC.Repository
             _context= context;
         }
 
+        public async Task<List<Accepted>> GetAccepteds ()
+        {
+            List<Accepted> accepteds = await _context.Accepteds.ToListAsync();
+            return accepteds;
+        }
         public async Task<Clerk> AddClerk( Clerk clerk)
         {
             await _context.clerk.AddAsync(clerk);

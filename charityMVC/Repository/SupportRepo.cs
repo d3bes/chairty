@@ -37,5 +37,10 @@ namespace charityMVC.Repository
             return true;
 
         }
+        public async Task<List<Support>> GetAllSupports()
+        {
+            List<Support> list = await _context.support.ToListAsync();
+            return list;
+        }
     }
 }
