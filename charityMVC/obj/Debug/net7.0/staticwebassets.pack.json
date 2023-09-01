@@ -325,6 +325,22 @@
       "PackagePath": "staticwebassets\\assets\\vendor\\swiper\\swiper-bundle.min.js.map"
     },
     {
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\web-fonts\\A Thuluth Regular.ttf",
+      "PackagePath": "staticwebassets\\assets\\web-fonts\\A Thuluth Regular.ttf"
+    },
+    {
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\web-fonts\\arfonts-decotype-thuluth-ii.zip",
+      "PackagePath": "staticwebassets\\assets\\web-fonts\\arfonts-decotype-thuluth-ii.zip"
+    },
+    {
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\web-fonts\\decotype-thuluth-ii.ttf",
+      "PackagePath": "staticwebassets\\assets\\web-fonts\\decotype-thuluth-ii.ttf"
+    },
+    {
+      "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\assets\\web-fonts\\important.txt",
+      "PackagePath": "staticwebassets\\assets\\web-fonts\\important.txt"
+    },
+    {
       "Id": "F:\\downloads\\Impact\\chairty\\charityMVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
