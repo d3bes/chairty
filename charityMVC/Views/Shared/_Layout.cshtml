@@ -26,10 +26,16 @@
         <i class="bi bi-phone d-flex align-items-center ms-4"><span> +1 5589 55488 55 </span></i>
     @if(User.Identity.IsAuthenticated)
     {
+      if(User.IsInRole("user")) {
     <a  asp-controller="UserProfile" asp-action="GetUserProfile" class="bi bi-person-fill bi-lg" style="cursor: pointer; text-decoration: none;color: white;">
         الملف الشخصى
     </a>
-    <a class="btn btn-warning" asp-controller="Register" asp-action="Signout" style="margin-right: 2vw;">تسجيل الخروج <i class="bi bi-box-arrow-right"></i></a>
+      }
+      else if (User.IsInRole("clerk")){
+  <a  asp-controller="Clerk" asp-action="getClerk" class="bi bi-person-fill bi-lg" style="cursor: pointer; text-decoration: none;color: white;">
+        الملف الشخصى
+    </a>
+      }
     }
 
 
@@ -39,6 +45,13 @@
         <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        @if(!User.Identity.IsAuthenticated)
+        {
+        <a class="btn btn-warning" asp-controller="Admin" asp-action="LoginAdmin" style="margin-right: 2vw;"> مدير النظام <i class="bi bi-box-arrow-in-left"></i></a>
+        }
+        else {
+            <a class="btn btn-warning" asp-controller="Register" asp-action="Signout" style="margin-right: 2vw;">تسجيل الخروج <i class="bi bi-box-arrow-right"></i></a>
+        }
       </div>
     </div>
   </section><!-- End Top Bar -->
@@ -46,18 +59,24 @@
 <header id="header" class="header d-flex align-items-center">
 
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>جمعية<span>.</span></h1>
+        <h2 style="color: tomato; font-family:'thuluth';"><span>صندوق ذرية محمد بن عثمان بن مسعود الحميد</span></h2>
       </a>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="#">الرئيسية</a></li>
           <li><a asp-controller="Register" asp-action="register"> تسجيل كمستفيد</a></li>
           <li><a href="#about">من نحن</a></li>
-          <li><a asp-controller="Clerk" asp-action="GetCityUsers">المشرف</a></li>
-      
+    
+          @if(User.Identity.IsAuthenticated)
+       {
+          if(User.IsInRole("clerk"))
+          {
+              <li><a asp-controller="Clerk" asp-action="getClerk" >المشرف</a></li>
+          }
+       }
   
         <li><a href="#contact">التواصل</a></li>
         </ul>

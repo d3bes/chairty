@@ -13,6 +13,13 @@
     </div>
 }
 
+@if (TempData.ContainsKey("ErrorMessage"))
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
 <div class="row">
  <div class="col-sm-5"> </div>
  <div class="col-sm-4">
@@ -24,16 +31,26 @@
 
 
 <div class="container-fluid">
-   <table class="table table-striped table-hover" id="example">
+<div style="margin-bottom: 1vw;">
+
+     <a class="btn btn-success" asp-controller="Reports" asp-action="AllUsersExel" style="margin-right: 1vw;">
+           <i class="bi bi-filetype-xls" style="font-size: 2rem;"></i>
+            </a> 
+    <p>
+        تصدير الى xlsx
+    </p>
+</div>
+
+   <table class="table table-striped table-hover" id="exampleu">
         <thead>
             <tr>
-                <th>الاسم</th>
-                <th>رقم الهوية</th>
-                <th>رقم الجوال</th>
-                <th>العنوان</th>
-                <th>المدينة</th>
-                <th>النقاط</th>
-                <th>
+                <th style="text-align: right;" >الاسم</th>
+                <th style="text-align: right;" >رقم الهوية</th>
+                <th style="text-align: right;" >رقم الجوال</th>
+                <th style="text-align: right;" >العنوان</th>
+                <th style="text-align: right;" >المدينة</th>
+                <th style="text-align: right;" >النقاط</th>
+                <th style="text-align: right;" >
                      <a class="btn btn-info" asp-controller="Register" asp-action="register">اضافة</a>
                 </th>
             </tr>
@@ -61,3 +78,10 @@
 
 </div>
 
+@section Scripts{
+
+    <script>
+          new DataTable('#exampleu');
+
+    </script>
+}

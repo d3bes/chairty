@@ -1,0 +1,123 @@
+
+@model List<User>
+@{
+    ViewData["Title"] = "cityUsers";
+}
+
+
+@if (TempData.ContainsKey("ErrorMessage"))
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+
+ <form asp-action="Upload" asp-controller="Repot"  class="mt-4" method="post" enctype="multipart/form-data">
+
+<div>
+      <div class="form-group">
+            <label for="city">اختر مدينتك</label>
+            <select class="form-control" id="city" required>
+                <option value=""></option>
+            </select>
+         </div>
+</div>
+  <button type="submit" class="btn btn-primary">تسجيل</button>
+  </form>
+
+@if(Model!=null)
+{
+
+
+<div class="container-fluid" style="direction: rtl;">
+   <table class="table table-striped table-hover" id="exampleb">
+        <thead>
+            <tr> 
+                <th >الاسم</th>
+                <th>رقم الهوية</th>
+                <th>رقم الجوال</th>
+                <th>العنوان</th>
+                <th>النقاط</th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.fullName</td>
+                    <td>@item.id</td>
+                    <td>@item.phone</td>
+                    <td>@item.fullAddress</td>
+                    <td>@item.points</td>
+                    <td>
+                        <a class="btn btn-warning" asp-controller="Clerk" asp-action="Review" asp-route-id="@item.id">مراجعة</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="m">
+
+</div>
+
+}
+else 
+{
+    
+
+<div class="container-fluid" style="direction: rtl;">
+   <table class="table table-striped table-hover" id="exampleb">
+        <thead>
+            <tr> 
+                <th >الاسم</th>
+                <th>رقم الهوية</th>
+                <th>رقم الجوال</th>
+                <th>العنوان</th>
+                <th>النقاط</th>
+                <th>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+</div>
+
+<div class="m">
+
+</div>
+}
+
+
+
+
+@section Scripts{
+    <script>
+         new DataTable('#exampleb');
+ var cities =  [ 
+        "أبها", "الأحساء", "الباحة", "الدمام", "الرياض", "الزلفي", "الخبر", "الخرج", "الخفجي", "الجبيل", "الجوف", "الحائط", "الحبيل", "الحوية", "الدرعية", "الدوادمي", "الدومة الجندل", "الظهران",
+        "العلا", "العيون", "الغاط", "الفريش", "القريات", "القطيف", "القويعية", "المجمعة", "المذنب", "المدينة المنورة", "المزاحمية", "المبرز", "المخواة", "النعيرية", "النماص", "الهفوف", "الوجه", 
+        "بيشة", "تبوك", "تاروت", "جازان", "جدة", "حائل", "خميس مشيط", "رفحاء", "رأس تنورة", "رياض الخبراء", "ساجر", "سكاكا", "سيهات", "شرورة", "شقراء", "ضباء", "طريف", "ظهران الجنوب", "عرعر",
+        "عفيف", "عنيزة", "غرناطة", "فيفاء", "قلوة", "قيصومة", "كفر الدوار", "مكة المكرمة", "محايل عسير", "مرات", "مراكز الجودة", "مزارع الشريفة", "مستورة", "مطوفة", "محمد بن عبدالوهاب", "نجران", 
+        "نجوى", "نجوى ورغداء", "نخيل", "نمرة", "نفي", "نيابة", "هدا الشام", "هيئة", "هيئة الاتصالات وتقنية المعلومات", "وادي الدواسر", "وادي الريان", "وادي الشريعة", "وادي الفرع"
+    ];
+
+
+var cityDropdown = document.getElementById("city");
+
+    for (var i = 0; i < cities.length; i++) {
+        var option = document.createElement("option");
+        option.value = cities[i];
+        option.text = cities[i];
+        cityDropdown.appendChild(option);
+    }
+
+    </script>
+}
+

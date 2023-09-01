@@ -24,18 +24,28 @@
 }
 
 <div class="container-fluid"style="margin-bottom:20vw">
-   <table class="table table-striped table-hover" id="example">
+<div style="margin-bottom: 1vw;" >
+  <a class="btn btn-success" asp-controller="Reports" asp-action="ClerksExel" style="margin-right: 1vw;">
+           <i class="bi bi-filetype-xls" style="font-size: 2rem;"></i>
+            </a> 
+     <p>
+        تصدير الى xlsx
+    </p>
+</div>
+   
+
+   <table class="table table-striped table-hover" id="examplec">
         <thead>
-            <tr>
-                <th>الاسم</th>
-                <th>رقم الهوية</th>
-                <th>رقم الجوال</th>
-                <th>المدينة</th>
+            <tr> 
+                <th style="text-align: right;">الاسم</th>
+                <th style="text-align: right;">رقم الهوية</th>
+                <th style="text-align: right;">رقم الجوال</th>
+                <th style="text-align: right;">المدينة</th>
                
-                <th>
+                <th style="text-align: right;">
                      <a class="btn btn-info" asp-controller="Admin" asp-action="AddClerk">اضافة مشرف</a>
                 </th>
-                <th></th>
+                <th style="text-align: right;"></th>
             </tr>
         </thead>
         <tbody>
@@ -46,14 +56,16 @@
                     <td>@item.Id</td>  
                      <td>@item.phone</td>  
                     <td>@item.city</td>
-                    @* 
+                    
                     <td>
-                        <a class="btn btn-warning" asp-controller="Admin" asp-action="Review" asp-route-id="@item.Id">تغيير المدينة</a>
+                        <a class="btn btn-warning" asp-controller="Clerk" asp-action="ClerkProfil" asp-route-id="@item.Id">قائمة المستفيدين </a>
                     </td>
-                     *@
+                    
                     <td>
                         <a class="btn btn-danger" asp-controller="Admin" asp-action="RemoveClerk" asp-route-id="@item.Id">حذف</a>
                     </td>
+                     <th></th>
+
                 </tr>
             }
         </tbody>
@@ -63,6 +75,14 @@
 <div class="m">
 
 </div>
+
+@section Scripts{
+
+    <script>
+          @* new DataTable('#examplec'); *@
+
+    </script>
+}
 
 
   

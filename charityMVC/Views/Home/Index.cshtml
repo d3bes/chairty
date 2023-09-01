@@ -15,8 +15,10 @@
     <div class="container position-relative">
       <div class="row gy-5" data-aos="fade-in">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-right text-lg-start">
-          <h2>مرحبا بك  <span> </span></h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptas minus ratione voluptatibus architecto aut mollitia dolorum! Beatae ipsam reiciendis maiores alias enim, voluptatum distinctio omnis in ducimus perferendis debitis.</p>
+          @if(User.Identity.IsAuthenticated)
+          {
+          <h2>  مرحبا بك <span style="color: tomato;">@User.Identity.Name</span>  <span> </span></h2>
+          }
           <div class="d-flex justify-content-center justify-content-lg-start">
             @if(!User.Identity.IsAuthenticated)
             {          
@@ -50,26 +52,34 @@
           </div><!--End Icon Box -->
             }
   
+      @if(User.IsInRole("admin"))
+        {
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-cash-coin"></i></div>
-              <h4 class="title"><a href="" class="stretched-link"> إنشاء دفعة مالية</a></h4>
+              <h4 class="title"><a asp-controller="Admin" asp-action="Index" class="stretched-link"> إنشاء دفعة مالية</a></h4>
             </div>
           </div><!--End Icon Box -->
-  
+        
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-receipt"></i></div>
-              <h4 class="title"><a href="" class="stretched-link">التقارير</a></h4>
+              <h4 class="title"><a asp-controller="Reports" asp-action="Index" class="stretched-link">التقارير</a></h4>
             </div>
           </div><!--End Icon Box -->
-  
+        }
+      
+      @if(!User.Identity.IsAuthenticated)
+      {
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-box-arrow-in-right"> </i></div>
-              <h4 class="title"><a href="" class="stretched-link"> دخول الاعضاء</a></h4>
+            
+              <h4 class="title"><a asp-controller="Clerk" asp-action="LoginClerk" class="stretched-link"> دخول الاعضاء</a></h4>
             </div>
           </div><!--End Icon Box -->
+      }
+
         </div>
       </div>
     </div>
