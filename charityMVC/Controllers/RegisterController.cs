@@ -63,7 +63,7 @@ namespace charityMVC.Controllers
 
                 identity.AddClaim(new Claim("id",account.id.ToString()));
                 identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, account.id.ToString()));
-                
+                identity.AddClaim(new Claim(ClaimTypes.Name, accountModel.fullName.Split(' ')[0].ToString()));
                 identity.AddClaim(new Claim(ClaimTypes.Role, role.Role));
 
                  ClaimsPrincipal principal = new ClaimsPrincipal(identity);
