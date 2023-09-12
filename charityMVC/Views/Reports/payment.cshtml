@@ -1,3 +1,82 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:61c06f9a1f9a5bbb6d950cfbf9f4f52cb316bb0904dedb076a5317c659202427
-size 2454
+@model List<Support> 
+@{
+    ViewData["Title"] = "دفعة مالية";
+}
+
+
+
+<div class="container" style="margin-top: 1vw; margin-bottom:15vw">
+
+<hr>
+<div style="text-align: center;">
+ <a class="btn btn-danger" asp-controller="Reports" asp-action="SupportPdfReportByPayment" asp-route-id="@Model[0].paymentId"> 
+            <i class="bi bi-file-earmark-pdf-fill"   style="font-size: 2rem;"></i>
+        
+            </a> 
+            <a class="btn btn-success" asp-controller="Reports" asp-action="AllSupportsExcelByPayment" asp-route-id="@Model[0].paymentId" style="margin-right: 1vw;">
+           <i class="bi bi-filetype-xls" style="font-size: 2rem;"></i>
+            </a> 
+</div>
+ 
+<hr>
+<div class="row"> 
+ <div class="col-sm-1">
+    
+@* <div style="margin-bottom: 1vw;" >
+  <a class="btn btn-success" asp-controller="Reports" asp-action="AllSupportsExcelByPayment" style="margin-right: 1vw;">
+           <i class="bi bi-filetype-xls" style="font-size: 2rem;"></i>
+            </a> 
+     <p>
+        تصدير الى xlsx
+    </p>
+</div>     *@
+ </div>
+
+
+
+<div class="col-sm-9">
+
+    @foreach(var item in Model)
+    {
+    
+        <div class="card text-right" style="margin-bottom: 1vw;margin-top:1vw">
+        <div class="card-header" >
+          @item.city - تقرير دفعة مالية  
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">  ر.س <mark> @item.Amount</mark> </h5>
+            <p class="card-text">الاسم: @item.name </p>
+             <p class="card-text">رقم الهوية: @item.userId</p>
+             <p class="card-text">رقم الهاتف: @item.phone</p>
+             <p class="card-text">العنوان : @item.fullAddress</p>
+
+            <a class="btn btn-danger" asp-controller="Reports" asp-action="SupportPdfReport" asp-route-id="@item.Id"> 
+            <i class="bi bi-file-earmark-pdf-fill"   style="font-size: 2rem;"></i>
+            </a> 
+
+            <a class="btn btn-success" asp-controller="Reports" asp-action="SupportExcelReport" asp-route-id="@item.Id" style="margin-right: 1vw;">
+           <i class="bi bi-filetype-xls" style="font-size: 2rem;"></i>
+            </a> 
+
+            
+
+        </div>
+        <div class="card-footer text-muted" >
+           @item.ApprovalDate تم الموافقة بتاريخ: 
+        </div>
+        </div>
+    }
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+    
+</div>
