@@ -13,7 +13,7 @@ namespace charityMVC.ViewModels
         
         [Required(ErrorMessage = "ادخل الاسم كاملا")]
         public string fullName { get; set;}
-        [RegularExpression(@"^\d{10}$", ErrorMessage = "يجب ان يكون رقم الهاتف 10 ارقام")]
+        [RegularExpression(@"^\d{9}$", ErrorMessage = "يجب ان يكون رقم الهاتف 9 ارقام")]
         public string? phone { get; set;}
         public string? birthDate { get; set;}
         public string? city { get; set;}
@@ -28,7 +28,7 @@ namespace charityMVC.ViewModels
         public bool proxy { get; set;}
 
         public string? _proxy_name { get; set;}
-        [RegularExpression(@"^\d{16}$", ErrorMessage = "يجب ان يكون رقم الحساب 16 رقم")]
+        [RegularExpression(@"^\d{15}$", ErrorMessage = "يجب ان يكون رقم الحساب 15 رقم")]
         public string? _proxy_account_number { get; set;}
     }
 }

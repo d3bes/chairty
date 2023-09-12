@@ -1,0 +1,32 @@
+
+@media (max-width: 767px) {
+    /* Styles specific to small screens go here */
+    /* For example, you can adjust font sizes, margins, padding, or layout for small screens */
+
+    /* Example: Make font size smaller on small screens */
+    body {
+        font-size: 80%;
+        
+    }
+
+    .page-header{
+      width: 8rem;
+      height: 5vh;
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+      border-radius: 0.5vw,0.5vw;
+    }
+    .col-sm-2 .nav-pills .nav-item .btn {
+      width: 200%; 
+  }
+
+}
+
+
+#return-button {
+    position: absolute;
+    top: 9rem; /* Adjust the top distance as needed */
+    left: 5vw; /* Adjust the left distance as needed */
+    z-index: 9999;
+}
+

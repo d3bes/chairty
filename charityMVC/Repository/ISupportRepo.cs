@@ -12,6 +12,8 @@ namespace charityMVC.Repository
         public Task<Support> GetSupportById(int Id);
         public Task<bool> NewSupport (Support support);
         public  Task<List<Support>> GetAllSupports();
+        public  Task<List<Support>> GetSupportsByPayment(string PayMentId);
+
 
 
     }

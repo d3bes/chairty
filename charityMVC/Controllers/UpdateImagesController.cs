@@ -5,12 +5,14 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using charityMVC.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace charityMVC.Controllers
 {
       [Route("[controller]/[action]")]
+      [Authorize]
     public class UpdateImagesController : Controller
     {
         private readonly ILogger<UpdateImagesController> _logger;
@@ -105,6 +107,8 @@ namespace charityMVC.Controllers
 
                   try 
                   {
+                    if(disability_proof != null)
+                    {
                           string UploadPath =  Path.Combine(_webHostEnvironment.WebRootPath, "userImages");
                          string fileName = Guid.NewGuid().ToString() + "_" + disability_proof.FileName;
                          string filePath = Path.Combine(UploadPath, fileName);
@@ -115,12 +119,24 @@ namespace charityMVC.Controllers
                       {
                           var user =  await _userRepo.GetUserById(userId);
                           user.disability_proof = dbFilePath;
-                         
+                           user.disability =true;
                            var points = await _userRepo.GetPoints(user);
                           user.points = points;
                         await _userRepo.Update(user);
                         TempData["Success"] = "!تم بنجاح ";
                       }
+                    }
+                    else 
+                    {
+                        var user =  await _userRepo.GetUserById(userId);
+                          user.disability_proof = null;
+                           user.disability =false;
+                           var points = await _userRepo.GetPoints(user);
+                          user.points = points;
+                        await _userRepo.Update(user);
+                      TempData["Success"] = "!تم بنجاح ";
+
+                    }
 
                      return RedirectToAction("GetUserProfile", "UserProfile", new { id = userId });
 
@@ -143,7 +159,9 @@ namespace charityMVC.Controllers
                    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
               try 
-              {
+              {     
+                    if(debt_proof != null)
+                    {
                        string UploadPath =  Path.Combine(_webHostEnvironment.WebRootPath, "userImages");
                          string fileName = Guid.NewGuid().ToString() + "_" + debt_proof.FileName;
                          string filePath = Path.Combine(UploadPath, fileName);
@@ -154,12 +172,24 @@ namespace charityMVC.Controllers
                       {
                           var user =  await _userRepo.GetUserById(userId);
                           user.debt_proof = dbFilePath;
-                          
+                          user.debt = true;
                            var points = await _userRepo.GetPoints(user);
                           user.points = points;
                         await _userRepo.Update(user);
                         TempData["Success"] = "!تم بنجاح ";
                       }
+                    }
+                      else 
+                    {
+                        var user =  await _userRepo.GetUserById(userId);
+                          user.debt_proof = null;
+                           user.debt =false;
+                           var points = await _userRepo.GetPoints(user);
+                          user.points = points;
+                        await _userRepo.Update(user);
+                      TempData["Success"] = "!تم بنجاح ";
+
+                    }
 
                      return RedirectToAction("GetUserProfile", "UserProfile", new { id = userId });
               }
@@ -180,6 +210,8 @@ namespace charityMVC.Controllers
               var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 try
                 {
+                      if(rent_proof != null)
+                      {
                           string UploadPath =  Path.Combine(_webHostEnvironment.WebRootPath, "userImages");
                          string fileName = Guid.NewGuid().ToString() + "_" + rent_proof.FileName;
                          string filePath = Path.Combine(UploadPath, fileName);
@@ -190,12 +222,24 @@ namespace charityMVC.Controllers
                       {
                           var user =  await _userRepo.GetUserById(userId);  
                           user.rent_proof = dbFilePath;
-                         
+                          user.house_rent =true;
                           var points = await _userRepo.GetPoints(user);
                           user.points = points;  
                         await _userRepo.Update(user);
                         TempData["Success"] = "!تم بنجاح ";
                       }
+                       }
+                      else 
+                    {
+                        var user =  await _userRepo.GetUserById(userId);
+                          user.rent_proof = null;
+                           user.house_rent =false;
+                           var points = await _userRepo.GetPoints(user);
+                          user.points = points;
+                        await _userRepo.Update(user);
+                      TempData["Success"] = "!تم بنجاح ";
+
+                    }
 
                      return RedirectToAction("GetUserProfile", "UserProfile", new { id = userId });
                    }

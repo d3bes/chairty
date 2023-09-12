@@ -10,6 +10,7 @@
     </div>
 }
 
+
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero">
     <div class="container position-relative">
@@ -24,21 +25,24 @@
             {          
                @* <a class="btn btn-logIn" data-bs-toggle="modal" data-bs-target="#loginModal" style="margin-left: 2vw;">تسجيل دخول</a> *@
                  <a class="btn btn-logIn"  asp-controller="Register" asp-action="login" style="margin-left: 2vw;">تسجيل دخول</a>
-
-
+                 <a class="btn btn-logIn"  asp-controller="Register" asp-action="register" style="margin-left: 2vw; background: #ddc10f;">تسجيل مستفيد</a>
             }
 
             @* <a class="btn btn-signUp" data-bs-toggle="modal" data-bs-target="#signupModal"> لا تملك حساب</a>  *@
           </div>
         </div>
+        
+        
         <div class="col-lg-6 order-1 order-lg-2">
-          <img src="assets\img\OIG.jfif" class="img-fluid" id="donateImg" alt="" data-aos="zoom-out" data-aos-delay="100">
+  
+          <img src="\assets\img\5555555.PNG"  id="donateImg" style="border-radius: 2vw 2vw;" alt="" data-aos="zoom-out" data-aos-delay="100">
         </div>
       </div>
     </div>
   
-    <div class="icon-boxes position-relative">
+    @* <div class="icon-boxes position-relative">
       <div class="container position-relative">
+        @*
         <div class="row gy-4 mt-5" >
             @if(!User.Identity.IsAuthenticated)
             {  
@@ -51,13 +55,20 @@
             </div>
           </div><!--End Icon Box -->
             }
-  
-      @if(User.IsInRole("admin"))
+      *@
+      @* @if(User.IsInRole("admin"))
         {
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-cash-coin"></i></div>
-              <h4 class="title"><a asp-controller="Admin" asp-action="Index" class="stretched-link"> إنشاء دفعة مالية</a></h4>
+              <h4 class="title"><a asp-controller="Admin" asp-action="NewPay" class="stretched-link"> إنشاء دفعة مالية</a></h4>
+            </div>
+          </div><!--End Icon Box -->
+
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300" style="margin-top: 2vw;margin-bottom: 2vw;">
+            <div class="icon-box">
+              <div class="icon"><i class="bi bi-person-badge-fill"></i></div>
+              <h4 class="title"><a asp-controller="Reports" asp-action="Index" class="stretched-link">المدير</a></h4>
             </div>
           </div><!--End Icon Box -->
         
@@ -67,7 +78,8 @@
               <h4 class="title"><a asp-controller="Reports" asp-action="Index" class="stretched-link">التقارير</a></h4>
             </div>
           </div><!--End Icon Box -->
-        }
+        } *@
+        @*
       
       @if(!User.Identity.IsAuthenticated)
       {
@@ -82,36 +94,40 @@
 
         </div>
       </div>
-    </div>
+    </div> *@
+  </section>
+  <section style="height: 30vw; background-color: #023e4a;;" > 
+
   </section>
   <!-- End Hero Section -->
   
   
-  <main id="main">
+  @* <main id="main"> *@
 
-    <!-- ======= About Us Section ======= -->
+    @* <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
           <h2>من نحن</h2>
-          <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
-        </div>
+          @* <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p> *@
+        @* </div>
 
         <div class="row gy-4">
-          <div class="col-lg-6">
-            <h3>Voluptatem dignissimos provident quasi corporis</h3>
+          <div class="col-lg-6"> *@
+            @* <h3>Voluptatem dignissimos provident quasi corporis</h3> *@
             <!-- <img src="assets/img/about.jpg" class="img-fluid rounded-4 mb-4" alt=""> -->
-            <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
+            @* <p>Ut fugiat ut sunt quia veniam. Voluptate perferendis perspiciatis quod nisi et. Placeat debitis quia recusandae odit et consequatur voluptatem. Dignissimos pariatur consectetur fugiat voluptas ea.</p>
             <p>Temporibus nihil enim deserunt sed ea. Provident sit expedita aut cupiditate nihil vitae quo officia vel. Blanditiis eligendi possimus et in cum. Quidem eos ut sint rem veniam qui. Ut ut repellendus nobis tempore doloribus debitis explicabo similique sit. Accusantium sed ut omnis beatae neque deleniti repellendus.</p>
-          </div>
+          *@
+          @* </div>
           <div class="col-lg-6">
-            <div class="content ps-0 ps-lg-5">
-              <p class="fst-italic">
+            <div class="content ps-0 ps-lg-5"> *@
+              @* <p class="fst-italic">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua.
-              </p>
-              <ul>
+              </p> *@
+              @* <ul>
                 <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
                 <li><i class="bi bi-check-circle-fill"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
                 <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
@@ -119,22 +135,23 @@
               <p>
                 Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
                 velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-              </p>
+              </p> *@
 
-              <div class="position-relative mt-4">
-                <!-- <img src="assets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a> -->
+              @* <div class="position-relative mt-4">
+                <img src="assets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
+                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a> 
               </div>
             </div>
           </div>
         </div>
 
       </div>
-    </section><!-- End About Us Section -->
+    </section>  *@
 
-    
+
+
     <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    @* <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
   
           <div class="section-header">
@@ -199,15 +216,15 @@
                 </div>
                 <div class="text-center"><button type="submit">Send Message</button></div>
               </form>
-            </div><!-- End Contact Form -->
+            </div><!-- End Contact Form --> *@
   
-          </div>
+          @* </div>
   
         </div>
       </section><!-- End Contact Section -->
   
     </main><!-- End #main -->
-
+ *@
 
     
 <!-- ################################################ -->

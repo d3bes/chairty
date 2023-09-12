@@ -4,12 +4,13 @@ using System.Diagnostics;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using charityMVC.Migrations;
+
 using charityMVC.Models;
 using charityMVC.Repository;
 using charityMVC.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -23,18 +24,20 @@ namespace charityMVC.Controllers
         private  IUserRepo _userRepo;
         private IClerkRepo _clerkRepo;
         private IAdminRepo _adminRepo;
+        private ISupportRepo _supportRepo;
         private Context _context;
         public AdminController(ILogger<AdminController> logger, IAdminRepo adminRepo,
-         IUserRepo userRepo, IClerkRepo clerkRepo, Context context)
+         IUserRepo userRepo, IClerkRepo clerkRepo, Context context, ISupportRepo supportRepo)
         {
             _logger = logger;
             _userRepo = userRepo;
             _clerkRepo =clerkRepo;
             _adminRepo = adminRepo;
             _context = context;
+            _supportRepo = supportRepo;
         }
 
-
+        [Authorize(Roles="admin")]
         public async Task<IActionResult> Index()
         { 
             try{
@@ -53,6 +56,8 @@ namespace charityMVC.Controllers
                     }
         }
 
+        [Authorize(Roles="admin")]
+        
         public async Task<IActionResult> AllUsers()
         {
             try{
@@ -68,10 +73,13 @@ namespace charityMVC.Controllers
 
                     }
         }
+         [Authorize(Policy = "AdminOrClerk")]
         public async Task<IActionResult> cityUsers ()
         {
             return View();
         }
+
+        [Authorize(Roles="admin")]
 
         public async Task<IActionResult> AllClerks()
         {
@@ -88,6 +96,8 @@ namespace charityMVC.Controllers
 
                     }
         }
+
+        [Authorize(Roles="admin")]
         public async Task<IActionResult> NewAdmin(Admin admin)
         {
             try{
@@ -99,7 +109,7 @@ namespace charityMVC.Controllers
                                     id = admin.id,
                                     Role = "admin"
                                 };
-                await _userRepo.AddRole(role);
+                 _userRepo.AddRole(role);
                 TempData["Success"] = "!تم بنجاح ";
 
                  }
@@ -114,11 +124,13 @@ namespace charityMVC.Controllers
 
         }
 
+        [Authorize(Roles="admin")]
         public async Task<IActionResult> AddClerk( )
         {
             return  View("AddClerk");
         }
 
+        [Authorize(Roles="admin")]
         [HttpPost]
         public async Task<IActionResult> AddClerk(Clerk clerk)
         {
@@ -130,7 +142,7 @@ namespace charityMVC.Controllers
                                     id = clerk.Id.ToString(),
                                     Role = "clerk"
                                 };
-                await _userRepo.AddRole(role);
+                 _userRepo.AddRole(role);
                 TempData["Success"] = "!تم بنجاح ";
 
                  }
@@ -143,7 +155,7 @@ namespace charityMVC.Controllers
                     }
                   return  RedirectToAction("AllClerks");
         }
-
+        [Authorize(Roles="admin")]
         public async Task<IActionResult> RemoveClerk(int id)
         {
 
@@ -168,7 +180,7 @@ namespace charityMVC.Controllers
                 return  RedirectToAction("AllClerks");
 
         }
-
+           [Authorize(Roles="admin")]
             public async Task<IActionResult> RemoveAdmin(string id)
         {
 
@@ -204,7 +216,7 @@ namespace charityMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> LoginAdmin(MemberAccount account)
         {
-            try {
+            //try {
 
             if(_adminRepo.FoundAdmin(account.username, account.password))
             {
@@ -229,18 +241,19 @@ namespace charityMVC.Controllers
             }
             else 
                 return View();
-            }
-                catch (Exception ex)
-                    {
-                        _logger.LogError(ex, "An error occurred in the Review action.");
+            //}
+            //    catch (Exception ex)
+            //        {
+            //            _logger.LogError(ex, "An error occurred in the Review action.");
                         
-                        TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر عليك التواصل مع المبرمج !";
-                        return View();
-                    }
+            //            TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر عليك التواصل مع المبرمج !";
+            //            return View();
+            //        }
             
            
 
         }
+        [Authorize(Roles="admin")]
 
         public async Task<IActionResult> ChangeClerkCity(int id, string city)
         {
@@ -267,7 +280,7 @@ namespace charityMVC.Controllers
   
 
         }
-
+        [Authorize(Roles="admin")]
         public async Task<IActionResult> EditPoints()
         {
             points _points = await _adminRepo.Points();
@@ -278,7 +291,7 @@ namespace charityMVC.Controllers
         {
              try{
 
-                _points.Id = 6;
+                _points.Id = 1;
                 
                await _adminRepo.EditPoints(_points);
                TempData["Success"] = "!تم بنجاح ";
@@ -303,6 +316,110 @@ namespace charityMVC.Controllers
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login");
         }
+
+
+
+    [Authorize(Roles="admin")]
+    public async Task<IActionResult> ChangePassword( )
+    {
+        return View("ChangPassword");
+    }
+
+
+     [Authorize(Roles="admin")]
+     [HttpPost]
+     public async Task<IActionResult> ChangePassword(ClerkChangPassword changPassword )
+     {
+        try{
+        bool found = _adminRepo.PasswordFound(changPassword.oldPassword, changPassword.userName);
+        if(found)
+        {
+            Admin admin = await _adminRepo.FindAdmin(changPassword.userName, changPassword.oldPassword);
+            admin.password = changPassword.newPassword;
+            if(changPassword.NewUserName != null)
+            {
+            admin.username = changPassword.NewUserName;
+            }
+            _context.admin.Update(admin);
+            _context.SaveChanges();
+        }
+               TempData["Success"] = "!تم بنجاح ";
+
+        return RedirectToAction("Index","Admin");
+
+        }
+         catch (Exception ex)
+                 {
+                   _logger.LogError(ex, "An error occurred in the Review action.");
+                        
+                    TempData["ErrorMessage"] = "يوجد خطا فى الادمن او كلمة المرور القديمة!";
+
+                  }
+            return  RedirectToAction("ChangePassword");
+
+     }
+
+
+         [Authorize(Roles="admin")]
+        public async Task<IActionResult> NewPay ()
+        {
+        List<Accepted> _accepteds = await _adminRepo.GetAccepteds();
+        float _pointsCount = 0 ;
+        foreach(var accepted in _accepteds)
+        {
+            _pointsCount+=  accepted.points;
+
+        }
+      
+        PayMent payMent = new PayMent{
+            // accepteds = _accepteds ,
+            acceptedsCount = _accepteds.Count,
+            pointsCount = _pointsCount,
+        };
+            
+            return View(payMent);
+        }
+
+        [Authorize(Roles="admin")]
+
+        public async Task<IActionResult> RemoveUser(string id)
+        {
+            try{
+            bool done = await _userRepo.HardDeleteUser(id);
+            if(done)
+            {
+            TempData["Success"] = "! تم حذف الطلب بنجاح";
+            }
+                return View("AllUsers");
+
+            }
+          catch (Exception ex)
+                 {
+                   _logger.LogError(ex, "An error occurred in the Review action.");
+                        
+                    TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر عليك التواصل مع المبرمج !";
+                        
+                      return View("AllUsers");
+
+
+                  }
+
+            }
+           
+      
+       
+           
+
+          
+
+
+
+
+
+
+
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

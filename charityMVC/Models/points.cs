@@ -40,7 +40,7 @@ namespace charityMVC.Models
         [DefaultValue(10)]
          public int house_is_rent { get; set; }
 
-         public int pointValue { get; set; }
+         public float pointValue { get; set; }
 
 
     }

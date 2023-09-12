@@ -11,6 +11,14 @@
         @TempData["ErrorMessage"]
     </div>
 }
+@if (TempData.ContainsKey("Success"))
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["Success"]
+    </div>
+}
+
+
 
 
  <div class="container">
@@ -51,7 +59,9 @@
                 <label>  الهوية الشخصية: <span class="text-danger">*</span></label>
                <div class="image-preview" id="idImagePreview">
                 <img src=@Model.id_image alt="" class="image-preview__image">
-                <span class="image-preview__default-text"> </span>
+                <span class="image-preview__default-text">
+                     <a style="cursor: pointer;" href="@Model.id_image"> <i class="bi bi-box-arrow-down"></i></a> 
+                </span>
              </div>
             <input type="file" id="id_image"  asp-for="id_image"  onchange="previewImage('id_image','idImagePreview','@Model.id_image ')"  name="id_image"  class="form-control  form-control-sm" accept="image/*" />
              </div>
@@ -73,7 +83,9 @@
                 <label> بطاقة العائلة: <span class="text-danger">*</span> </label>
              <div class="image-preview" id="FamilyImagePreview">
                 <img src="@Model.family_card_image" alt="" class="image-preview__image">
-                <span class="image-preview__default-text"> </span>
+                <span class="image-preview__default-text"> 
+                     <a style="cursor: pointer;" href="@Model.family_card_image"> <i class="bi bi-box-arrow-down"></i></a> 
+                </span>
              </div>
                 <input type="file" id="family_card_image" asp-for="family_card_image"  value="بطاقة العائلة"
                 onchange="previewImage('family_card_image','FamilyImagePreview','@Model.family_card_image')" name="family_card_image" class="form-control  form-control-sm" accept="image/*" >
@@ -312,7 +324,9 @@
                         <div id="disiability-section" >
                         <div class="image-preview" id="disability_image_preview">
                         <img src="@Model.disability_proof" alt="" class="image-preview__image">
-                        <span class="image-preview__default-text">اثبات الاعاقة</span>
+                        <span class="image-preview__default-text">
+                             <a style="cursor: pointer;" href="@Model.disability_proof"> <i class="bi bi-box-arrow-down"></i></a> 
+                            اثبات الاعاقة</span>
                         </div>
                         <div class="col-sm-5" >
                             <input class="form-control mt-2" type="file" asp-for="disability_proof"  id="disability_proof" onchange="previewImage('disability_proof','disability_image_preview','@Model.disability_proof')"  name="disability_proof" accept="image/*">
@@ -351,7 +365,10 @@
                     <div id="debt-section" class="col-sm-5">
                     <div class="image-preview" id="debt_image_preview">
                     <img src="@Model.debt_proof" alt="" class="image-preview__image">
-                    <span class="image-preview__default-text"> اثبات الدين </span>
+                    <span class="image-preview__default-text"> 
+                         <a style="cursor: pointer;" href="@Model.debt_proof"> <i class="bi bi-box-arrow-down"></i></a> 
+                        اثبات الدين 
+                    </span>
                     </div>
                     <input class="form-control mt-2" asp-for="debt_proof" onchange="previewImage('debt_proof','debt_image_preview','@Model.debt_proof')" id="debt_proof" type="file" name="debt_proof" accept="image/*">
 
@@ -390,7 +407,9 @@
                     <div id="rent-section" class="col-sm-5">
                         <div class="image-preview" id="rentImagePreview">
                         <img src="@Model.rent_proof" alt="" class="image-preview__image">
-                        <span class="image-preview__default-text">اثبات الايجار </span>
+                        <span class="image-preview__default-text">اثبات الايجار 
+                             <a style="cursor: pointer;" href="@Model.house_rent"> <i class="bi bi-box-arrow-down"></i></a> 
+                        </span>
                         </div>
                         <input class="form-control mt-2" asp-for="rent_proof" type="file" onchange="previewImage('rent_proof','rentImagePreview','@Model.rent_proof')" id="rent_proof" name="rent_proof" accept="image/*">
 
@@ -523,11 +542,7 @@
 
 
 var cities =  [ 
-    "أبها", "الأحساء", "الباحة", "الدمام", "الرياض", "الزلفي", "الخبر", "الخرج", "الخفجي", "الجبيل", "الجوف", "الحائط", "الحبيل", "الحوية", "الدرعية", "الدوادمي", "الدومة الجندل", "الظهران",
-      "العلا", "العيون", "الغاط", "الفريش", "القريات", "القطيف", "القويعية", "المجمعة", "المذنب", "المدينة المنورة", "المزاحمية", "المبرز", "المخواة", "النعيرية", "النماص", "الهفوف", "الوجه", 
-      "بيشة", "تبوك", "تاروت", "جازان", "جدة", "حائل", "خميس مشيط", "رفحاء", "رأس تنورة", "رياض الخبراء", "ساجر", "سكاكا", "سيهات", "شرورة", "شقراء", "ضباء", "طريف", "ظهران الجنوب", "عرعر",
-      "عفيف", "عنيزة", "غرناطة", "فيفاء", "قلوة", "قيصومة", "كفر الدوار", "مكة المكرمة", "محايل عسير", "مرات", "مراكز الجودة", "مزارع الشريفة", "مستورة", "مطوفة", "محمد بن عبدالوهاب", "نجران", 
-      "نجوى", "نجوى ورغداء", "نخيل", "نمرة", "نفي", "نيابة", "هدا الشام", "هيئة", "هيئة الاتصالات وتقنية المعلومات", "وادي الدواسر", "وادي الريان", "وادي الشريعة", "وادي الفرع"
+    "مدن اخرى", "الاردن", "حائل", "القصيم", "الرياض" 
   ];
 
 var cityDropdown = document.getElementById("city");

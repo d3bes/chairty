@@ -4,7 +4,25 @@
 * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
-*/
+*/$(function () {
+
+  hljs.initHighlightingOnLoad();
+  initDefault();
+});
+
+function initDefault() {
+
+  $("#default-picker").hijriDatePicker({
+      locale:"ar-sa",
+      hijri: true,
+      viewMode: 'months',
+      showClose: true,
+      showClear: true,
+      showTodayButton: true,
+      useCurrent:false,
+
+  });
+}
 document.addEventListener('DOMContentLoaded', () => {
     "use strict";
   

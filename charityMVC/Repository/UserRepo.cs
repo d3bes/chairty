@@ -22,7 +22,7 @@ namespace charityMVC.Repository
 
         public async Task<int> GetPoints(User user)
         {
-           var Points = await context.points.FirstOrDefaultAsync(i=> i.Id == 6 );
+           var Points = await context.points.FirstOrDefaultAsync(i=> i.Id == 2 );
         
            var result = await CalculatePoints(user,Points) ;
             return result;
@@ -37,7 +37,7 @@ namespace charityMVC.Repository
              if((bool)user.debt) ResultPoints += points.has_debt;
             if((bool)user.disability) ResultPoints += points.has_disability;
             if((bool)user.house_rent) ResultPoints += points.house_is_rent;
-            if((bool)user.income_support) ResultPoints += points.hasNo_income_support;
+            if(!user.income_support) ResultPoints += points.hasNo_income_support;
             if(user.children_count==1) ResultPoints += points.children_count_1;
             if(user.children_count==2) ResultPoints += points.children_count_2;
             if(user.children_count==3) ResultPoints += points.children_count_3;
@@ -50,8 +50,8 @@ namespace charityMVC.Repository
 
         public async Task<User> AddUser(User user)
         {
-           await context.user.AddAsync(user);
-           await  context.SaveChangesAsync();
+            context.user.Add(user);
+             context.SaveChanges();
            return user;
         }
 
@@ -85,6 +85,7 @@ namespace charityMVC.Repository
             if(user != null )
             {
              context.user.Remove(user);
+             context.SaveChanges();
              return true;
             }
             else
@@ -101,6 +102,7 @@ namespace charityMVC.Repository
             { 
                 user.isDeleted = true;
                 context.user.Update(user);
+                context.SaveChanges();
                 return true;
             }
             else
@@ -140,7 +142,7 @@ namespace charityMVC.Repository
         public User Find(string id,string password)
         {
             User user = context.user
-                        .FirstOrDefault(u=> u.id == id && u.phone == password && ! u.isDeleted);
+                        .FirstOrDefault(u=> u.id == id && u.password == password && ! u.isDeleted);
 
             return user;
 
@@ -149,7 +151,7 @@ namespace charityMVC.Repository
         public bool Found(string id,string password)
         {
               User user = context.user
-                        .FirstOrDefault(u=> u.id == id && u.phone == password  && ! u.isDeleted);
+                        .FirstOrDefault(u=> u.id == id && u.password == password  && ! u.isDeleted);
 
                 // return user != null? true : false;
 
@@ -158,11 +160,11 @@ namespace charityMVC.Repository
 
         }
 
-        public async Task<bool> AddRole (Roles role)
+        public bool AddRole (Roles role)
         {
         
-            await context.Roles.AddAsync(role);
-            await context.SaveChangesAsync();
+            context.Roles.Add(role);
+            context.SaveChanges();
             return true;
 
         }

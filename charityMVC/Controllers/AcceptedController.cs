@@ -11,6 +11,7 @@ using Microsoft.Reporting.NETCore;
 using System.IO;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Principal;
+using Microsoft.AspNetCore.Authorization;
 
 
 
@@ -36,11 +37,13 @@ namespace charityMVC.Controllers
             _supportRepo = supportRepo;
         }
 
+        [Authorize(Policy = "AdminOrClerk")]
         public IActionResult Index()
         {
             return View();
         }
 
+        [Authorize(Policy = "AdminOrClerk")]
         public async Task<IActionResult> ClerkApprove(string id)
         {
             try {
@@ -52,7 +55,10 @@ namespace charityMVC.Controllers
                 name = user.fullName,
                 fullAddress = user.fullAddress,
                 phone = user.phone,
-                points = (int)user.points
+                points = (float)user.points,
+                bank_account_number = user.bank_account_number,
+                proxyName = user._proxy_name,
+                proxy_account_number = user._proxy_account_number
             };
            
             user.isAccepted = true;
@@ -74,15 +80,42 @@ namespace charityMVC.Controllers
 
 
         }
+        
+         [Authorize(Policy = "AdminOrClerk")]
+        public async Task<IActionResult> ReturnToReview(string id)
+        {   
+            try {
+            User user = await _userRepo.GetUserById(id);
+            user.isAccepted =false;
+            _userRepo.Update(user);
+
+            Accepted accepted = _context.Accepteds.FirstOrDefault(a => a.userId == id);
+            _context.Accepteds.Remove(accepted);
+            _context.SaveChanges(); 
+            TempData["Success"] = "!   تم التحويل الى المراجعة بنجاح  ";
+
+            }
+             catch (Exception ex)
+                 {
+                   _logger.LogError(ex, "An error occurred in the Review action.");
+                        
+                    TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر عليك التواصل مع المبرمج !";
+                        
+                        return  RedirectToAction("Index","Admin",new {id = id});
+
+                  }
+
+            return RedirectToAction("Index","Admin");
+        }
 
 
-
+        [Authorize(Roles="admin")]
         public async Task<IActionResult> AcceptedReport(string id)
         {
             try{
             var accepted = await _context.Accepteds.FirstOrDefaultAsync(a=> a.userId == id);
             points _points = await _adminRepo.Points();
-            int amount =( _points.pointValue * accepted.points);
+            float amount =( _points.pointValue * accepted.points);
       
 
             Support support = new Support(){
@@ -100,7 +133,7 @@ namespace charityMVC.Controllers
                    _context.Accepteds.Update(accepted);
                     await _context.SaveChangesAsync();
                      TempData["Success"] = "! جارى انتظار التقرير  ";
-               return  RedirectToAction("UserReports","Reports",new {id = id});
+                return  RedirectToAction("Index","Admin",new {id = id});
                 
              }
 
@@ -142,12 +175,88 @@ namespace charityMVC.Controllers
 
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+
+
+
+         [Authorize(Roles="admin")]
+         [HttpPost]
+        public async Task<IActionResult> NewPay(PayMent payMent)
         {
-            return View("Error!");
+            try{
+          if(payMent.income != 0 )
+          {
+            payMent.Id = Guid.NewGuid().ToString();
+
+             var accepteds = _context.Accepteds.ToList();
+
+            points _points = await _adminRepo.Points();
+            _points.pointValue = payMent.pointValue;
+
+             _adminRepo.EditPoints(_points);
+
+            
+
+         //   var accepteds = await _adminRepo.GetAccepteds();
+           // points _points = await _adminRepo.Points();
+
+        // string _payMentId = Guid.NewGuid().ToString();
+        // DateTime dateTime = DateTime.Now;
+        foreach(var accepted in accepteds)
+        {
+             float amount =((_points.pointValue * accepted.points));
+             
+             Support support = new Support(){
+
+            Amount = amount, ApprovalDate = accepted.dateTime, city = accepted.city,
+            userId = accepted.userId, fullAddress = accepted.fullAddress, name = accepted.name,
+            phone = accepted.phone, points = accepted.points,paymentId = payMent.Id,
+            bank_account_number = accepted.bank_account_number,
+            proxyName = accepted.proxyName,
+            proxy_account_number = accepted.proxy_account_number
+
+            };
+
+
+
+             bool NewSupportSuccess = await _supportRepo.NewSupport(support);
+            if(NewSupportSuccess)
+             {
+                  accepted.isApproved = true;
+                   _context.Accepteds.Update(accepted);
+                     _context.SaveChanges();
+                  
+             } 
+        
+        }   payMent.createDate = DateTime.Now;
+             _context.PayMents.Add(payMent);
+                  _context.SaveChanges();
+
+            return RedirectToAction("GetSupportsByPaymentId", "Reports",new {id = payMent.Id});
         }
+        else
+        {
+            return RedirectToAction("NewPay","Admin");
+        }
+            }
+            catch (Exception ex)
+                 {
+                   _logger.LogError(ex, "An error occurred in the Review action.");
+                        
+                    TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر عليك التواصل مع المبرمج !";
+                        
+                    return RedirectToAction("NewPay","Admin");
+
+
+                  }
+
+        }
+
+
+        
+
     }
+
+}
 
 
     
@@ -159,5 +268,4 @@ namespace charityMVC.Controllers
 
 
 // }
-}
 

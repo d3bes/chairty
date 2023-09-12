@@ -77,12 +77,12 @@ namespace charityMVC.Repository
         {
 
              _context.points.Update(_points);
-             await _context.SaveChangesAsync();
+              _context.SaveChanges();
              return _points;
         }
         public async Task<points> Points()
         {
-            points _points = await _context.points.FirstOrDefaultAsync(p=> p.Id == 6);
+            points _points = await _context.points.FirstOrDefaultAsync(p=> p.Id == 2);
             return _points;
         }
 
@@ -146,6 +146,15 @@ namespace charityMVC.Repository
 
                 return admin;
         }
+
+        public bool PasswordFound (string oldPassword,string userName)
+        {
+             _context.admin.FirstOrDefault(c=> c.password == oldPassword && c.username == userName);
+           
+            return true;
+        }
+
+        
 
 
  

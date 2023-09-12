@@ -52,3 +52,10 @@ img{
 a{
     margin: 1;
 }
+
+@media (max-width: 767px) {
+    img{
+        width: 55vw;
+        height: 35vh;
+    }
+     }

@@ -25,7 +25,7 @@ namespace charityMVC.Repository
 
         public bool Found(string id,string password);
 
-        public  Task<bool> AddRole (Roles role);
+        public  bool AddRole (Roles role);
 
         public  Task<Roles> GetRoles(string id);
 

@@ -81,3 +81,69 @@ margin-bottom: 10vh;
 
 
 }
+
+#proxy-section{
+    display: none;
+}
+
+#disiability-section{
+    display: none;
+}
+
+#debt-section{
+    display: none;
+}
+
+#rent-section{
+    display: none;
+}
+
+
+@media (max-width: 767px) {
+    
+    .image-preview{
+        width: 55vw !important;
+        height: 35vh !important;
+    }
+
+    img{
+        width: 54vw !important;
+        height: 34vh !important;
+    }
+     }
+
+
+
+     #cal-1, #cal-2 {
+        margin-left: 12px;
+        margin-top: 10px;
+      }
+      .icon-button {
+        width: 30px;
+      }
+      input {
+        width: 243px;
+        margin-bottom: 8px;
+      }
+      
+
+      /* CSS styles for the date picker */
+.datepicker {
+    position: relative;
+    display: inline-block;
+}
+
+#hijri-date {
+    padding: 5px;
+    width: 150px;
+}
+
+.calendar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+}

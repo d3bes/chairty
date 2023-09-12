@@ -42,5 +42,10 @@ namespace charityMVC.Repository
             List<Support> list = await _context.support.ToListAsync();
             return list;
         }
+
+        public async Task<List<Support>> GetSupportsByPayment(string PayMentId)
+        {
+          return  await _context.support.Where(s=> s.paymentId == PayMentId).ToListAsync();
+        }
     }
 }

@@ -12,17 +12,40 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Context>(op=>
 {
-    op.UseNpgsql(builder.Configuration.GetConnectionString("pgsql"));
+    op.UseSqlServer(builder.Configuration.GetConnectionString("Cs"));
 });
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie();
 
+builder.Services.AddMvc()
+    .AddViewOptions(options =>
+    {
+        options.HtmlHelperOptions.ClientValidationEnabled = true;
+    });
+
+
+builder.Services.AddAuthorization(
+    options =>
+{
+    options.AddPolicy("AdminOrClerk", policy =>
+    {
+        policy.RequireRole("admin", "clerk");
+    });
+});
+builder.Services.AddSession(options =>
+    {
+        options.Cookie.Name = ".YourApp.Session";
+        options.IdleTimeout = TimeSpan.FromMinutes(60); // Set your desired timeout
+        options.Cookie.IsEssential = true;
+    });
 
 builder.Services.AddScoped<IUserRepo, UserRepo>();
 builder.Services.AddScoped<IClerkRepo, ClerkRepo>();
 builder.Services.AddScoped<IAdminRepo, AdminRepo>();
 builder.Services.AddScoped<ISupportRepo, SupportRepo>();
+builder.Services.AddScoped<IReportRepo, ReportRepo>();
+builder.Services.AddScoped<IsmsRepo, smsRepo>();
 
 var app = builder.Build();
 
@@ -38,8 +61,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseSession();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

@@ -8,10 +8,10 @@ namespace charityMVC.ViewModels
 {
     public class MemberAccount
     {
-       
+         [Required(ErrorMessage = "ادخل الهوية")]
         public string username { get; set; }
 
-        [RegularExpression(@"^\d{10}$", ErrorMessage = "يجب ان يكون رقم الهاتف 10 ارقام")]
+        [Required(ErrorMessage ="ادخل كلمة المرور")]
         public string password { get; set; }
     }
 }

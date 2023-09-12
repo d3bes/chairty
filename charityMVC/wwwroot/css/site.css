@@ -13,6 +13,10 @@
   font-weight: bold;
 }
 
+#navAlter{
+  display: none;
+}
+
 /* Colors */
 :root {
   --color-default: #222222;
@@ -232,6 +236,21 @@ section {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
+
+  .hero img{
+    border-radius: 5vw 5vw;
+    height: 25vh;
+    width: 50vw;
+  }
+  
+/* #donateImg{
+  border-radius: 5vw 5vw;
+  height: 25vh;
+  width: 50vw;
+  margin-right: 10vw;
+  padding: 2rem;
+} */
+
 }
 
 /*--------------------------------------------------------------
@@ -262,8 +281,12 @@ section {
 
   .topbar .contact-info i a,
   .topbar .contact-info i span {
-    font-size: 13px;
+    font-size: 12px;
   }
+  #adminTop a{
+   font-size: x-small;
+   width:25vw;
+}
 }
 
 .topbar .contact-info i a {
@@ -483,7 +506,7 @@ section {
 # Mobile Navigation
 --------------------------------------------------------------*/
 @media (max-width: 1279px) {
-  .navbar {
+   /* .navbar {
     position: fixed;
     top: 0;
     right: -100%;
@@ -492,7 +515,9 @@ section {
     bottom: 0;
     transition: 0.3s;
     z-index: 9997;
-  }
+  }  
+
+  
 
   .navbar ul {
     position: absolute;
@@ -562,7 +587,7 @@ section {
   .navbar .dropdown>.dropdown-active,
   .navbar .dropdown .dropdown>.dropdown-active {
     display: block;
-  }
+  } */
 
   .mobile-nav-show {
     color: rgba(255, 255, 255, 0.6);
@@ -1091,6 +1116,8 @@ section {
 }
 
 @media (max-width: 767px) {
+
+ 
   .testimonials .testimonial-wrap {
     padding-left: 0;
   }
@@ -1953,6 +1980,7 @@ section {
 }
 
 @media (max-width: 640px) {
+ 
   .hero h2 {
     font-size: 36px;
   }
@@ -2691,7 +2719,8 @@ section {
 
 #donateImg{
   border-radius: 2vw 2vw;
-  height: 60vh;
+  height: 50vh;
+  
   margin-right: 10vw;
 }
 

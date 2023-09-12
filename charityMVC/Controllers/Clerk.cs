@@ -11,6 +11,7 @@ using charityMVC.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 
 namespace charityMVC.Controllers
 {
@@ -33,7 +34,7 @@ namespace charityMVC.Controllers
         {
             return View("userProfile");
         }
-        
+         [Authorize(Roles = "clerk")]
         public async Task<IActionResult> getClerk()
         {
 
@@ -42,6 +43,7 @@ namespace charityMVC.Controllers
 
 
         }
+         [Authorize(Policy = "AdminOrClerk")]
         public async Task<IActionResult> ClerkProfil(int id)
         {
 
@@ -69,7 +71,7 @@ namespace charityMVC.Controllers
                         
                     }
         }
-
+         [Authorize(Policy = "AdminOrClerk")]
         public async Task<IActionResult> Review(string id)
         {
             var user =await _userRepo.GetUserById(id);
@@ -77,7 +79,7 @@ namespace charityMVC.Controllers
             return View("review",user);
         }
 
-        
+         [Authorize(Policy = "AdminOrClerk")]
         [HttpPost]
         public async Task<IActionResult> UpdatePersonslData( PersonalData personalData, string id)
         {
@@ -91,7 +93,7 @@ namespace charityMVC.Controllers
                                 }
                                             
                                 user.fullName = personalData.fullName;
-                                user.phone = "966"+personalData.phone;
+                                user.phone = personalData.phone;
                                 user.birthDate = personalData.birthDate;
                                 user.city = personalData.city;
                                 user.fullAddress = personalData.fullAddress;
@@ -180,6 +182,59 @@ namespace charityMVC.Controllers
            
 
         }
+
+
+     [Authorize(Policy = "AdminOrClerk")]
+    public async Task<IActionResult> ChangePassword( )
+    {
+       return View("ChangePassword");
+
+    }
+
+
+      [Authorize(Policy = "AdminOrClerk")]
+     [HttpPost]
+     public async Task<IActionResult> ChangePassword(ClerkChangPassword changPassword )
+     {
+        try{
+        bool found = _adminRepo.FoundClerk(changPassword.userName, changPassword.oldPassword);
+        if(found)
+        {
+            Clerk clerk = await  _adminRepo.FindClerk(changPassword.userName, changPassword.oldPassword);
+            clerk.password = changPassword.newPassword;
+
+            if(changPassword.NewUserName!= null)
+            {
+            clerk.name  = changPassword.NewUserName;
+            }
+
+            _adminRepo.UpdateClerk(clerk);
+            TempData["Success"] = "!تم بنجاح ";
+               
+
+              return   RedirectToAction("ClerkProfil",new { id = clerk.Id });
+        }
+        else
+            {
+                TempData["ErrorMessage"] = "غير موجود!";
+                return View("ChangePassword");
+            } 
+
+        }
+         catch (Exception ex)
+                 {
+                   _logger.LogError(ex, "An error occurred in the Review action.");
+
+                    TempData["ErrorMessage"] = "يوجد خطا فى الادمن او كلمة المرور القديمة!";
+
+                  }
+            return  RedirectToAction("ChangePassword");
+
+     }
+
+
+
+
 
     }
 

@@ -26,6 +26,9 @@ namespace charityMVC.Repository
         public  Task<points> Points();
         public  Task<List<Accepted>> GetAccepteds ();
 
+        public bool PasswordFound (string oldPassword,string userName);
+
+
 
 
 

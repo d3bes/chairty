@@ -1,0 +1,52 @@
+
+@model smsValidation
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="container mt-5" style="margin-top: 30vw;margin-bottom: 30vw;">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" style="background: #40a8a2;">تسجيل دخول مستفيد:</div>
+                <div class="card-body">
+
+                      <form asp-action="validatePhone" asp-controller="sms" method="post" class="mt-4" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                          <label for="ValidationCode" class="form-label"> كود التعفعيل:</label>
+                            <div class="input-group">
+                      <input type="number" name="ValidationCode" id="ValidationCode" asp-for="ValidationCode" class="form-control" required>
+                                <div class="input-group-append">
+                    <i class="bi bi-eye-fill"></i>                        
+                                </button>
+                        </div>
+                        </div>
+                        </div>
+                     <button class="btn btn-success " type="submit" style="margin-top:0.5vw">تفعيل</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@* <div>
+        <form asp-action="validatePhone" asp-controller="sms" method="post" class="mt-4" method="post" enctype="multipart/form-data">
+        <div style="margin-top: 15vw;">
+            
+                <input type="number" name="ValidationCode" id="ValidationCode" asp-for="ValidationCode" class="form-control" required>
+
+        </div>
+                    <button type="submit" class="btn btn-primary">تفعيل</button>
+
+    </form>
+    
+</div> *@
+
+
+
+

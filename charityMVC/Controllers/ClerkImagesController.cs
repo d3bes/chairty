@@ -5,11 +5,13 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using charityMVC.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace charityMVC.Controllers
-{
+{  
+     [Authorize(Policy = "AdminOrClerk")]
     [Route("[controller]/[action]")]
     public class ClerkImagesController : Controller
     {
@@ -104,7 +106,7 @@ namespace charityMVC.Controllers
                 try
                 {
                   // var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
+          
                           string UploadPath =  Path.Combine(_webHostEnvironment.WebRootPath, "userImages");
                          string fileName = Guid.NewGuid().ToString() + "_" + disability_proof.FileName;
                          string filePath = Path.Combine(UploadPath, fileName);

@@ -19,22 +19,23 @@ namespace charityMVC.Models
     public string fullAddress { get; set; }
     public string phone { get; set; }
 
-    public decimal? Amount { get; set; }
+    public float? Amount { get; set; }
 
     public DateTime? ApprovalDate { get; set; } // Date when support was approved
     
     [DefaultValue(false)]
     public bool isApproved { get; set;}
-    public int points { get; set; }
+    public float points { get; set; }
         
     [DefaultValue(false)]
      public bool isDeleted {get;set;}
+     public string? paymentId { get; set; }
+     public string? bank_account_number { get; set; }
+     public string? proxyName {get; set; }
+     public string? proxy_account_number { get; set;}
 
-        public static implicit operator List<object>(Support v)
-        {
-            throw new NotImplementedException();
-        }
 
+       // بيان الدفعة المالية يتضمن اسم المستفيد ورقم حسابه واسم الوكيل ورقم حسابه والمنطقة والنقاط والمبلغ .
         // public string? Description { get; set; } // Details about the support request
 
         // public string? DocumentUrl { get; set; } // URL to any supporting documents

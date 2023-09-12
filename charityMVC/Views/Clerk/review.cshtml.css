@@ -45,8 +45,6 @@ img{
     border-radius: 2%;
     padding: 2vw;
     margin-bottom: 2vw;
-    
-
 
 }
 
@@ -58,3 +56,11 @@ a{
     display: none;
 }
  */
+
+
+ @media (max-width: 767px) {
+img{
+    width: 55vw;
+    height: 35vh;
+}
+ }

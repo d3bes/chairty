@@ -14,14 +14,17 @@ using Microsoft.AspNetCore.Authorization;
 namespace charityMVC.Controllers
 {
     [Route("[controller]/[action]")]
+    [Authorize]
     public class UserProfile : Controller
     {
         private readonly ILogger<UserProfile> _logger;
         public IUserRepo _userRepo;
-        public UserProfile(ILogger<UserProfile> logger, IUserRepo userRepo)
+        public IsmsRepo _smsRepo;
+        public UserProfile(ILogger<UserProfile> logger, IUserRepo userRepo,IsmsRepo ismsRepo)
         {
             _logger = logger;
             _userRepo = userRepo;
+            _smsRepo = ismsRepo;
         }
         [Authorize]
         public async Task<IActionResult> GetUserProfile()
@@ -31,8 +34,12 @@ namespace charityMVC.Controllers
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             User user  = await _userRepo.GetUserById(userId);
-
+            // if(user.isPhoneValid)
+            // {
             return View("userProfile",user);
+            // }
+            // else
+            // return RedirectToAction("validatePhone","sms");
             }
              catch (Exception ex)
                   {
@@ -45,6 +52,14 @@ namespace charityMVC.Controllers
 
                     }
         }
+
+
+    [Authorize]
+    public async Task<IActionResult> ChangePassword( )
+    {
+       return View("ChangPassword");
+
+    }
 
        
         

@@ -1,0 +1,183 @@
+@model PayMent
+
+@{
+    ViewData["Title"] = "انشاء دفعة مالية";
+}
+
+
+<div>
+    
+    <div class="container">
+ <form method="post" asp-action="NewPay" asp-controller="Accepted"  class="mt-4">
+
+        <div class="row" style="margin-top: 3vw">
+
+        <div class="col-sm-2">
+                <h5> عدد المقبولبن:</h5>
+        </div>
+        <div class="col-sm-2">
+        <div class="input-group mb-3">
+                    <input type="number" asp-for="acceptedsCount" id="usersCount" class="form-control" readonly >
+                    <span class="input-group-text">مستفيد</span>
+                </div>  
+        </div>
+
+        <div class="col-sm-2" >
+                <h5 style="text-align: left;" > عدد النقاط:</h5>
+        </div>
+        <div class="col-sm-2">
+        <div class="input-group mb-3">
+                    <input type="number" asp-for="pointsCount" id="pointCount" class="form-control" readonly >
+                    <span class="input-group-text">نقطة</span>
+                </div>  
+        </div>
+
+         <div class="col-sm-2" >
+                <h5> قيمة النقطة:</h5>
+        </div>
+        <div class="col-sm-2">
+        <div class="input-group mb-3">
+                    <input type="number" asp-for="pointValue" id="pointValue" class="form-control" readonly >
+                     <span class="input-group-text">ر.س</span>
+                </div>  
+        </div>
+
+        </div>
+        
+
+        <div class="row" style="margin-top: 2vw">
+            <div class="col-sm-2">
+                <h5>مبلغ التبرع:</h5>
+            </div>
+            <div class="col-sm-4">
+                <div class="input-group mb-3">
+                    <input type="number" onchange="ConvertToMoneyText()" asp-for="income" id="Money" class="form-control"
+                           aria-label="Amount (to the nearest dollar)">
+                    <span class="input-group-text">ر.س</span>
+
+                </div>
+            </div>
+            @* <div class="col-sm-6">
+                <div class="input-group mb-3">
+                    <input type="text" id="MoneyVerbose" class="form-control" readonly>
+                </div>
+            </div> *@
+        </div>
+        
+<div class="row" style="margin-bottom: 15vw;">
+<div class="col-sm-2" ></div>
+<div class="col-sm-2">
+
+  <a class="btn btn-success" data-bs-toggle="modal" data-bs-target="#PayModal" > انشاء دفعة مالية</a> 
+
+
+      <div class="modal fade" id="PayModal" tabindex="-1" aria-labelledby="PayModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header" style="background-color: #294d5d; color: white;">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h5 class="modal-title" id="PayModalLabel" >  انشاء دفعة مالية  </h5>              
+  
+              </div>
+              <div class="modal-body">
+
+            <button type="submit" class="btn btn-success"> انشاء</button>
+              </div>
+          </div>
+      </div>
+  </div> 
+
+</div>
+</div>
+
+<!-- ################### Accepting modal ############## -->
+ 
+
+
+
+
+
+</form>
+    </div>
+
+    <div>
+        
+    </div>
+
+@section Scripts{
+    <script>
+        function ConvertToMoneyText() {
+            var inputMoney = parseInt(document.getElementById("Money").value);
+
+              var pointValue = document.getElementById("pointValue");
+            var pointCount = document.getElementById("pointCount");
+            var result = parseFloat(inputMoney)/ parseFloat(pointCount.value); 
+            var fixedResult = result.toFixed(5);
+            pointValue.value = fixedResult.toString();
+
+
+            var outputMoney = document.getElementById("MoneyVerbose");
+
+            var text = numberToArabicText(inputMoney);
+            outputMoney.value = text; // Use .value to set the input field's value
+
+          
+
+        }
+
+        function numberToArabicText(number) {
+            var units = ["", "واحد", "اثنان", "ثلاثة", "أربعة", "خمسة", "ستة", "سبعة", "ثمانية", "تسعة"];
+            var teens = ["عشرة", "أحد عشر", "اثنا عشر", "ثلاثة عشر", "أربعة عشر", "خمسة عشر", "ستة عشر", "سبعة عشر", "ثمانية عشر", "تسعة عشر"];
+            var tens = ["", "عشرون", "ثلاثون", "أربعون", "خمسون", "ستون", "سبعون", "ثمانون", "تسعون"];
+            var hundreds = ["", "مئة","مئتين", "ثلاثمائة", "اربعمائة", "خمسمائة", "ستمائة", "سبعمائة", "ثمانمائة", "تسعمائة"]
+            var thousands = ["", "الف","الفين", "ثلاثة الاف", "اربعة الاف", "خمس الاف", "ست الاف", "سبع الاف", "ثمانية الاف", "تسع الاف"]
+
+            var thousands = ["", "ألف", "مليون"];
+
+            function convertToArabicText(n, level) {
+                if (n === 0) {
+                    return "";
+                }
+
+                var text = "";
+
+                if (n < 10) {
+                    text = units[n];
+                } else if (n < 20) {
+                    text = teens[n - 10];
+                } else if (n < 100) {
+                    text = tens[Math.floor(n / 10) - 1];
+                    if (n % 10 !== 0) {
+                        text += " و" + units[n % 10];
+                    }
+                } else if (n < 1000) {
+                    text = units[Math.floor(n / 100)] + " مئة";
+                    if (n % 100 !== 0) {
+                        text += " و" + convertToArabicText(n % 100, 0);
+                    }
+                } else {
+                    text = convertToArabicText(Math.floor(n / 1000), level + 1) + " " + thousands[level];
+                    if (n % 1000 !== 0) {
+                        text += " و" + convertToArabicText(n % 1000, 0);
+                    }
+                }
+
+                return text;
+            }
+
+            if (number === 0) {
+                return "صفر";
+            } else {
+                return convertToArabicText(number, 0);
+            }
+        }
+
+
+        $("form").keypress(function(e){
+    if(e.keyCode == 13) {
+        e.preventDefault();
+        return false;
+    }
+})
+    </script>
+}

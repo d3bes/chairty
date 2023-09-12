@@ -22,32 +22,48 @@ public IActionResult UsersExcelReport(List<Support> supports, string reportName)
     {
         var worksheet = package.Workbook.Worksheets.Add($"{reportName}");
         int column = 1;
+        float result = 0;
 
         // Add Arabic header row
         worksheet.Cells[1, 1].Value = "الاسم";
         worksheet.Cells[1, 2].Value = "رقم الهوية";
         worksheet.Cells[1, 3].Value = "المدينة";
         worksheet.Cells[1, 4].Value = "العنوان";
-        worksheet.Cells[1, 5].Value = "رقم الهاتف";
-        worksheet.Cells[1, 6].Value = "النقاظ";
-        worksheet.Cells[1, 7].Value = "الدفعة المالية";
-        worksheet.Cells[1, 8].Value = "تاريخ اقرار الدفعة";
+        worksheet.Cells[1, 5].Value = " رقم حساب المستفيد ";
+        worksheet.Cells[1, 6].Value = "رقم الهاتف";
+        worksheet.Cells[1, 7].Value = "النقاظ";
+        worksheet.Cells[1, 8].Value = "اسم الوكيل";
+        worksheet.Cells[1, 9].Value = " رقم حساب الوكيل ";
+        worksheet.Cells[1, 10].Value = "تاريخ اقرار الدفعة";
+        worksheet.Cells[1, 11].Value = "الدفعة المالية";
+
 
         foreach (var _support in supports)
         {
             column++;
+            result +=(float) _support.Amount;
             worksheet.Cells[column, 1].Value = _support.name;
             worksheet.Cells[column, 2].Value = _support.userId;
             worksheet.Cells[column, 3].Value = _support.city;
             worksheet.Cells[column, 4].Value = _support.fullAddress;
-            worksheet.Cells[column, 5].Value = _support.phone;
-            worksheet.Cells[column, 6].Value = _support.points;
-            worksheet.Cells[column, 7].Value = _support.Amount;
-            if (_support.ApprovalDate.HasValue)
+            worksheet.Cells[column, 5].Value = _support.bank_account_number;
+            worksheet.Cells[column, 6].Value = _support.phone;
+            worksheet.Cells[column, 7].Value = _support.points;
+            worksheet.Cells[column, 8].Value = _support.proxyName;
+            worksheet.Cells[column, 9].Value = _support.proxy_account_number;
+              if (_support.ApprovalDate.HasValue)
             {
-                worksheet.Cells[column, 8].Value = _support.ApprovalDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
+                worksheet.Cells[column, 10].Value = _support.ApprovalDate.Value.ToString("yyyy-MM-dd HH:mm:ss");
             }
+            worksheet.Cells[column, 11].Value = _support.Amount;
+          
         }
+        column+= 2;
+            worksheet.Cells[column, 11].Value = result;
+            worksheet.Cells[column, 12].Value = "اجمالى الدفعات";
+
+
+
 
         worksheet.Cells.AutoFitColumns();
 

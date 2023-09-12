@@ -43,3 +43,32 @@ img{
 a{
     margin: 1;
 }
+
+
+#return-button {
+    position: absolute;
+    top: 9rem; /* Adjust the top distance as needed */
+    left: 5vw; /* Adjust the left distance as needed */
+    z-index: 9999;
+}
+
+/* Add custom CSS for smaller screens here */
+@media screen and (max-width: 768px) {
+    /* Adjust styles for small screens */
+    .col-sm-4, .col-sm-3, .col-sm-2 {
+        width: 100%;
+    }
+    .page-header{
+        width: 30vw;
+        height: 5vh;
+    }
+
+
+  
+    
+    
+
+}
+
+
+

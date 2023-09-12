@@ -9,6 +9,7 @@ using charityMVC.Repository;
 using charityMVC.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -22,22 +23,25 @@ namespace charityMVC.Controllers
         private readonly ILogger<RegisterController> _logger;
         private IUserRepo _userRepo;
         private IWebHostEnvironment _webHostEnvironment;
-     
+        private IsmsRepo _smsRepo;
 
-        public RegisterController(ILogger<RegisterController> logger, IUserRepo userRepo, IWebHostEnvironment webHostEnvironment )
+
+        public RegisterController(ILogger<RegisterController> logger,IsmsRepo smsRepo,
+                      IUserRepo userRepo, IWebHostEnvironment webHostEnvironment )
         {
             _logger = logger;
             _userRepo = userRepo;
             _webHostEnvironment = webHostEnvironment;
+            _smsRepo = smsRepo;
 
         }
-        
+
         public IActionResult register()
-        { 
+        {
             return View("register");
         }
         public IActionResult Login()
-        { 
+        {
             return View();
         }
 
@@ -46,19 +50,19 @@ namespace charityMVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(Account account)
         {
-        
-        try 
+
+        try
         {
         //   if(ModelState.IsValid)
         //   {
             if(_userRepo.Found(account.id, account.password))
             {
-                
+
                 //get role
                Roles role = await _userRepo.GetRoles(account.id);
                 User accountModel =   _userRepo.Find(account.id, account.password);
-               
-                   ClaimsIdentity identity = 
+
+                   ClaimsIdentity identity =
                     new ClaimsIdentity(CookieAuthenticationDefaults.AuthenticationScheme);
 
                 identity.AddClaim(new Claim("id",account.id.ToString()));
@@ -67,16 +71,16 @@ namespace charityMVC.Controllers
                 identity.AddClaim(new Claim(ClaimTypes.Role, role.Role));
 
                  ClaimsPrincipal principal = new ClaimsPrincipal(identity);
-                 
+
                 HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,principal);
 
-                 return RedirectToAction("GetUserProfile", "UserProfile");     
+                 return RedirectToAction("GetUserProfile", "UserProfile");
             }
             else
             {
                 ModelState.AddModelError("","عذرا,الهوية او كلمة المرور غير صحيحة يرجى اعادة المحاولة");
-            } 
-         
+            }
+
         //   }
                return View(account);
 
@@ -84,10 +88,10 @@ namespace charityMVC.Controllers
          catch (Exception ex)
                      {
                         _logger.LogError(ex, "An error occurred in the Review action.");
-                        
+
                         TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر اكثر عليك التواصل مع المبرمج !";
-                    
-                      return View(); 
+
+                      return View();
 
                        }
 
@@ -105,42 +109,51 @@ namespace charityMVC.Controllers
         public async Task<IActionResult> Upload(IFormFile id_image, IFormFile family_card_image, IFormFile disability_proof,
                                     IFormFile debt_proof, IFormFile rent_proof, User user )
         {
-            try 
+            try
             {
 
                 // if(ModelState.IsValid)
                 // {
-                       
 
-                                
+
+
                                 await _userRepo.UploadAllFiles( id_image, family_card_image, disability_proof, debt_proof, rent_proof ,user);
                                   // Calculate user points and add the user
                                 user.points = await _userRepo.GetPoints(user);
-                                await _userRepo.AddUser(user);
-                                
+                            user.phone = "966"+user.phone;
+                            user.password = user.phone;
+
+                          User userRe = await  _userRepo.AddUser(user);
+
                                Roles role = new Roles
                                 {
                                     id = user.id,
                                     Role = "user"
                                 };
-                                 await _userRepo.AddRole(role);
-                      
-                        
-                               
-                                        // Redirect to the Index action of the HomeController
-                        return View("Login");
+
+                    if(_userRepo.Found(user.id, user.phone))
+                    {
+                          _userRepo.AddRole(role);
+                        //  _smsRepo.Create(user.id);
+
+                    }
+
+
+                                     // Redirect to the Index action of the HomeController
+                        // return View("Login");
+                          return View("TempPassword",userRe);
                         // }
                         // else
-                        // return View("register",user); 
+                        // return View("register",user);
                     }
 
                     catch (Exception ex)
                      {
                         _logger.LogError(ex, "An error occurred in the Review action.");
-                        
+
                         TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر اكثر عليك التواصل مع المبرمج !";
-                    
-                      return View("register",user); 
+
+                      return View("register",user);
 
                        }
 
@@ -150,17 +163,17 @@ namespace charityMVC.Controllers
 
         }
 
-
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> UpdatePersonslData( PersonalData personalData )
         {
                     try
                     {
-                               
+
                              var user = await _userRepo.GetUserById(personalData.id);
-                                
+
                                 user.fullName = personalData.fullName;
-                                user.phone = "966"+personalData.phone;
+                                user.phone = personalData.phone;
                                 user.birthDate = personalData.birthDate;
                                 user.city = personalData.city;
                                 user.fullAddress = personalData.fullAddress;
@@ -172,7 +185,7 @@ namespace charityMVC.Controllers
                                 user.elderly= personalData.elderly;
                                 user.widow=(bool) personalData.widow;
                                 user.income_support = (bool)personalData.income_support;
-                              
+
                                 var points =  await _userRepo.GetPoints(user);
                                 user.points = points;
 
@@ -186,9 +199,9 @@ namespace charityMVC.Controllers
                       catch (Exception ex)
                     {
                         _logger.LogError(ex, "An error occurred in the Review action.");
-                        
+
                         TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر اكثر عليك التواصل مع المبرمج !";
-                    
+
                         return RedirectToAction("GetUserProfile", "UserProfile");
 
                     }
@@ -196,11 +209,48 @@ namespace charityMVC.Controllers
         }
 
 
-        
+//    [Authorize]
+//     public async Task<IActionResult> ChangePassword( )
+//     {
+//        return View("ChangPassword","Register");
 
-     
+//     }
+
+    [Authorize]
+     [HttpPost]
+     public async Task<IActionResult> ChangePassword(ChangPassword changPassword )
+     {
+        try{
+        bool found = _userRepo.Found(changPassword.userName, changPassword.oldPassword);
+        if(found)
+        {
+            User user =  _userRepo.Find(changPassword.userName, changPassword.oldPassword);
+            user.password = changPassword.newPassword;
+            _userRepo.Update(user);
+
+        }
+               TempData["Success"] = "!تم بنجاح ";
+
+            return RedirectToAction("GetUserProfile", "UserProfile");
+
+
+        }
+         catch (Exception ex)
+                 {
+                   _logger.LogError(ex, "An error occurred in the Review action.");
+
+                    TempData["ErrorMessage"] = "يوجد خطا فى الادمن او كلمة المرور القديمة!";
+
+                  }
+            return  RedirectToAction("ChangePassword");
+
+     }
+
+
+
+
     }
 }
 
 
- 
+

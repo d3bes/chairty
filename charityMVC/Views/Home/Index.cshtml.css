@@ -1,0 +1,14 @@
+@media (max-width: 767px) {
+    /* Styles specific to small screens go here */
+#donateImg{
+    width: 70vw;
+   height: 70vw;
+   border-radius: 0; 
+      
+     margin-left: 15vw;
+
+  
+
+}
+    /* For example, you can adjust font sizes, margins, padding, or layout for small screens */
+}

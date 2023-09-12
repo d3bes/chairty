@@ -24,9 +24,14 @@ namespace charityMVC.Models
         [DefaultValue(false)]
         public bool isApproved { get; set;}
         public DateTime dateTime { get; set; }
-        public int points { get; set; }
+        public float points { get; set; }
            [DefaultValue(false)]
         public bool isDeleted {get;set;}
+        public string? bank_account_number { get; set; }
+        public string? proxyName {get; set; }
+        public string? proxy_account_number { get; set;}
+
+      //  public List<PayMent>? payMents { get; set; }
 
     }
 }

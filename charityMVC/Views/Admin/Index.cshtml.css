@@ -15,26 +15,49 @@
  }
 
 
-  /* .btn-success:active{
-    background-color: rgb(240, 119, 119);
-  } */
-  /* .page-header{
-    width: 13vw;
-    height: 4vw;
-    background-color:rgb(12, 144, 95);
-    color: white;
-    margin-top: 2vw;
-    border-radius: 0.2vw 0.2vw;
-    text-align: center;
-    margin-right: 1vw;
-    padding:0.5vw;
-   
+#links{
+  width: 12vw;
+}
+  
+   @media (max-width: 767px) {
+    /* Styles specific to small screens go here */
+    /* For example, you can adjust font sizes, margins, padding, or layout for small screens */
+    #ijj{
+      width:  fit-content;
+    }
+    /* Example: Make font size smaller on small screens */
+    body {
+        font-size: 80%;
+        
+    }
+    #hkji{
+      height: 25vw;
+    }
+
+    .page-header{
+      width: 10rem;
+      height: 5vh;
+    }
+    .col-sm-2 .nav-pills .nav-item .btn {
+      width: 200%; 
+  }
+
+     /* Example: Adjust the width of buttons for small screens */
+     .col-sm-2 a {
+      width: 100%; /* Adjust the width as needed */
+      margin-bottom: 0.5vw;
+      width: 5vw !important;
   }
   
-  
-   */
-  
-  
+  /* Example: Center-align items within the container */
+  .col-sm-2 {
+      text-align: center;
+  }
+
+}
+
+
+
   
   
   
