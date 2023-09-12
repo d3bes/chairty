@@ -53,31 +53,31 @@ The project was created for the benefit of a family fund dedicated to supporting
 
 ## System Features
 
-1. **Beneficiary Registration:** Visitors, area supervisors, and system administrators can register beneficiaries through the system.
+1. **User Registration:** Visitors, area supervisors, and system administrators can register beneficiaries through the system.
 
-2. **Beneficiary Data Updates:** Beneficiary data can be updated at any time.
+2. **User Data Updates:** User data can be updated at any time.
 
 3. **Financial Batch Creation:** System administrators can create financial batches for distribution.
 
-4. **Custom Reports:** Detailed reports can be generated, such as the financial batch expenditure report and beneficiary status report.
+4. **Custom Reports:** Detailed reports can be generated, such as the financial batch expenditure report and User status report.
 
 ## System Details
 
 - Language: Asp net core 7 MVC
 - Web Pages:
-  - Beneficiary Registration Page
-  - Beneficiary Data Update Page
+  - User Registration Page
+  - User Data Update Page
   - Financial Batch Creation Page
   - Reports Page
 
-## Beneficiary Registration Process
+## User Registration Process
 
-- Beneficiary data is recorded, including name, ID number, date of birth, and more.
+- User data is recorded, including name, ID number, date of birth, and more.
 - The status of each family is evaluated, and points are assigned.
 - Data related to income, assistance, health status, debts, and more is recorded.
 - Necessary documents are uploaded.
 - Identity is confirmed through SMS verification.
-- Supervisors and system administrators review registration requests, inspect documents, and communicate with beneficiaries if necessary.
+- Supervisors and system administrators review registration requests, inspect documents, and communicate with Users if necessary.
 
 ## Financial Batch Management
 
@@ -85,10 +85,10 @@ The project was created for the benefit of a family fund dedicated to supporting
 
 ## Custom Reports
 
-- Custom reports containing beneficiary information and financial batch data can be generated.
+- Custom reports containing User information and financial batch data can be generated.
 - Reports can be exported to Excel or PDF formats.
 
 ## Notes
 
-- System administrators can adjust the points for each category in beneficiary information.
+- System administrators can adjust the points for each category in User information.
 
