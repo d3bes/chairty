@@ -14,7 +14,9 @@ for details on configuring this project to bundle and minify static web assets. 
     
  }
  
-
+ #adminTop{
+   float: left;
+ }
 
  #navAlter{
    display: block;

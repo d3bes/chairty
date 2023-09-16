@@ -7,13 +7,10 @@
     }
     .page-header{
         width: 20vw;
-        height: 5vh;
+        height: 7vh;
+        border-radius: 0.4rem 0.4rem;
     }
-
-  
     
-    
-
 }
 
 
