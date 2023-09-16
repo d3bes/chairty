@@ -22,19 +22,24 @@
 <div class="container">
     <div class="row">
 
-<div class="col-sm-1"></div>
-<div class="col-sm-3">
+<span class="col-sm-2"></span>
+<span class="col-sm-3">
         @if(Model.isAccepted){
                         
-                        <a  class="btn btn-success" style="margin:1vw;" disiable>تم القبول </a>
+                        @* <a  class="btn btn-success" style="margin:1vw;" disiable>تم القبول </a> *@
+                         <div id="acceptedSign" style="width: 2vw; height: 2vw;color:white; background: green;padding:0.25vw;padding-right:0.40vw; border-radius: 50%; margin-top:1vw">
+               <i class="bi bi-check2-circle" ></i>
+                </div>
                     }
 
-        </div>
+</span>
 
-<div class="col-sm-3 " >
+
+<span class="col-sm-3" >
                   <a  class="btn btn-info" style="margin:1vw;" asp-action="ChangePassword" asp-controller="UserProfile"> تغيير كلمة المرور </a>
 
-</div>
+</span>
+<span class="col-sm-2"></span>
     </div>
    
 
@@ -149,7 +154,7 @@
                   
                     <input type="number" asp-for="phone" name="phone" class="form-control" required>
                       <span asp-validation-for="phone" class="text-danger"></span>
-                        <span class="input-group-text">966</span>
+                        @* <span class="input-group-text">966</span> *@
 
                 </div>
             </div>

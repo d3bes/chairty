@@ -36,7 +36,7 @@
  <div class="col-sm-5"> </div>
  <div class="col-sm-4">
 <div class="page-header">
-<h6 style="padding-top: 0.5vw;">قائمة  المراجعة </h6>
+<h6 style="padding-top: 0.5vw;">قائمة  المستفيدين </h6>
 </div>
  </div>
 </div>
@@ -89,7 +89,7 @@
                     <td>@item.city</td>
                     <td>@item.points</td>
                     <td>
-                        <a class="btn btn-warning btn-sm" asp-controller="Clerk" asp-action="Review" asp-route-id="@item.id">مراجعة</a>
+                        <a class="btn btn-warning btn-sm" asp-controller="Clerk" asp-action="Review" asp-route-id="@item.id">ملف المستفيد</a>
                     </td>
                     @if(item.isAccepted)
                     {
@@ -99,7 +99,29 @@
                        } 
                        else {
                          <td>
-                        <a class="btn btn-danger btn-sm" asp-controller="Admin" asp-action="RemoveUser" asp-route-id="@item.id"> حذف الطلب </a>
+
+                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#RemoveUserModal">
+                    حذف المستفيد
+                    </button>
+                            <!-- Modal -->
+                    <div class="modal fade" id="RemoveUserModal" tabindex="-1" aria-labelledby="RemoveUserModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="RemoveUserModalLabel"> حذف مستفيد نهائيا</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            هل انت متاكد من حذف المستفيد من النظام نهائيا؟
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">الغاء</button>
+                            <a class="btn btn-danger" asp-controller="Admin" asp-action="RemoveUser" asp-route-id="@item.id"> حذف المستفيد نهائيا </a>
+
+                        </div>
+                        </div>
+                    </div>
+                    </div>
                     </td>
                        }
                      

@@ -75,7 +75,7 @@ public IActionResult UsersExcelReport(List<Support> supports, string reportName)
 
         return new FileContentResult(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
         {
-            FileDownloadName = $"{DateTime.Now.ToString("yyyy-MM-dd-hh-mm")}_{reportName}.xlsx"
+            FileDownloadName = $"{DateTime.UtcNow.ToString("yyyy-MM-dd-hh-mm")}_تقرير.xlsx"
         };
     }
 }

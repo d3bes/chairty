@@ -44,7 +44,7 @@
           @item.city - تقرير دفعة مالية  
         </div>
         <div class="card-body">
-            <h5 class="card-title">  ر.س <mark> @item.Amount</mark> </h5>
+            <h5 class="card-title">   <mark style="background-color: yellow;"> @item.Amount ر.س</mark> </h5>
             <p class="card-text">الاسم: @item.name </p>
              <p class="card-text">رقم الهوية: @item.userId</p>
              <p class="card-text">رقم الهاتف: @item.phone</p>
@@ -62,7 +62,10 @@
 
         </div>
         <div class="card-footer text-muted" >
-           @item.ApprovalDate تم الموافقة بتاريخ: 
+             
+           @* @item.ApprovalDate.ToString("yyyy/MM/dd") تم الموافقة بتاريخ:  *@
+         
+              تم انضمام المستفيد فى :   @String.Format("{0:dd/MM/yyyy}", item.ApprovalDate)   <span style="margin-right: 10vw;"> @String.Format("{0:hh:mm tt}", item.ApprovalDate)</span>   
         </div>
         </div>
     }

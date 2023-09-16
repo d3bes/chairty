@@ -49,7 +49,8 @@ namespace charityMVC.Controllers
         public async Task<IActionResult> Index()
         {
          
-         List<PayMent> payMents = _context.PayMents.ToList();
+         List<PayMent> payMents = await _context.PayMents.OrderByDescending(p=> p.createDate).ToListAsync();
+       
          return View(payMents);
 
                                 
@@ -95,6 +96,7 @@ namespace charityMVC.Controllers
 
 public async Task<IActionResult> SupportPdfReportByPayment(string id)
 {
+    try{
     // Get the list of Support objects
     List<Support> supportList = await _supportRepo.GetSupportsByPayment(id); // Assuming you have a method to retrieve all supports
 
@@ -132,11 +134,20 @@ public async Task<IActionResult> SupportPdfReportByPayment(string id)
 
         // Close the main PDF document
         pdfDocument.Close();
-
         // Return the combined PDF as a downloadable file
         byte[] pdfBytes = memoryStream.ToArray();
-        return File(pdfBytes, "application/pdf", $"{supportList[1].ApprovalDate}الدفعة المالية_.pdf");
+        return File(pdfBytes, "application/pdf", $"{supportList[0].ApprovalDate}الدفعة المالية_.pdf");
     }
+    }
+   catch (Exception ex)
+                     {
+                        _logger.LogError(ex, "An error occurred in the Review action.");
+                        
+                        TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر اكثر عليك التواصل مع المبرمج !";
+                    
+                      return RedirectToAction("Index","Reports");
+
+                       }
 }
 
 

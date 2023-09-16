@@ -291,7 +291,7 @@ namespace charityMVC.Controllers
         {
              try{
 
-                _points.Id = 1;
+                _points.Id = 2;
                 
                await _adminRepo.EditPoints(_points);
                TempData["Success"] = "!تم بنجاح ";
@@ -390,7 +390,7 @@ namespace charityMVC.Controllers
             {
             TempData["Success"] = "! تم حذف الطلب بنجاح";
             }
-                return View("AllUsers");
+                return RedirectToAction("AllUsers");
 
             }
           catch (Exception ex)
@@ -399,7 +399,8 @@ namespace charityMVC.Controllers
                         
                     TempData["ErrorMessage"] = "عذرا لقد وقع خطا غير مقصود اذا تكرر عليك التواصل مع المبرمج !";
                         
-                      return View("AllUsers");
+                     return RedirectToAction("AllUsers");
+
 
 
                   }

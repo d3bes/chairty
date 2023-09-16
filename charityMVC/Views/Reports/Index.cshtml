@@ -33,9 +33,9 @@
          @item.createDate.ToString("dd/MM/yyyy") - تقرير دفعة مالية   
         </div>
         <div class="card-body">
-            <h5 class="card-title"> دفعات مالية بتاريخ@*<mark style="background-color: yellow;" >*@  <span  class="badge badge-success badge-xl"> @item.createDate </span> </h5>
+            <h5 class="card-title"> دفعات مالية بتاريخ@*<mark style="background-color: yellow;" >*@  <span  class="badge badge-success badge-xl"> @item.createDate.ToString("dd/MM/yyyy hh:mm tt")  </span> </h5>
              <p class="card-text">عدد المستفيدين @item.acceptedsCount </p>
-             <p class="card-text"> قيمة التبرع @item.income</p>
+             <p class="card-text"> قيمة التبرع  <mark style="font-size: large;background-color: orange; ">@item.income ر.س</mark> </p>
              @* <p class="card-text">رقم الهاتف: @item.</p>
              <p class="card-text">العنوان : @item.fullAddress</p>  *@
 
@@ -53,7 +53,9 @@
 
         </div>
         <div class="card-footer text-muted" >
-            @item.createDate
+            @* @item.createDate *@
+              @String.Format("{0:dd/MM/yyyy}", item.createDate)   <span style="margin-right: 20vw;"> @String.Format("{0:hh:mm tt}", item.createDate)</span>    
+
            @* @item.ؤث تم الموافقة بتاريخ:  *@
         </div>
         </div>

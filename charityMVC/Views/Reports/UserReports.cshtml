@@ -43,7 +43,7 @@
 
         </div>
         <div class="card-footer text-muted" >
-           @item.ApprovalDate تم الموافقة بتاريخ: 
+              تم انضمام المستفيد فى :   @String.Format("{0:dd/MM/yyyy}", item.ApprovalDate)   <span style="margin-right: 10vw;"> @String.Format("{0:hh:mm tt}", item.ApprovalDate)</span>    
         </div>
         </div>
     }

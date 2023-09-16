@@ -59,8 +59,32 @@ a{
 
 
  @media (max-width: 767px) {
-img{
-    width: 55vw;
-    height: 35vh;
-}
+
+    #acceptji{
+        font-size:x-small;
+        padding: 0.5vw;
+        padding-top: 1vw;
+        height: 12vw;
+    }
+
+    #disSec{
+            width: 100%;
+    }
+    #acceptedSign{
+        width: 7vw !important;
+        height: 7vw !important;
+    }
+
+    #acceptedSign i{
+        padding: 1vw;
+    }
+    .section{
+        border-radius: 1rem 1rem;
+        
+    }
+   
+    img{
+        width: 55vw;
+        height: 35vh;
+    }
  }

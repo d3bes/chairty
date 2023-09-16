@@ -27,7 +27,7 @@
             <div class="col-sm-8">
 
             @if(Model.isAccepted){
-                <div style="width: 2vw; height: 2vw;color:white; background: green;padding:0.25vw;padding-right:0.40vw; border-radius: 50%; margin-top:1vw">
+                <div id="acceptedSign" style="width: 2vw; height: 2vw;color:white; background: green;padding:0.25vw;padding-right:0.40vw; border-radius: 50%; margin-top:1vw">
                <i class="bi bi-check2-circle" ></i>
                 </div>
             }
@@ -122,7 +122,7 @@
                         <div class="form-group">
                         <label>رقم الهوية : <span class="text-danger">*</span></label>
 
-            <input type="number" asp-for="id" name="id" class="form-control"  disabled>
+            <input type="number" asp-for="id" name="id" class="form-control"  >
                     <span asp-validation-for="id" class="text-danger"></span>
 
 
@@ -136,7 +136,7 @@
                   
                     <input type="number" asp-for="phone" name="phone" class="form-control" required>
                       <span asp-validation-for="phone" class="text-danger"></span>
-                        <span class="input-group-text">+966</span>
+                        @* <span class="input-group-text">+966</span> *@
 
                 </div>
             </div>
@@ -191,7 +191,7 @@
 
 <!-- هل لديك دخل أو مساعدات دورية أو ضمان اجتماعي؟ -->
 
-                <h4>الحالة الاجتماعية</h4>
+                @* <h4>الحالة الاجتماعية</h4> *@
             @* <div class="form-group">
                 <label>هل لديك دخل أو مساعدات دورية أو ضمان اجتماعي؟ <span class="text-danger">*</span> </label><br>
                 <div class="form-check form-check-inline">
@@ -297,7 +297,7 @@
 <div class="col-sm-8" >
 
 
-     <div class="section" >
+     <div class="section" id="disSec" >
             <!-- هل يوجد حالة إعاقة أو لأحد عائلتك؟ -->
             <form asp-action="UpdateDisiability" asp-controller="ClerkImages"  class="mt-4" method="post" enctype="multipart/form-data">
             <div>
@@ -463,14 +463,12 @@
              }
              else{
                 
-                  <a  class="btn btn-warning" style="margin:1vw;width:10vw" disiable>تم القبول </a>
+                  <a  class="btn btn-warning" id="acceptji" style="margin:1vw;width:10vw" disiable>تم القبول </a>
              }
              
-              
+              <div class="col-sm-2" > </div>
             </div>
 
-</div>
-<div class="col-sm-2" > 
     
 </div>    
     

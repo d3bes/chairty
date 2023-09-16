@@ -227,7 +227,7 @@ namespace charityMVC.Controllers
                   
              } 
         
-        }   payMent.createDate = DateTime.Now;
+        }   payMent.createDate = DateTime.UtcNow;
              _context.PayMents.Add(payMent);
                   _context.SaveChanges();
 
