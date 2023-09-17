@@ -16,7 +16,7 @@
 
 ## النظام
 
-- اللغة: Asp net core 7 MVC
+- التقنية: Asp net core 7 MVC
 - صفحات الويب:
   - صفحة تسجيل المستفيدين
   - صفحة تحديث بيانات المستفيدين
@@ -63,7 +63,7 @@ The project was created for the benefit of a family fund dedicated to supporting
 
 ## System Details
 
-- Language: Asp net core 7 MVC
+- Technology: Asp net core 7 MVC
 - Web Pages:
   - User Registration Page
   - User Data Update Page
