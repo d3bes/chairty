@@ -2,8 +2,24 @@
 for details on configuring this project to bundle and minify static web assets. */
 @media (min-width: 767px) {
 #navbarNavAltMarkup{
-   margin-right: 15vw;
+   margin-right: 25vw;
+
 }
+
+
+}
+@media (min-width: 992px ){
+   #navbarNavAltMarkup{
+      margin-right: 10vw;
+   
+   }
+
+}
+@media (min-width: 1200px ){
+   #navbarNavAltMarkup{
+      margin-right: 20vw;
+   
+   }
 
 }
 @media (max-width: 767px) {
@@ -12,6 +28,9 @@ for details on configuring this project to bundle and minify static web assets. 
     font-size: medium;
     width: max-content;
     
+ }
+ .portfolio{
+   margin-left: 25vw;
  }
  
  #adminTop{
@@ -31,6 +50,8 @@ for details on configuring this project to bundle and minify static web assets. 
    width: 25vw;
 }
 
+
+
 /* For example, you can adjust font sizes, margins, padding, or layout for small screens */
 }
 
@@ -38,3 +59,7 @@ for details on configuring this project to bundle and minify static web assets. 
    background-color: #023e4a;
 }
 
+.contact-info i{
+   margin-right: 3vw;
+  font-size: large;
+}
