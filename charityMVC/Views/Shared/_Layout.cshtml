@@ -30,8 +30,11 @@
 <section id="topbar" class="topbar d-flex align-items-center">
   <div class="container d-flex justify-content-center justify-content-md-between">
     <div class="contact-info d-flex align-items-center">
-      <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">  @* contact@example.com*@ </a></i> 
-      <i class="bi bi-phone d-flex align-items-center ms-4" id="phoneContact"><span> @* +1 5589 55488 55 *@</span></i> 
+      <a href="mailto:abdo.mohamed6319@gmail.com"> <i class="bi bi-envelope d-flex align-items-center"></i> @* abdo.mohamed6319@gmail.com *@</a>
+      <a href="https://github.com/d3bes" class="github"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/abdelrahman-mohamed-29ba14166" class="linkedin"><i class="bi bi-linkedin"></i></a> 
+      <a href="http://d3bes.000.pe/" class="portfolio"><i class="bi bi-globe"></i></a> 
+
       @if(User.Identity.IsAuthenticated)
       {
         if(User.IsInRole("user")) {
@@ -48,12 +51,12 @@
     </div>
     <div id="adminTop"> <!-- Remove the d-none class to display on mobile -->
       @* <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a> *@
+      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> *@
+      @* <a href="https://github.com/d3bes" class="github"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/abdelrahman-mohamed-29ba14166" class="linkedin"><i class="bi bi-linkedin"></i></a>  *@
       @if(!User.Identity.IsAuthenticated)
       {
-        <a class="btn btn-warning btn-sm"  asp-controller="Admin" asp-action="LoginAdmin" style="margin-right: 2vw"> مدير النظام <i class="bi bi-box-arrow-in-left"></i></a>
+        <a class="btn btn-warning btn-sm"  asp-controller="Admin" asp-action="LoginAdmin" id="adminbtn" style="margin-right: 2vw"> مدير النظام <i class="bi bi-box-arrow-in-left"></i></a>
       }
       else {
         <a class="btn btn-warning btn-sm" asp-controller="Register" asp-action="Signout" style="margin-right: 2vw;">تسجيل الخروج <i class="bi bi-box-arrow-right"></i></a>
@@ -130,7 +133,7 @@
   <div class="container-fluid">
    <a asp-controller="Home" asp-action="Index" class="navbar-brand">
             <h2 id="title" style="color: tomato; font-family: 'thuluth';">
-                <span>صندوق ذرية محمد بن عثمان بن مسعود الحميد</span>
+                <span> صندوق ذرية محمد بن عثمان بن مسعود الحميد</span>
             </h2>
         </a>
         
@@ -145,11 +148,13 @@
     
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" style="color:white" aria-current="page"asp-controller="Home" asp-action="Index">الرئيسية</a>
+        <a class="nav-link" style="color:white" aria-current="page" asp-controller="Home" asp-action="Index">الرئيسية</a>
         <a class="nav-link" style="color:white" asp-controller="Register" asp-action="register">تسجيل كمستفيد</a>
        @if(!User.Identity.IsAuthenticated)
       {
-        <a class="nav-link"  style="color:white" asp-controller="Clerk" asp-action="LoginClerk" > دخول الاعضاء</a>        
+        <a class="nav-link"  style="color:white" asp-controller="Clerk" asp-action="LoginClerk" > دخول الاعضاء</a>    
+        <a class="nav-link"  style="color:white" asp-controller="Admin" asp-action="LoginAdmin"> مدير النظام </a>
+    
       }
         @if (User.Identity.IsAuthenticated)
                 {
@@ -161,9 +166,9 @@
                     if (User.IsInRole("admin"))
                     {
                        
-                          <a style="color:white ;margin-left:2vw" asp-controller="Admin" asp-action="Index">المدير</a>
-                          <a style="color:white; margin-left:2vw" asp-controller="Admin" asp-action="NewPay" > إنشاء دفعة مالية</a>
-                          <a  style="color:white; margin-left:2vw" asp-controller="Reports" asp-action="Index">التقارير</a>
+                          <a style="color:white ;margin-left:2vw" id="aj" asp-controller="Admin" asp-action="Index">المدير</a>
+                          <a style="color:white; margin-left:2vw" id="kj" asp-controller="Admin" asp-action="NewPay" > إنشاء دفعة مالية</a>
+                          <a  style="color:white; margin-left:2vw" id="ik" asp-controller="Reports" asp-action="Index">التقارير</a>
                     }
                 }
       </div>
@@ -250,10 +255,12 @@
           </a>
           <!-- <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p> -->
           <div class="social-links d-flex mt-4">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            @* <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> *@
+            <a href="https://github.com/d3bes" class="github"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/abdelrahman-mohamed-29ba14166" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            <a href="http://d3bes.000.pe/" class="portfolio"><i class="bi bi-globe"></i></a> 
+
           </div>
         </div>
 
@@ -291,7 +298,7 @@
           </ul>
         </div> *@
 
-        @* <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+         @* <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
           <h4> تواصل معنا</h4>
           <p>
       
@@ -299,7 +306,7 @@
             <strong>Email:</strong>abdo.mohamed6319@gmail.com<br>
           </p>
 
-        </div> *@
+        </div>  *@
 
       </div>
     </div>
