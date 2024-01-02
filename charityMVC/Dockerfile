@@ -17,7 +17,7 @@ RUN dotnet restore
 
 COPY . .
 
-RUN dotnet publish -c release -o /App
+RUN dotnet publish -c release -o /app
 RUN sudo docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=GYR2hu76#3d' \
    --name 'sql1' -p 1401:1433 \
    -v sql1data:/var/opt/mssql \
@@ -25,9 +25,9 @@ RUN sudo docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=GYR2hu76#3d' \
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 
-WORKDIR /App
+WORKDIR /app
 
-COPY --from=build /App .
+COPY --from=build /app .
 
 ENTRYPOINT [ "dotnet","charityMVC.dll" ]
 
