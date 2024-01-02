@@ -25,7 +25,7 @@ RUN sudo docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=GYR2hu76#3d' \
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 
-WORKDIR /app
+WORKDIR /App
 
 COPY --from=build /App .
 
