@@ -1,0 +1,26 @@
+make backup directory:
+
+docker exec -it CharitySqlServer bash
+mkdir /var/opt/mssql/backup
+
+copy backup:
+
+- cd charityMVC 
+
+docker cp .\database_16_9.bak CharitySqlServer:/var/opt/mssql/backup
+
+RESTORE:
+
+docker exec -it CharitySqlServer /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P '<GYR2hu76#3d>' -Q "RESTORE DATABASE charity FROM DISK = '/var/opt/mssql/backup/database_16_9.bak' WITH MOVE 'logical_data_file_name' TO '/var/opt/mssql/data/charity_Data.mdf', MOVE 'logical_log_file_name' TO '/var/opt/mssql/data/charity_Log.ldf', REPLACE, RECOVERY, STATS = 10;"
+
+or insinde sqlcmd:
+
+docker exec -it CharitySqlServer /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P '<GYR2hu76#3d>'
+
+RESTORE DATABASE charity
+FROM DISK = '/var/opt/mssql/backup/database_16_9.bak'
+WITH
+    MOVE 'db_a9e627_charity4_Data' TO '/var/opt/mssql/data/charity4_Data.mdf',
+    MOVE 'db_a9e627_charity4_Log' TO '/var/opt/mssql/data/charity4_Log.ldf',
+    REPLACE, RECOVERY, STATS = 10;
+GO
