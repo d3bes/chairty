@@ -1,0 +1,14 @@
+version: '3'
+services:
+  ms-sql-server:
+    image:  ${abdelrahman9986/charity_sql_server:latest}
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "<GYR2hu76#3d>"
+    ports:
+      - "1433:1433"
+
+  charityMVC:
+    build: .
+    ports:
+      - "80:80"
