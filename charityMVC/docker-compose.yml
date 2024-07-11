@@ -1,14 +1,30 @@
-version: '3'
-services:
-  ms-sql-server:
-    image:  abdelrahman9986/charity_sql_server:latest
-    environment:
-      ACCEPT_EULA: "Y"
-      MSSQL_SA_PASSWORD: "<GYR2hu76#3d>"
-    ports:
-      - "1433:1433"
+version: '3.8'
 
-  charityMVC:
+services:
+  charitymvc:
     build: .
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      DatabaseServer: ms-sql-server
+      DatabasePort: "1433"
     ports:
       - "80:80"
+    depends_on:
+      - ms-sql-server
+    networks:
+      - backend-network
+      
+  ms-sql-server:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: ms-sql-server
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "<GYR2hu76#3d>"
+    ports:
+      - "1433:1433"
+    networks:
+      - backend-network
+
+networks:
+  backend-network:
+    driver: bridge
