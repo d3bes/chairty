@@ -47,6 +47,10 @@ builder.Services.AddScoped<ISupportRepo, SupportRepo>();
 builder.Services.AddScoped<IReportRepo, ReportRepo>();
 builder.Services.AddScoped<IsmsRepo, smsRepo>();
 
+
+// builder.Services.AddDataProtection()
+//     .PersistKeysToFileSystem(new DirectoryInfo("/keys"));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

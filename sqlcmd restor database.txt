@@ -7,7 +7,7 @@ copy backup:
 
 - cd charityMVC 
 
-docker cp .\database_16_9.bak CharitySqlServer:/var/opt/mssql/backup
+docker cp database_16_9.bak CharitySqlServer:/var/opt/mssql/backup
 
 RESTORE:
 
@@ -24,3 +24,14 @@ WITH
     MOVE 'db_a9e627_charity4_Log' TO '/var/opt/mssql/data/charity4_Log.ldf',
     REPLACE, RECOVERY, STATS = 10;
 GO
+
+
+sudo docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=<GYR2hu76#3d>" \
+   -p 1433:1433 --name CharitySqlServer --hostname CharitySqlServer
+ \
+   -d \
+ 
+
+
+ docker login  -u abdelrahman9986
+ 
