@@ -10,10 +10,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
+// builder.Services.AddDbContext<Context>(op=>
+// {
+//     op.UseSqlServer(builder.Configuration.GetConnectionString("Cs"));
+// });
+
 builder.Services.AddDbContext<Context>(op=>
 {
-    op.UseSqlServer(builder.Configuration.GetConnectionString("Cs"));
+    op.UseSqlite("DataSource=data.sqlite");
 });
+
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie();
